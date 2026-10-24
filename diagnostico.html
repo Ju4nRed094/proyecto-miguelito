@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1322">
+    <meta name="description" content="Revisa de forma orientativa cómo organiza tu negocio el tratamiento y cuidado de datos personales.">
+    <meta name="application-name" content="DOCFAST">
+    <title>Diagnóstico de Cumplimiento — DOCFAST</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="diagnostico.css">
+    <script src="vendor/jspdf.umd.min.js" defer></script>
+    <script src="diagnostico.js" defer></script>
+  </head>
+  <body class="diagnostic-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html#herramientas">Herramientas</a>
+        <a href="#cuestionario" aria-current="page">Diagnóstico</a>
+        <a href="#que-evalua">Qué evalúa</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a class="nav-cta" href="#cuestionario">Comenzar <span aria-hidden="true">↓</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="diagnostic-hero page-wrap" aria-labelledby="page-title">
+        <div class="diagnostic-hero-copy">
+          <p class="breadcrumb"><a href="index.html">DOCFAST</a><span aria-hidden="true">/</span><span>Diagnóstico</span></p>
+          <span class="availability"><span class="availability-dot"></span> HERRAMIENTA DISPONIBLE</span>
+          <h1 id="page-title">Diagnóstico de <span>Cumplimiento</span></h1>
+          <p class="diagnostic-lede">Una revisión guiada para ordenar cómo tu organización maneja datos personales y qué prácticas puede fortalecer.</p>
+          <div class="hero-facts" aria-label="Detalles del cuestionario">
+            <span><strong>4</strong> pasos guiados</span><span><strong>5</strong> etapas hasta el resultado</span><span><strong>5–8</strong> minutos</span>
+          </div>
+          <a class="primary-link" href="#cuestionario">Iniciar diagnóstico <span aria-hidden="true">↓</span></a>
+          <p class="hero-note">No escribas nombres, RUT, correos ni información real de clientes o trabajadores.</p>
+        </div>
+        <aside class="hero-summary" aria-label="Resumen del diagnóstico">
+          <div class="summary-orbit" aria-hidden="true"></div>
+          <div class="summary-icon" aria-hidden="true">◉</div>
+          <p class="summary-kicker">REVISIÓN ORIENTATIVA</p>
+          <h2>Un punto de partida, hecho por ti.</h2>
+          <p>Responde sobre prácticas generales. El cálculo ocurre en esta página. Solo al abrir el catálogo desde los resultados se conserva una copia temporal en esta pestaña para restaurar tus respuestas al volver.</p>
+          <div class="summary-bottom"><span>Sin cuenta</span><span>Sin envío de respuestas</span></div>
+        </aside>
+      </section>
+
+      <section class="questionnaire-section" id="cuestionario" aria-labelledby="questionnaire-title">
+        <div class="questionnaire-wrap">
+          <div class="questionnaire-heading">
+            <div><span class="section-kicker">TU REVISIÓN</span><h2 id="questionnaire-title">Empecemos por tu organización.</h2><p>Elige la opción que mejor describa tu situación actual. Puedes dejar respuestas pendientes: el informe seguirá disponible y el puntaje no es un requisito.</p></div>
+            <span class="privacy-chip"><span aria-hidden="true">●</span> Respuestas locales</span>
+          </div>
+
+          <div class="questionnaire-layout">
+          <section class="questionnaire-card" aria-label="Cuestionario de diagnóstico">
+            <div class="stepper-top">
+            <span class="step-count" id="step-count">Paso 1 de 4</span>
+              <span class="step-topic" id="step-topic">Tu negocio</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="Progreso del cuestionario y resultados" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" id="progress-track"><span class="progress-fill" id="progress-fill"></span></div>
+            <ol class="step-labels" aria-label="Etapas del cuestionario">
+              <li aria-current="step"><span>01</span><b>Tu negocio</b></li><li><span>02</span><b>Datos</b></li><li><span>03</span><b>Estado actual</b></li><li><span>04</span><b>Incidentes</b></li><li><span>05</span><b>Diagnóstico</b></li>
+            </ol>
+            <div class="questionnaire-error" id="step-error" role="alert" aria-live="polite" hidden></div>
+            <form id="diagnostic-form" novalidate>
+              <section class="form-step" data-step="0" aria-labelledby="step-title-1">
+                <div class="form-step-heading"><span class="step-eyebrow">PASO 1 · CONTEXTO</span><h3 id="step-title-1" tabindex="-1">Tu negocio</h3><p>Estas respuestas ayudan a contextualizar el resultado. No cambian el puntaje.</p></div>
+                <fieldset class="question-group" data-required="radio" aria-describedby="error-business-type">
+                  <legend>¿Qué tipo de negocio describe mejor al tuyo?</legend>
+                  <div class="choice-grid choice-grid-3">
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="E-commerce"><span class="choice-mark"></span><span class="choice-copy"><strong>E-commerce</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Servicio profesional"><span class="choice-mark"></span><span class="choice-copy"><strong>Servicio profesional</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Salud"><span class="choice-mark"></span><span class="choice-copy"><strong>Salud</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Educación"><span class="choice-mark"></span><span class="choice-copy"><strong>Educación</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Retail"><span class="choice-mark"></span><span class="choice-copy"><strong>Retail</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Restaurante/Gastronomía"><span class="choice-mark"></span><span class="choice-copy"><strong>Restaurante / gastronomía</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Contabilidad/Finanzas"><span class="choice-mark"></span><span class="choice-copy"><strong>Contabilidad / finanzas</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Inmobiliaria"><span class="choice-mark"></span><span class="choice-copy"><strong>Inmobiliaria</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="businessType" value="Otro"><span class="choice-mark"></span><span class="choice-copy"><strong>Otro</strong></span></label>
+                  </div>
+                  <p class="question-error" id="error-business-type" hidden>Selecciona una opción para continuar.</p>
+                </fieldset>
+                <fieldset class="question-group" data-required="radio" aria-describedby="error-team-size">
+                  <legend>¿Cuántas personas trabajan en tu negocio?</legend>
+                  <div class="choice-grid choice-grid-4">
+                    <label class="choice-card compact"><input type="radio" name="teamSize" value="1–5"><span class="choice-mark"></span><span class="choice-copy"><strong>1–5</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="teamSize" value="6–20"><span class="choice-mark"></span><span class="choice-copy"><strong>6–20</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="teamSize" value="21–50"><span class="choice-mark"></span><span class="choice-copy"><strong>21–50</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="teamSize" value="50+"><span class="choice-mark"></span><span class="choice-copy"><strong>50+</strong></span></label>
+                  </div>
+                  <p class="question-error" id="error-team-size" hidden>Selecciona una opción para continuar.</p>
+                </fieldset>
+                <fieldset class="question-group" data-required="radio" aria-describedby="error-website">
+                  <legend>¿Tu organización tiene sitio web?</legend>
+                  <div class="choice-grid choice-grid-2">
+                    <label class="choice-card compact"><input type="radio" name="website" value="Sí"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="website" value="No"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label>
+                  </div>
+                  <p class="question-error" id="error-website" hidden>Selecciona una opción para continuar.</p>
+                </fieldset>
+              </section>
+
+              <section class="form-step" data-step="1" aria-labelledby="step-title-2" hidden>
+                <div class="form-step-heading"><span class="step-eyebrow">PASO 2 · CONTEXTO</span><h3 id="step-title-2" tabindex="-1">Datos que recopilas</h3><p>Marca categorías generales. No ingreses nombres, RUT ni datos reales de personas.</p></div>
+                <fieldset class="question-group" data-required="checkbox" aria-describedby="error-data-types">
+                  <legend>¿Qué tipos de datos recopila o utiliza tu negocio? <span class="legend-hint">Puedes marcar varios.</span></legend>
+                  <div class="choice-grid choice-grid-3">
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="Nombre completo"><span class="choice-mark"></span><span class="choice-copy"><strong>Nombre completo</strong></span></label>
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="RUT"><span class="choice-mark"></span><span class="choice-copy"><strong>RUT</strong></span></label>
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="Email"><span class="choice-mark"></span><span class="choice-copy"><strong>Email</strong></span></label>
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="Teléfono"><span class="choice-mark"></span><span class="choice-copy"><strong>Teléfono</strong></span></label>
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="Dirección postal"><span class="choice-mark"></span><span class="choice-copy"><strong>Dirección postal</strong></span></label>
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="Datos de pago"><span class="choice-mark"></span><span class="choice-copy"><strong>Datos de pago</strong></span></label>
+                    <label class="choice-card compact"><input type="checkbox" name="dataTypes" value="Datos de salud"><span class="choice-mark"></span><span class="choice-copy"><strong>Datos de salud</strong><small>Solo selecciona la categoría; no detalles.</small></span></label>
+                    <label class="choice-card compact no-data-choice"><input type="checkbox" name="dataTypes" value="none"><span class="choice-mark"></span><span class="choice-copy"><strong>No recopilo datos personales</strong></span></label>
+                  </div>
+                  <p class="question-error" id="error-data-types" hidden>Marca al menos una opción.</p>
+                </fieldset>
+                <fieldset class="question-group" data-required="radio" aria-describedby="error-web-forms">
+                  <legend>¿Tu negocio tiene formularios de contacto, registro o cotización en la web?</legend>
+                  <p class="question-hint">Incluye WhatsApp Business o formularios externos integrados en la página.</p>
+                  <div class="choice-grid choice-grid-2">
+                    <label class="choice-card compact"><input type="radio" name="webForms" value="yes"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="webForms" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label>
+                  </div>
+                  <p class="question-error" id="error-web-forms" hidden>Selecciona una opción.</p>
+                </fieldset>
+                <fieldset class="question-group" data-required="radio" aria-describedby="error-tracking">
+                  <legend>¿Usas cookies, Google Analytics u otras herramientas de seguimiento?</legend>
+                  <div class="choice-grid choice-grid-3">
+                    <label class="choice-card compact"><input type="radio" name="tracking" value="yes"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="tracking" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label>
+                    <label class="choice-card compact"><input type="radio" name="tracking" value="unknown"><span class="choice-mark"></span><span class="choice-copy"><strong>No sé</strong></span></label>
+                  </div>
+                  <p class="question-error" id="error-tracking" hidden>Selecciona una opción.</p>
+                </fieldset>
+                <fieldset class="question-group consistency-confirm" id="no-data-confirmation" data-required="checkbox" aria-describedby="error-no-data-confirm" hidden>
+                  <legend id="consistency-legend">Marcaste que no recopilas datos, pero también indicaste que usas formularios o seguimiento.</legend>
+                  <p class="question-hint">Revisa si alguna herramienta recibe información personal. Puedes cambiar tus respuestas o confirmar que ya lo verificaste.</p>
+                  <label class="choice-card compact"><input type="checkbox" name="noDataConfirm" value="confirmed"><span class="choice-mark"></span><span class="choice-copy"><strong>Confirmo que revisé estas respuestas y mantengo mi selección.</strong></span></label>
+                  <p class="question-error" id="error-no-data-confirm" hidden>Revisa la combinación y confirma para continuar.</p>
+                </fieldset>
+              </section>
+
+              <section class="form-step" data-step="2" aria-labelledby="step-title-3" hidden>
+                <div class="form-step-heading"><span class="step-eyebrow">PASO 3 · ESTADO ACTUAL</span><h3 id="step-title-3" tabindex="-1">Lo que ya tienes</h3><p>Responde según los documentos y procesos actuales del negocio.</p></div>
+                <fieldset class="question-group scored-group" data-required="radio" data-control="policy" aria-describedby="error-policy"><legend>¿Cuál opción describe mejor tu política de privacidad?</legend><div class="choice-grid choice-grid-3"><label class="choice-card compact"><input type="radio" name="policy" value="current"><span class="choice-mark"></span><span class="choice-copy"><strong>Actualizada</strong></span></label><label class="choice-card compact"><input type="radio" name="policy" value="outdated"><span class="choice-mark"></span><span class="choice-copy"><strong>Existe, pero está desactualizada</strong></span></label><label class="choice-card compact"><input type="radio" name="policy" value="none"><span class="choice-mark"></span><span class="choice-copy"><strong>No tiene</strong></span></label></div><p class="question-error" id="error-policy" hidden>Selecciona una respuesta.</p></fieldset>
+                <fieldset class="question-group scored-group" data-required="radio" data-control="consent" aria-describedby="error-consent"><legend>¿Cómo gestionas el consentimiento explícito?</legend><div class="choice-grid choice-grid-4"><label class="choice-card compact"><input type="radio" name="consent" value="always"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí, siempre</strong></span></label><label class="choice-card compact"><input type="radio" name="consent" value="sometimes"><span class="choice-mark"></span><span class="choice-copy"><strong>A veces</strong></span></label><label class="choice-card compact"><input type="radio" name="consent" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label><label class="choice-card compact"><input type="radio" name="consent" value="unknown"><span class="choice-mark"></span><span class="choice-copy"><strong>No sé qué es eso</strong></span></label></div><p class="question-error" id="error-consent" hidden>Selecciona una respuesta.</p></fieldset>
+                <fieldset class="question-group scored-group" data-required="radio" data-control="register" aria-describedby="error-register"><legend>¿Tienes un registro documentado de los datos que tratas?</legend><div class="choice-grid choice-grid-2"><label class="choice-card compact"><input type="radio" name="register" value="yes"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label><label class="choice-card compact"><input type="radio" name="register" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label></div><p class="question-error" id="error-register" hidden>Selecciona una respuesta.</p></fieldset>
+                <fieldset class="question-group scored-group" data-required="radio" data-control="rights" aria-describedby="error-rights"><legend>¿Tienes un procedimiento para solicitudes de acceso, rectificación o eliminación?</legend><div class="choice-grid choice-grid-3"><label class="choice-card compact"><input type="radio" name="rights" value="yes"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label><label class="choice-card compact"><input type="radio" name="rights" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label><label class="choice-card compact"><input type="radio" name="rights" value="unknown"><span class="choice-mark"></span><span class="choice-copy"><strong>No sé qué es eso</strong></span></label></div><p class="question-error" id="error-rights" hidden>Selecciona una respuesta.</p></fieldset>
+              </section>
+
+              <section class="form-step" data-step="3" aria-labelledby="step-title-4" hidden>
+                <div class="form-step-heading"><span class="step-eyebrow">PASO 4 · RESPUESTA</span><h3 id="step-title-4" tabindex="-1">Preparación ante incidentes</h3><p>Estas respuestas completan el puntaje y el plan de acción.</p></div>
+                <fieldset class="question-group scored-group" data-required="radio" data-control="training" aria-describedby="error-training"><legend>¿El equipo tiene capacitación básica o una persona responsable de privacidad?</legend><div class="choice-grid choice-grid-2"><label class="choice-card compact"><input type="radio" name="training" value="yes"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label><label class="choice-card compact"><input type="radio" name="training" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label></div><p class="question-error" id="error-training" hidden>Selecciona una respuesta.</p></fieldset>
+                <fieldset class="question-group scored-group" data-required="radio" data-control="incidentPlan" aria-describedby="error-incident-plan"><legend>¿Tienes un plan de acción interno ante una filtración de datos?</legend><div class="choice-grid choice-grid-2"><label class="choice-card compact"><input type="radio" name="incidentPlan" value="yes"><span class="choice-mark"></span><span class="choice-copy"><strong>Sí</strong></span></label><label class="choice-card compact"><input type="radio" name="incidentPlan" value="no"><span class="choice-mark"></span><span class="choice-copy"><strong>No</strong></span></label></div><p class="question-error" id="error-incident-plan" hidden>Selecciona una respuesta.</p></fieldset>
+              </section>
+              <div class="form-actions"><button class="secondary-button" id="previous-button" type="button" disabled>← <span>Anterior</span></button><button class="primary-link next-button" id="next-button" type="button">Siguiente <span aria-hidden="true">→</span></button></div>
+            </form>
+
+            <section class="results-panel" id="results-panel" aria-labelledby="results-title" aria-live="polite" hidden>
+              <div class="results-ready"><span class="ready-check" aria-hidden="true">✓</span><span class="step-eyebrow">TU DIAGNÓSTICO ESTÁ LISTO</span></div>
+              <div class="results-header"><div><h3 id="results-title" tabindex="-1">Tu nivel de preparación</h3><p>Resultado dinámico basado en tus respuestas. Es orientativo y no evalúa la legalidad de tus procesos.</p></div><span class="result-level" id="result-level"></span></div>
+              <div class="score-layout"><div class="score-ring" id="score-ring"><div><strong id="score-value">—</strong><span>de 100</span></div></div><div class="score-copy"><h4 id="score-heading"></h4><p id="score-explanation"></p><div class="result-meter" role="progressbar" aria-label="Puntaje orientativo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="result-meter"><span id="result-meter-fill"></span></div><p class="context-summary" id="context-summary"></p><p class="score-method">Se suman seis dimensiones con máximos fijos que totalizan 100 puntos: política 20; consentimiento 15; registro 20; solicitudes de titulares 15; capacitación o persona responsable 15; plan ante incidentes 15. Las respuestas de contexto no alteran el puntaje. Dimensiones sin respuesta: 0 puntos provisionales y pendientes. Cuando el cuestionario está completo, los niveles son: 0–39 Inicio, 40–69 En progreso, 70–99 Preparación declarada y 100 Preparación completa. El nivel describe respuestas declaradas, no cumplimiento legal.</p></div></div>
+              <section class="dimension-section" aria-labelledby="dimension-title"><div class="result-section-heading"><h4 id="dimension-title">Desglose por dimensión</h4><span>Puntos obtenidos / máximo</span></div><div class="dimension-breakdown" id="dimension-breakdown"></div></section>
+              <section class="action-section" aria-labelledby="action-title"><div class="result-section-heading"><h4 id="action-title">Acciones pendientes, por prioridad</h4><span id="action-count"></span></div><p class="empty-result" id="attention-empty" hidden>No aparecen brechas en estas dimensiones según tus respuestas. Puedes revisar las respuestas o mantener una revisión periódica interna.</p><ol class="action-list" id="action-list"></ol><p class="related-tools-note">Las dimensiones corresponden a una revisión general de preparación; no hay un tipo de documento seleccionado. Las acciones se ordenan desde la menor proporción de puntos y se complementan con el contexto declarado.</p></section>
+              <section class="results-next-step" aria-labelledby="results-next-step-title">
+                <div><span class="step-eyebrow">SIGUIENTE PASO</span><h4 id="results-next-step-title">Política de Privacidad en DOCFAST</h4><p id="policy-generator-status">El generador crea un borrador editable con los datos que completes. Si llegas desde este diagnóstico, se sugieren el tipo de negocio y solo las categorías que coinciden exactamente; las respuestas sobre sitio web y seguimiento aparecen como avisos para que las confirmes, no como datos precargados. No se infieren razón social, RUT, dirección, URL, titulares, finalidades, terceros, bases de licitud ni plazos. El puntaje no bloquea el acceso.</p></div>
+                <a class="primary-link" id="policy-generator-cta" href="politica-privacidad.html" aria-describedby="policy-generator-status">Genera tus documentos ahora <span aria-hidden="true">↗</span></a>
+              </section>
+              <div class="results-actions result-separators"><button class="primary-link" type="button" id="generate-document-button">Preparar ficha de contexto</button><button class="secondary-button" type="button" id="review-button">Editar respuestas del diagnóstico</button><button class="reset-button" type="button" id="reset-button">Reiniciar diagnóstico <span aria-hidden="true">↻</span></button></div>
+              <p class="result-disclaimer">El puntaje solo describe esta autoevaluación. No constituye asesoría legal, certificación ni garantía de cumplimiento; verifica las fuentes oficiales para interpretar requisitos aplicables a tu caso. No se calculan plazos de respuesta ni de notificación de incidentes. Consultar el resultado no descarga, imprime ni envía un archivo.</p>
+            </section>
+
+            <section class="document-builder" id="document-builder" aria-labelledby="document-builder-title" hidden>
+              <span class="step-eyebrow">DOCUMENTO · NUEVA SALIDA</span>
+              <h3 id="document-builder-title" tabindex="-1">Prepara un documento independiente</h3>
+              <p>Este flujo usa solo los datos y respuestas declaradas. No incorpora puntaje, barra de progreso ni recomendaciones del diagnóstico.</p>
+              <form id="document-form" novalidate>
+                <label for="document-type">Tipo de documento</label>
+                <select id="document-type" name="documentType" required aria-describedby="document-type-help">
+                  <option value="">Elige un tipo de documento</option>
+                  <option value="context-sheet">Ficha de contexto de gestión de datos</option>
+                </select>
+                <small id="document-type-help">Es el único tipo implementado en esta versión. Organiza las respuestas como una ficha descriptiva interna; no es una política ni un instrumento legal.</small>
+                <label for="document-subject">Nombre de la organización o persona</label>
+                <input id="document-subject" name="documentSubject" type="text" autocomplete="organization" maxlength="120" required aria-describedby="document-subject-help">
+                <small id="document-subject-help">Este dato identifica a quién corresponde la ficha. No se usa para validar el puntaje.</small>
+                <p class="document-form-error" id="document-form-error" role="alert" hidden></p>
+                <div class="document-builder-actions">
+                  <button class="secondary-button" type="button" id="back-to-diagnostic-button">Volver al diagnóstico</button>
+                  <button class="primary-link" type="submit">Preparar vista previa</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="document-preview" id="document-preview" aria-labelledby="document-preview-title" hidden>
+              <h3 class="document-preview-heading" id="document-preview-title" tabindex="-1">Vista previa adaptada a pantalla · impresión en A4</h3>
+              <article class="generated-document" id="generated-document"></article>
+              <div class="document-preview-actions">
+                <button class="primary-link" type="button" id="download-document-button">Descargar documento como PDF</button>
+                <button class="secondary-button" type="button" id="print-document-button">Imprimir documento (alternativa)</button>
+                <button class="secondary-button" type="button" id="edit-document-button">Volver a editar información</button>
+                <button class="secondary-button" type="button" id="edit-diagnostic-from-document-button">Editar respuestas del diagnóstico</button>
+              </div>
+              <p class="document-print-note">La descarga recomendada genera un PDF limpio directamente. Si eliges imprimir, desactiva “Encabezados y pies de página” en el diálogo del navegador.</p>
+            </section>
+          </section>
+          <aside class="live-diagnostic" aria-labelledby="live-diagnostic-title">
+            <details class="live-panel-details" open>
+              <summary class="live-panel-summary">Tu diagnóstico · actualizar al responder</summary>
+            <div class="live-panel-inner">
+              <p class="section-kicker">SEGUIMIENTO EN VIVO</p>
+              <h3 id="live-diagnostic-title">Tu diagnóstico</h3>
+              <p class="live-intro">Evaluación general de preparación. No hay un tipo de documento seleccionado.</p>
+              <div class="live-score-line"><strong id="live-score">—</strong><span id="live-score-suffix">/ 100 puntos</span></div>
+              <p class="live-level" id="live-level">Responde para calcular tu nivel</p>
+              <div class="live-meter" id="live-meter" role="progressbar" aria-label="Puntaje de preparación actual" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="live-meter-fill"></span></div>
+              <p class="live-completion" id="live-completion">0 de 6 dimensiones respondidas</p>
+              <h4>Dimensiones evaluadas</h4>
+              <div class="live-dimensions" id="live-dimensions"></div>
+              <h4>Mejoras pendientes</h4>
+              <ul class="live-pending" id="live-pending"></ul>
+              <p class="live-complete-note" id="live-complete-note" hidden>Preparación completa significa que declaraste las prácticas evaluadas. No es una certificación ni garantiza cumplimiento legal.</p>
+              <p class="live-announcer" id="live-announcer" aria-live="polite" aria-atomic="true"></p>
+            </div>
+            </details>
+          </aside>
+          </div>
+          <p class="local-data-note"><span aria-hidden="true">⌁</span> Tus respuestas no se envían a un servidor. Al usar el botón hacia el catálogo se conservan temporalmente en esta pestaña y se eliminan al volver o reiniciar el diagnóstico.</p>
+        </div>
+      </section>
+
+      <section class="information-section" id="que-evalua" aria-labelledby="what-title">
+        <div class="page-wrap">
+          <div class="info-intro"><span class="section-kicker">UNA GUÍA, NO UN VEREDICTO</span><h2 id="what-title">¿Qué evalúa el diagnóstico?</h2><p>Te ayuda a ordenar prácticas declaradas por tu equipo: información que maneja, documentos de referencia, responsables y preparación general. No revisa sistemas, documentos ni hechos externos.</p></div>
+          <div class="info-grid">
+            <article class="info-card"><span class="info-icon" aria-hidden="true">01</span><h3>¿Cómo se calcula el resultado?</h3><p>Seis dimensiones suman exactamente 100 puntos: política (20), consentimiento (15), registro (20), solicitudes de titulares (15), capacitación o responsable (15) y plan ante incidentes (15). “Actualizada” aporta 20 a política y “desactualizada” 10; “siempre” aporta 15 al consentimiento y “a veces” 8. Las respuestas afirmativas obtienen el máximo indicado, salvo esas ponderaciones parciales; las negativas o “No sé” obtienen 0 y la incertidumbre se muestra expresamente. Si una dimensión queda sin responder, sus 0 puntos son provisionales y aparece como pendiente. Esto no bloquea el informe. Tipo de negocio, personal, web y herramientas de seguimiento no cambian el puntaje. Las acciones se priorizan desde la dimensión con menor proporción de puntos.</p></article>
+            <article class="info-card"><span class="info-icon" aria-hidden="true">02</span><h3>¿Quién debería hacerlo?</h3><p>Personas que conocen los procesos cotidianos de su negocio. Si una pregunta ofrece “No sé” o “No sé qué es eso”, puedes elegir esa opción; las dudas también sirven para orientar una revisión interna.</p></article>
+            <article class="info-card info-card-wide"><span class="info-icon" aria-hidden="true">03</span><h3>Pasos para mejorar tu preparación</h3><p>Como punto de partida general, puedes:</p><ul><li>hacer un inventario de los datos y procesos que reconoces;</li><li>ubicar documentos y canales que el equipo ya usa;</li><li>definir quién puede investigar las respuestas inciertas;</li><li>acordar una revisión interna y revisar fuentes oficiales antes de tomar decisiones legales.</li></ul></article>
+          </div>
+          <aside class="legal-reference"><span class="legal-icon" aria-hidden="true">i</span><div><h3>Referencia normativa consultada</h3><p>La ficha oficial de la Biblioteca del Congreso Nacional indica que las modificaciones de la Ley 21.719 entran en vigencia el 1 de diciembre de 2026. Esta fecha y la referencia legal no cambian el resultado del cuestionario; verifica el texto oficial y su versión vigente al tomar decisiones.</p><a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Consultar Ley 21.719 en Ley Chile <span aria-hidden="true">↗</span></a></div></aside>
+        </div>
+      </section>
+
+      <section class="faq-section" id="preguntas" aria-labelledby="faq-title">
+        <div class="page-wrap faq-layout">
+          <div class="faq-heading"><span class="section-kicker">PREGUNTAS FRECUENTES</span><h2 id="faq-title">Lo esencial, claro.</h2><p>Cómo interpretar y usar esta revisión.</p></div>
+          <div class="faq-list">
+            <details><summary>¿Este diagnóstico certifica que cumplo la ley?<span aria-hidden="true">+</span></summary><p>No. Es una autoevaluación orientativa basada en tus respuestas; no revisa documentos ni determina obligaciones aplicables a tu caso.</p></details>
+            <details><summary>¿Qué pasa si no conozco una respuesta?<span aria-hidden="true">+</span></summary><p>En las preguntas que ofrecen “No sé” o “No sé qué es eso”, puedes marcar esa respuesta. No suma puntos en las dimensiones puntuadas y podrá aparecer como aspecto para revisar; no es una conclusión legal.</p></details>
+            <details><summary>¿Se envían mis respuestas?<span aria-hidden="true">+</span></summary><p>No. El cálculo ocurre en el navegador y no se envían a un servidor. Solo al abrir el catálogo desde los resultados se usa almacenamiento temporal de esta pestaña para restaurar las respuestas al volver; esa copia se elimina al restaurarla o reiniciar.</p></details>
+            <details><summary>¿El puntaje considera mi negocio o las herramientas web?<span aria-hidden="true">+</span></summary><p>No. El tipo de negocio, cantidad de personas, sitio web y respuestas sobre datos, formularios y seguimiento contextualizan las acciones sugeridas; no modifican los 100 puntos.</p></details>
+            <details><summary>¿Qué debo hacer con el resultado?<span aria-hidden="true">+</span></summary><p>Úsalo para priorizar conversaciones y verificaciones internas. Consulta fuentes oficiales o asesoría calificada si necesitas interpretar la normativa en tu situación.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-section" aria-labelledby="related-title">
+        <div class="page-wrap">
+          <div class="related-heading"><div><span class="section-kicker">SIGUIENTES HERRAMIENTAS</span><h2 id="related-title">Complementa tu preparación.</h2><p>También puedes preparar un RAT, un Formulario de Consentimiento o código para un Banner de Cookies.</p></div><a class="text-link" href="index.html#herramientas">Ver el catálogo <span aria-hidden="true">↗</span></a></div>
+          <div class="related-grid">
+            <a class="related-card" href="politica-privacidad.html"><span class="related-icon" aria-hidden="true">📄</span><span class="related-status">DISPONIBLE</span><h3>Política de Privacidad</h3><p>Prepara y revisa un borrador con la información que ingreses.</p></a>
+            <a class="related-card" href="registro-tratamiento.html"><span class="related-icon" aria-hidden="true">📊</span><span class="related-status">DISPONIBLE</span><h3>Registro de Tratamiento (RAT)</h3><p>Añade actividades y descarga un registro local en HTML o imprímelo como PDF.</p></a>
+            <a class="related-card" href="formulario-consentimiento.html"><span class="related-icon" aria-hidden="true">✅</span><span class="related-status">DISPONIBLE</span><h3>Formulario de Consentimiento</h3><p>Prepara un borrador imprimible con la finalidad y las categorías de datos que indiques.</p></a>
+            <a class="related-card" href="banner-cookies.html"><span class="related-icon" aria-hidden="true">🍪</span><span class="related-status">DISPONIBLE</span><h3>Banner de Cookies</h3><p>Personaliza y descarga un fragmento de banner HTML/CSS/JS para tu sitio.</p></a>
+            <article class="related-card"><span class="related-icon" aria-hidden="true">📨</span><span class="related-status">EN DESARROLLO</span><h3>Protocolo ARCOP</h3><p>Planificación de un flujo para solicitudes sobre datos.</p></article>
+            <article class="related-card"><span class="related-icon" aria-hidden="true">🔐</span><span class="related-status">EN DESARROLLO</span><h3>Protocolo de Brechas</h3><p>Organización de respuestas internas ante incidentes.</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer diagnostic-footer">
+      <div class="footer-top"><div class="footer-about"><a class="brand footer-brand" href="index.html" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a><p>Herramientas claras para trabajar con documentos.</p></div><div class="footer-column"><strong>Diagnóstico</strong><a href="#cuestionario">Cuestionario</a><a href="#que-evalua">Qué evalúa</a><a href="#preguntas">Preguntas frecuentes</a></div><div class="footer-column"><strong>DOCFAST</strong><a href="index.html#herramientas">Catálogo de herramientas</a><a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Ley 21.719 · BCN</a></div><div class="footer-column"><strong>Nota</strong><span>Resultado orientativo</span><span>No es asesoría legal</span></div></div>
+      <div class="footer-bottom"><span id="footer-copyright">© 2026 DOCFAST</span><span>Respuestas procesadas en tu navegador</span><a href="#page-title">Volver arriba ↑</a></div>
+    </footer>
+  </body>
+</html>

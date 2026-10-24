@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1322">
+    <meta name="description" content="Prepara un borrador de Política de Privacidad en DOCFAST, directamente en tu navegador.">
+    <meta name="application-name" content="DOCFAST">
+    <title>Política de Privacidad — DOCFAST</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="politica-privacidad.css">
+    <script src="politica-privacidad.js" defer></script>
+  </head>
+  <body class="policy-page">
+    <header class="site-header">
+      <div class="brand policy-header-brand">
+        <span class="policy-header-logo-frame"><img class="policy-header-logo" src="img/logo-claro.png" alt="DOCFAST" draggable="false" decoding="async"></span>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html#herramientas">Herramientas</a>
+        <a href="diagnostico.html">Diagnóstico</a>
+        <a href="#generador" aria-current="page">Generador</a>
+        <a class="nav-cta" href="#generador">Comenzar <span aria-hidden="true">↓</span></a>
+      </nav>
+    </header>
+
+    <main class="policy-main">
+      <section class="policy-intro" aria-labelledby="page-title">
+        <p class="policy-breadcrumb"><a href="index.html">DOCFAST</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span>Política de Privacidad</span></p>
+        <span class="policy-availability"><i aria-hidden="true"></i> HERRAMIENTA DISPONIBLE</span>
+        <h1 id="page-title">Prepara tu <span>Política de Privacidad</span></h1>
+        <p>Completa cuatro pasos para crear un borrador con la información que proporciones. Todo se procesa en tu navegador y puedes revisar cada sección antes de compartirlo.</p>
+        <div class="policy-assurances"><span>● Sin envío al servidor</span><span>● Información editable</span><span>● Borrador orientativo</span></div>
+      </section>
+
+      <section class="policy-builder" id="generador" aria-labelledby="builder-title">
+        <div class="policy-builder-head">
+          <div><span class="section-kicker">GENERADOR DOCFAST</span><h2 id="builder-title">Tu información, paso a paso.</h2><p>Los campos obligatorios se indican con <span aria-hidden="true">*</span>. Usa ejemplos solo como guía, no agregues datos personales de terceros.</p></div>
+        </div>
+        <div class="policy-card">
+          <div class="policy-stepper">
+            <div class="policy-progress-copy"><span id="policy-step-count">Paso 1 de 4</span><strong id="policy-step-name">Tu negocio</strong></div>
+            <div class="policy-progress-track" id="policy-progress-track" role="progressbar" aria-label="Progreso del generador" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1"><span id="policy-progress-fill"></span></div>
+            <ol class="policy-step-labels" aria-label="Pasos del generador">
+              <li aria-current="step"><span>01</span><b>Tu negocio</b></li><li><span>02</span><b>Datos personales</b></li><li><span>03</span><b>Finalidades</b></li><li><span>04</span><b>Terceros y almacenamiento</b></li>
+            </ol>
+          </div>
+
+          <div id="diagnostic-context-notice" class="context-notice" role="status" hidden></div>
+          <div id="policy-step-error" class="policy-step-error" role="alert" aria-live="polite" hidden></div>
+
+          <form id="policy-form" novalidate>
+            <section class="policy-step" data-policy-step="0" aria-labelledby="step-business-title">
+              <div class="policy-step-heading"><span class="step-eyebrow">PASO 1 · IDENTIFICACIÓN</span><h3 id="step-business-title" tabindex="-1">Tu negocio</h3><p>Completa la identidad y el canal que recibiría solicitudes de datos.</p></div>
+              <div class="policy-form-grid">
+                <div class="policy-field full"><label for="business-name">Razón social o nombre del negocio <span aria-hidden="true">*</span></label><input id="business-name" name="businessName" autocomplete="organization" maxlength="160" required placeholder="Ej.: Comercio Ejemplo SpA" aria-describedby="error-business-name"><small class="field-error" id="error-business-name" hidden>Ingresa la razón social o el nombre del negocio.</small></div>
+                <div class="policy-field"><label for="business-rut">RUT de la empresa <span class="field-optional">(opcional)</span></label><input id="business-rut" name="businessRut" autocomplete="off" inputmode="text" maxlength="12" placeholder="Ej.: 12.345.678-5" aria-describedby="error-business-rut"><small class="field-warning" id="error-business-rut" role="status" aria-live="polite" hidden>Escribe el RUT con el formato XX.XXX.XXX-X.</small></div>
+                <div class="policy-field"><label for="business-address">Dirección <span class="field-optional">(opcional)</span></label><input id="business-address" name="businessAddress" autocomplete="street-address" maxlength="200" placeholder="Calle, número, comuna, ciudad"></div>
+                <div class="policy-field"><label for="contact-email">Email para solicitudes de datos <span aria-hidden="true">*</span></label><input id="contact-email" name="contactEmail" type="email" autocomplete="email" maxlength="160" required placeholder="privacidad@ejemplo.cl" aria-describedby="error-contact-email"><small class="field-error" id="error-contact-email" hidden>Ingresa un email válido para recibir solicitudes.</small></div>
+                <div class="policy-field"><label for="business-website">Sitio web <span class="field-optional">(opcional)</span></label><input id="business-website" name="businessWebsite" type="url" autocomplete="url" maxlength="240" placeholder="https://www.ejemplo.cl" aria-describedby="website-help error-business-website"><small class="field-hint" id="website-help">No escribiremos una URL inferida del diagnóstico. Ingresa la dirección exacta si deseas incluirla.</small><small class="field-error" id="error-business-website" hidden>Ingresa una dirección web válida (por ejemplo, https://ejemplo.cl).</small></div>
+                <div class="policy-field"><label for="business-type">Tipo de negocio <span aria-hidden="true">*</span></label><select id="business-type" name="businessType" required aria-describedby="error-business-type"><option value="">Selecciona una opción</option><option>E-commerce</option><option>Servicio profesional</option><option>Corredor de propiedades</option><option>Inmobiliaria</option><option>Salud</option><option>Educación</option><option>Retail</option><option>Restaurante</option><option>Otro</option></select><small class="field-error" id="error-business-type" hidden>Selecciona el tipo de negocio.</small></div>
+                <div class="policy-field" id="business-type-other-wrap" hidden><label for="business-type-other">Describe el tipo de negocio <span aria-hidden="true">*</span></label><input id="business-type-other" name="businessTypeOther" maxlength="120" placeholder="Escribe el rubro" aria-describedby="error-business-type-other"><small class="field-error" id="error-business-type-other" hidden>Describe el tipo de negocio.</small></div>
+              </div>
+            </section>
+
+            <section class="policy-step" data-policy-step="1" aria-labelledby="step-data-title" hidden>
+              <div class="policy-step-heading"><span class="step-eyebrow">PASO 2 · CATEGORÍAS</span><h3 id="step-data-title" tabindex="-1">Datos personales</h3><p>Selecciona solo las categorías que realmente recopila o utiliza tu organización. No escribas datos reales de personas.</p></div>
+              <fieldset class="policy-group" data-required-checks="dataCategories" aria-describedby="error-data-categories error-data-other"><legend>¿Qué datos recopilas? <span class="legend-hint">Obligatorio · Marca una o más opciones.</span></legend>
+                <div class="policy-choice-grid">
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Nombre completo"><span class="choice-mark"></span><span>Nombre completo</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="RUT"><span class="choice-mark"></span><span>RUT</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Email"><span class="choice-mark"></span><span>Email</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Teléfono"><span class="choice-mark"></span><span>Teléfono</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Dirección postal"><span class="choice-mark"></span><span>Dirección postal</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Datos de pago"><span class="choice-mark"></span><span>Datos de pago</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Datos de salud"><span class="choice-mark"></span><span>Datos de salud</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Datos biométricos"><span class="choice-mark"></span><span>Datos biométricos</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Datos de menores de edad"><span class="choice-mark"></span><span>Datos de menores de edad</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Datos de navegación (cookies, IP)"><span class="choice-mark"></span><span>Datos de navegación (cookies, IP)</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataCategories" value="Otros"><span class="choice-mark"></span><span>Otros</span></label>
+                </div>
+                <div class="conditional-field" id="data-other-wrap" hidden><label for="data-other">Especifica otros datos <span aria-hidden="true">*</span></label><input id="data-other" name="dataOther" maxlength="160" placeholder="Describe la categoría general" aria-describedby="error-data-other"><small class="field-error" id="error-data-other" hidden>Especifica la otra categoría de datos.</small></div>
+                <p class="field-error" id="error-data-categories" hidden>Selecciona al menos una categoría de datos.</p>
+              </fieldset>
+              <fieldset class="policy-group" data-required-checks="dataSubjects" aria-describedby="error-data-subjects error-subjects-other"><legend>¿De quién son esos datos? <span class="legend-hint">Obligatorio · Marca una o más opciones.</span></legend>
+                <div class="policy-choice-grid">
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Clientes"><span class="choice-mark"></span><span>Clientes</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Empleados y colaboradores"><span class="choice-mark"></span><span>Empleados y colaboradores</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Proveedores"><span class="choice-mark"></span><span>Proveedores</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Usuarios del sitio web"><span class="choice-mark"></span><span>Usuarios del sitio web</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Pacientes"><span class="choice-mark"></span><span>Pacientes</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Estudiantes"><span class="choice-mark"></span><span>Estudiantes</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="dataSubjects" value="Otros"><span class="choice-mark"></span><span>Otros</span></label>
+                </div>
+                <div class="conditional-field" id="subjects-other-wrap" hidden><label for="subjects-other">Especifica otros titulares <span aria-hidden="true">*</span></label><input id="subjects-other" name="subjectsOther" maxlength="160" placeholder="Describe el grupo de personas" aria-describedby="error-subjects-other"><small class="field-error" id="error-subjects-other" hidden>Especifica el otro grupo de personas.</small></div>
+                <p class="field-error" id="error-data-subjects" hidden>Selecciona al menos un grupo de personas.</p>
+              </fieldset>
+            </section>
+
+            <section class="policy-step" data-policy-step="2" aria-labelledby="step-purposes-title" hidden>
+              <div class="policy-step-heading"><span class="step-eyebrow">PASO 3 · USOS</span><h3 id="step-purposes-title" tabindex="-1">Finalidades</h3><p>Indica los usos reales. Seleccionar una finalidad no determina por sí solo una base de licitud.</p></div>
+              <fieldset class="policy-group" aria-describedby="error-purposes error-purposes-other"><legend>¿Para qué utilizas los datos? <span class="legend-hint">Obligatorio · Marca una o más opciones.</span></legend>
+                <div class="policy-choice-grid">
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Prestar los servicios contratados"><span class="choice-mark"></span><span>Prestar los servicios contratados</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Emitir boletas y facturas"><span class="choice-mark"></span><span>Emitir boletas y facturas</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Enviar comunicaciones comerciales"><span class="choice-mark"></span><span>Enviar comunicaciones comerciales</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Mejorar productos y servicios"><span class="choice-mark"></span><span>Mejorar productos y servicios</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Cumplir obligaciones legales"><span class="choice-mark"></span><span>Cumplir obligaciones legales</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Gestión de recursos humanos"><span class="choice-mark"></span><span>Gestión de recursos humanos</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Atención al cliente"><span class="choice-mark"></span><span>Atención al cliente</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Analítica web"><span class="choice-mark"></span><span>Analítica web</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="purposes" value="Otras"><span class="choice-mark"></span><span>Otras</span></label>
+                </div>
+                <div class="conditional-field" id="purposes-other-wrap" hidden><label for="purposes-other">Especifica otras finalidades <span aria-hidden="true">*</span></label><input id="purposes-other" name="purposesOther" maxlength="200" placeholder="Describe el propósito" aria-describedby="error-purposes-other"><small class="field-error" id="error-purposes-other" hidden>Especifica la otra finalidad.</small></div>
+                <p class="field-error" id="error-purposes" hidden>Selecciona al menos una finalidad.</p>
+              </fieldset>
+            </section>
+
+            <section class="policy-step" data-policy-step="3" aria-labelledby="step-third-parties-title" hidden>
+              <div class="policy-step-heading"><span class="step-eyebrow">PASO 4 · DESTINATARIOS Y PLAZOS</span><h3 id="step-third-parties-title" tabindex="-1">Terceros y almacenamiento</h3><p>Declara qué destinatarios y períodos aplican a tus procesos.</p></div>
+              <fieldset class="policy-group" id="recipients-group" aria-describedby="error-recipients error-recipients-other"><legend>¿Compartes datos con terceros? <span class="legend-hint">Obligatorio · Elige “No compartimos” o una o más opciones.</span></legend>
+                <div class="policy-choice-grid">
+                  <label class="policy-choice"><input type="checkbox" name="recipients" value="No compartimos datos con terceros"><span class="choice-mark"></span><span>No compartimos datos con terceros</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="recipients" value="Proveedores tecnológicos (hosting, software)"><span class="choice-mark"></span><span>Proveedores tecnológicos (hosting, software)</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="recipients" value="Socios comerciales"><span class="choice-mark"></span><span>Socios comerciales</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="recipients" value="Por obligación legal"><span class="choice-mark"></span><span>Por obligación legal</span></label>
+                  <label class="policy-choice"><input type="checkbox" name="recipients" value="Otros"><span class="choice-mark"></span><span>Otros destinatarios</span></label>
+                </div>
+                <div class="conditional-field" id="recipients-other-wrap" hidden><label for="recipients-other">Especifica los otros destinatarios <span aria-hidden="true">*</span></label><input id="recipients-other" name="recipientsOther" maxlength="200" placeholder="Escribe solo los destinatarios reales" aria-describedby="error-recipients-other"><small class="field-error" id="error-recipients-other" hidden>Especifica los otros destinatarios.</small></div>
+                <p class="field-error" id="error-recipients" hidden>Elige al menos una opción y corrige cualquier selección incompatible.</p>
+              </fieldset>
+              <fieldset class="policy-group" aria-describedby="error-international"><legend>¿Usas servicios ubicados fuera de Chile? <span class="legend-hint">Obligatorio</span></legend><div class="policy-choice-grid compact-grid">
+                <label class="policy-choice"><input type="radio" name="international" value="no"><span class="choice-mark"></span><span>No</span></label>
+                <label class="policy-choice"><input type="radio" name="international" value="yes"><span class="choice-mark"></span><span>Sí</span></label>
+                <label class="policy-choice"><input type="radio" name="international" value="unsure"><span class="choice-mark"></span><span>No estoy seguro/a</span></label>
+              </div><p class="field-error" id="error-international" hidden>Indica si usas servicios fuera de Chile o si no estás seguro/a.</p>
+                <div class="conditional-field" id="international-details-wrap" hidden><label for="international-details">Proveedor o país (si lo conoces)</label><input id="international-details" name="internationalDetails" maxlength="200" placeholder="Ej.: proveedor o país, si lo has confirmado"></div>
+              </fieldset>
+              <fieldset class="policy-group" aria-describedby="error-retention error-retention-years"><legend>¿Cuánto tiempo conservas los datos? <span class="legend-hint">Obligatorio</span></legend><div class="policy-choice-grid compact-grid">
+                <label class="policy-choice"><input type="radio" name="retention" value="relationship"> <span class="choice-mark"></span><span>Mientras dure la relación comercial</span></label>
+                <label class="policy-choice"><input type="radio" name="retention" value="years"> <span class="choice-mark"></span><span>Durante años adicionales</span></label>
+                <label class="policy-choice"><input type="radio" name="retention" value="legal"> <span class="choice-mark"></span><span>Según obligación legal</span></label>
+              </div><p class="field-error" id="error-retention" hidden>Selecciona una opción de conservación.</p>
+                <div class="conditional-field years-field" id="retention-years-wrap" hidden><label for="retention-years">¿Cuántos años adicionales? <span aria-hidden="true">*</span></label><input id="retention-years" name="retentionYears" type="number" inputmode="numeric" min="1" max="100" step="1" placeholder="Ej.: 3" aria-describedby="error-retention-years"><small class="field-error" id="error-retention-years" hidden>Indica una cantidad de años entre 1 y 100.</small></div>
+              </fieldset>
+            </section>
+
+            <div class="policy-form-actions">
+              <button class="secondary-button" id="policy-previous" type="button" disabled>← <span>Anterior</span></button>
+              <button class="primary-link" id="policy-next" type="button">Siguiente <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+
+          <section class="policy-preview-panel" id="policy-preview-panel" aria-labelledby="preview-screen-title" hidden>
+            <div class="preview-screen-heading"><span class="step-eyebrow">VISTA PREVIA · BORRADOR ORIENTATIVO</span><h3 id="preview-screen-title" tabindex="-1">Revisa tu Política de Privacidad</h3><p id="pending-summary"></p></div>
+            <div class="policy-document-wrap"><article class="policy-document" id="policy-document" aria-label="Borrador de Política de Privacidad"></article></div>
+            <section class="policy-recommendations" aria-labelledby="policy-recommendations-title">
+              <div class="policy-recommendations-heading"><div><span class="step-eyebrow">MÁS HERRAMIENTAS DOCFAST</span><h4 id="policy-recommendations-title">También puedes revisar estas herramientas</h4><p>Prepara registros y materiales orientativos con la información que ingreses.</p></div></div>
+              <div class="policy-recommendation-grid">
+                <a class="policy-recommendation" href="registro-tratamiento.html" aria-label="Abrir generador de Registro de Tratamiento">
+                  <span class="recommendation-icon" aria-hidden="true">📊</span><h5>Registro de Tratamiento (RAT)</h5><span class="recommendation-status">Disponible · Crear registro</span><span class="recommendation-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="policy-recommendation" href="formulario-consentimiento.html" aria-label="Abrir generador de Formulario de Consentimiento">
+                  <span class="recommendation-icon" aria-hidden="true">✅</span><h5>Formulario de Consentimiento</h5><span class="recommendation-status">Disponible · Crear borrador</span><span class="recommendation-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="policy-recommendation" href="banner-cookies.html" aria-label="Abrir generador de Banner de Cookies">
+                  <span class="recommendation-icon" aria-hidden="true">🍪</span><h5>Banner de Cookies</h5><span class="recommendation-status">Disponible · Crear código</span><span class="recommendation-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </section>
+            <div class="policy-result-actions">
+              <button class="secondary-button" id="edit-policy-responses-button" type="button">← Editar respuestas</button>
+              <button class="primary-link" id="new-policy-button" type="button">Generar nueva política</button>
+            </div>
+            <div class="policy-preview-actions">
+              <button class="secondary-button" id="copy-policy-button" type="button">Copiar texto</button>
+              <button class="secondary-button" id="download-policy-html-button" type="button">Descargar HTML</button>
+              <button class="primary-link" id="print-policy-button" type="button">Imprimir / guardar como PDF <span aria-hidden="true">↗</span></button>
+            </div>
+            <p class="policy-action-status" id="policy-action-status" role="status" aria-live="polite" hidden></p>
+            <p class="policy-print-note">La impresión abre el diálogo del navegador. Para quitar sus encabezados y pies automáticos, desactívalos en las opciones de impresión.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="policy-legal-note" aria-labelledby="legal-note-title">
+        <div><span class="section-kicker">ANTES DE PUBLICAR</span><h2 id="legal-note-title">Revisa la vigencia normativa.</h2><p>Ley Chile registra la entrada en vigencia de las modificaciones de la Ley 21.719 para el 1 de diciembre de 2026. La norma y obligaciones aplicables dependen de la fecha de publicación y de las actualizaciones posteriores. Este generador no selecciona bases de licitud ni determina obligaciones para tu caso: las secciones sin información quedan marcadas como pendientes. Comprueba los textos oficiales vigentes antes de publicar.</p><a href="https://www.bcn.cl/leychile/navegar?i=141599" target="_blank" rel="noopener noreferrer">Ley 19.628 (Ley Chile) ↗</a><a href="https://www.bcn.cl/leychile/Navegar/imprimir?idNorma=1209272" target="_blank" rel="noopener noreferrer">Ley 21.719 y vigencia diferida (Ley Chile) ↗</a></div>
+      </section>
+
+      <section class="policy-footer-note"><p>DOCFAST procesa esta información en tu navegador. No la envía ni la guarda en un servidor. El borrador no es asesoría legal, certificación ni garantía de cumplimiento; revísalo y adáptalo antes de publicarlo.</p></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-bottom"><span id="footer-copyright">© 2026 DOCFAST</span><span>Borradores revisables, paso a paso.</span><a href="index.html#herramientas">Volver a herramientas ↑</a></div>
+    </footer>
+  </body>
+</html>
