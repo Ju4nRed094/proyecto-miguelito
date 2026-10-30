@@ -53,7 +53,7 @@ const dimensions = [
     key: 'training', title: 'Capacitación o responsable', max: 15,
     points: { yes: 15, no: 0 },
     action: 'Designa una persona de referencia o prepara una orientación básica para el equipo sobre sus prácticas internas.',
-    relatedTool: 'Recurso DOCFAST asociado · En preparación',
+    relatedTool: 'Recurso FOLIOX Studio asociado · En preparación',
   },
   {
     key: 'incidentPlan', title: 'Plan ante incidentes', max: 15,
@@ -225,6 +225,7 @@ function renderLivePanel({ announce = false } = {}) {
     const top = element('div', '', 'live-dimension-top');
     top.append(element('strong', dimension.title), element('span', `${dimension.score}/${dimension.max}`));
     const state = element('p', responseEffect(dimension));
+    highlightInlineScores(state);
     row.append(top, state);
     return row;
   }));
@@ -250,6 +251,32 @@ function element(tag, text, className) {
   if (text) node.textContent = text;
   if (className) node.className = className;
   return node;
+}
+
+function highlightInlineScores(container) {
+  const scorePattern = /\b\d+\s*\/\s*\d+\b/g;
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  let currentNode;
+  while ((currentNode = walker.nextNode())) {
+    if (scorePattern.test(currentNode.nodeValue)) textNodes.push(currentNode);
+    scorePattern.lastIndex = 0;
+  }
+
+  textNodes.forEach((textNode) => {
+    const value = textNode.nodeValue;
+    const fragment = document.createDocumentFragment();
+    let lastIndex = 0;
+    scorePattern.lastIndex = 0;
+    let match;
+    while ((match = scorePattern.exec(value))) {
+      fragment.append(document.createTextNode(value.slice(lastIndex, match.index)));
+      fragment.append(element('span', match[0], 'inline-score'));
+      lastIndex = match.index + match[0].length;
+    }
+    fragment.append(document.createTextNode(value.slice(lastIndex)));
+    textNode.replaceWith(fragment);
+  });
 }
 
 function createDimensionRow(dimension, score) {
@@ -368,6 +395,7 @@ function renderResults() {
   ];
   const actionList = document.querySelector('#action-list');
   actionList.replaceChildren();
+  actionList.hidden = actions.length === 0;
   document.querySelector('#attention-empty').hidden = actions.length > 0;
   document.querySelector('#action-count').textContent = actions.length ? `${actions.length} por revisar` : 'Sin pendientes declarados';
   actions.forEach((action, index) => {
@@ -462,11 +490,12 @@ function buildContextSheet() {
   generatedDocument.replaceChildren();
   const header = element('header', '', 'generated-document-header');
   const brandLine = element('div', '', 'document-brandline');
-  const brand = element('div', '', 'document-brand');
-  const siteMark = document.querySelector('.brand-symbol');
-  if (siteMark) brand.append(siteMark.cloneNode(true));
-  brand.append(element('span', 'DOCFAST', 'document-brand-name'));
-  brandLine.append(brand, element('p', `Generado el ${date}`, 'document-date'));
+  const brandLogo = document.createElement('img');
+  brandLogo.className = 'document-brand-logo';
+  brandLogo.src = 'img/Logotipo moderno FOLIOX Studio.png';
+  brandLogo.alt = 'FOLIOX Studio';
+  brandLogo.decoding = 'async';
+  brandLine.append(brandLogo, element('p', `Generado el ${date}`, 'document-date'));
   header.append(brandLine);
   header.append(element('p', 'BORRADOR ORIENTATIVO', 'document-kicker'));
   header.append(element('h1', 'Ficha de contexto de gestión de datos'));
@@ -500,13 +529,25 @@ function buildContextSheet() {
   generatedDocument.append(element('p', 'Esta ficha ordena las respuestas declaradas; la información no ha sido verificada. Es un borrador descriptivo de uso interno, no una política, registro legal, protocolo, asesoría legal, certificación ni garantía de cumplimiento.', 'document-disclaimer'));
 }
 
-function downloadContextSheetPdf() {
+async function folioxLogoDataUri() {
+  const response = await fetch(new URL('img/Logotipo moderno FOLIOX Studio.png', document.baseURI));
+  if (!response.ok) throw new Error('No se pudo leer el logo FOLIOX Studio.');
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  let binary = '';
+  for (let offset = 0; offset < bytes.length; offset += 8192) binary += String.fromCharCode(...bytes.subarray(offset, offset + 8192));
+  return 'data:image/png;base64,' + btoa(binary);
+}
+
+async function downloadContextSheetPdf() {
   const JsPdf = window.jspdf?.jsPDF;
   const announcer = document.querySelector('#live-announcer');
   if (!JsPdf) {
     announcer.textContent = 'No se pudo cargar el generador local del PDF. Recarga la página e inténtalo de nuevo.';
     return;
   }
+  let brandLogo;
+  try { brandLogo = await folioxLogoDataUri(); }
+  catch { announcer.textContent = 'No se pudo cargar el logo FOLIOX Studio para el PDF. Abre el sitio mediante un servidor local e inténtalo de nuevo.'; return; }
 
   const pdf = new JsPdf({ orientation: 'portrait', unit: 'mm', format: 'a4', compress: true });
   const pageWidth = 210;
@@ -524,10 +565,10 @@ function downloadContextSheetPdf() {
   const date = generatedDocument.querySelector('.document-date')?.textContent.replace(/^Generado el\s*/i, '').trim() || '';
 
   pdf.setProperties({
-    title: generatedDocument.querySelector('h1')?.textContent.trim() || 'Documento DOCFAST',
-    subject: 'Documento generado por DOCFAST',
-    author: 'DOCFAST',
-    creator: 'DOCFAST',
+    title: generatedDocument.querySelector('h1')?.textContent.trim() || 'Documento FOLIOX Studio',
+    subject: 'Documento generado por FOLIOX Studio',
+    author: 'FOLIOX Studio',
+    creator: 'FOLIOX Studio',
   });
   pdf.setLineHeightFactor(1.25);
 
@@ -544,37 +585,29 @@ function downloadContextSheetPdf() {
     pdf.setFont('helvetica', 'normal');
     pdf.setFontSize(8);
     pdf.setTextColor(...muted);
-    pdf.text(`DOCFAST  ·  ${page} / ${total}`, pageWidth - margin, 290, { align: 'right' });
+    pdf.text(`FOLIOX Studio  ·  ${page} / ${total}`, pageWidth - margin, 290, { align: 'right' });
   };
   const drawBrandLine = () => {
-    pdf.setFillColor(...accent);
-    pdf.roundedRect(margin, y, 10, 10, 2, 2, 'F');
-    pdf.setFillColor(255, 198, 203);
-    pdf.rect(margin + 2.2, y + 5.5, 1.2, 2.4, 'F');
-    pdf.rect(margin + 4.4, y + 3.1, 1.2, 4.8, 'F');
-    pdf.rect(margin + 6.6, y + 4.3, 1.2, 3.6, 'F');
-    pdf.setTextColor(...ink);
-    pdf.setFont('helvetica', 'bold');
-    pdf.setFontSize(12);
-    pdf.text('DOCFAST', margin + 14, y + 6.7);
+    pdf.addImage(brandLogo, 'PNG', margin, y - 3, 42, 21);
     pdf.setFont('helvetica', 'normal');
     pdf.setFontSize(8.5);
     pdf.setTextColor(...muted);
-    pdf.text(date, pageWidth - margin, y + 6.5, { align: 'right' });
+    pdf.text(date, pageWidth - margin, y + 9, { align: 'right' });
   };
   const newPage = () => {
     pdf.addPage();
-    y = 18;
+    y = 15;
     drawBrandLine();
     pdf.setDrawColor(...rule);
     pdf.setLineWidth(0.25);
-    pdf.line(margin, 33, pageWidth - margin, 33);
-    y = 40;
+    pdf.line(margin, 38, pageWidth - margin, 38);
+    y = 45;
   };
 
-  // Marca vectorial: conserva el símbolo tipográfico del sitio con bordes nítidos.
+  // Inserta el logotipo de FOLIOX Studio en la cabecera del documento.
+  y = 15;
   drawBrandLine();
-  y = 39;
+  y = 45;
 
   const kicker = generatedDocument.querySelector('.document-kicker')?.textContent.trim();
   if (kicker) {
@@ -707,7 +740,7 @@ function downloadContextSheetPdf() {
   const dateSuffix = new Intl.DateTimeFormat('sv-SE').format(new Date());
   const subjectSlug = (document.querySelector('#document-subject').value || 'documento')
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 42);
-  pdf.save(`docfast-${subjectSlug || 'documento'}-${dateSuffix}.pdf`);
+  pdf.save(`foliox-studio-${subjectSlug || 'documento'}-${dateSuffix}.pdf`);
   announcer.textContent = 'PDF limpio descargado. Contiene únicamente el documento generado.';
 }
 
@@ -818,6 +851,7 @@ document.querySelector('#edit-document-button').addEventListener('click', () => 
 });
 document.querySelector('#edit-diagnostic-from-document-button').addEventListener('click', () => showStep(0));
 document.querySelector('#reset-button').addEventListener('click', () => {
+  if (!window.confirm('¿Reiniciar el diagnóstico y borrar todas las respuestas?')) return;
   try { sessionStorage.removeItem(diagnosticNavigationKey); } catch { /* Storage is optional. */ }
   form.reset();
   documentForm.reset();

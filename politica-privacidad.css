@@ -1,5 +1,5 @@
 :root { --policy-red: #ed4053; --policy-coral: #ff8990; --policy-bg: #0c1322; --policy-panel: #151f31; --policy-card: #18253a; --policy-border: #36445b; --policy-text: #f0f3f8; --policy-muted: #aeb9ca; }
-html { scroll-padding-top: 90px; }
+html { min-height: 100%; scroll-padding-top: 90px; background: #090a0d; }
 .policy-page { min-width: 320px; background: radial-gradient(ellipse at 8% 0%, #17243a 0, transparent 34%), var(--policy-bg); color: var(--policy-text); }
 .policy-page .site-header { border-bottom-color: #ffffff18; background: #0c1322ed; box-shadow: 0 3px 14px #02071135; }
 .policy-page .brand { color: #f1f4f8; }
@@ -64,9 +64,33 @@ html { scroll-padding-top: 90px; }
 @media (max-width: 800px) { .policy-main { width: min(100% - 38px, 1120px); }.policy-choice-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }.policy-step-labels li { align-items: flex-start; flex-direction: column; gap: 4px; }.policy-document { min-height: 0; }.policy-document .document-identity p { grid-template-columns: 150px 1fr; } }
 @media (max-width: 620px) { .policy-page .site-header { height: 68px; padding-inline: 18px; }.policy-page .menu-toggle { border-color: #3b475b; background: #182338; }.policy-page .main-nav { border-color: #3b475b; background: #182338; box-shadow: 0 15px 30px #030811b8; }.policy-page .main-nav > a { color: #e4e9f1; }.policy-page .main-nav .nav-cta { color: #fff; }.policy-main { width: calc(100% - 28px); }.policy-intro { padding-top: 33px; }.policy-intro > p:not(.policy-breadcrumb) { font-size: 13px; }.policy-assurances { gap: 9px 14px; font-size: 9px; }.policy-builder { padding-top: 26px; }.policy-card { padding: 19px 15px; border-radius: 13px; }.policy-step-labels { gap: 3px; }.policy-step-labels li { padding: 6px 2px; font-size: 8px; text-align: center; }.policy-step-labels li > span { width: 21px; height: 21px; align-self: center; }.policy-form-grid { grid-template-columns: 1fr; gap: 14px; }.policy-field.full { grid-column: auto; }.policy-choice-grid, .policy-choice-grid.compact-grid { grid-template-columns: 1fr; }.policy-choice { min-height: 45px; }.policy-form-actions { align-items: stretch; }.policy-form-actions > button { flex: 1; }.policy-form-actions #policy-next { justify-content: center; }.policy-preview-actions { flex-direction: column; align-items: stretch; }.policy-preview-actions > button { width: 100%; }.policy-document-wrap { padding: 7px; }.policy-document { padding: 23px 17px; font-size: 11px; }.policy-document h1 { font-size: 23px; }.policy-document .document-identity p { grid-template-columns: 1fr; gap: 0; margin-block: 7px; }.policy-legal-note { padding: 16px; }.policy-page .footer-bottom { width: calc(100% - 28px); flex-direction: column; } }
 @media (prefers-reduced-motion: reduce) { .policy-page *, .policy-page *::before, .policy-page *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
-@media print { @page { size: A4 portrait; margin: 17mm; } body.printing-policy { background: #fff !important; color: #222 !important; } body.printing-policy > header, body.printing-policy > footer, body.printing-policy > main > :not(.policy-builder), body.printing-policy .policy-builder-head, body.printing-policy .policy-stepper, body.printing-policy .context-notice, body.printing-policy #policy-form, body.printing-policy .policy-form-actions, body.printing-policy .policy-preview-actions, body.printing-policy .policy-recommendations, body.printing-policy .policy-result-actions, body.printing-policy .policy-action-status, body.printing-policy .policy-print-note, body.printing-policy .preview-screen-heading { display: none !important; } body.printing-policy .policy-main { width: auto !important; margin: 0 !important; } body.printing-policy .policy-builder { display: block !important; margin: 0 !important; padding: 0 !important; } body.printing-policy .policy-card { display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: #fff !important; box-shadow: none !important; } body.printing-policy .policy-preview-panel { display: block !important; } body.printing-policy .policy-document-wrap { display: block !important; padding: 0 !important; border: 0 !important; background: #fff !important; } body.printing-policy .policy-document { width: auto !important; min-height: 0 !important; padding: 0 !important; box-shadow: none !important; } body.printing-policy .policy-section { break-inside: avoid-page; } body.printing-policy .policy-document a { color: #333 !important; } }
+@media print { @page { size: A4 portrait; margin: 17mm; } html, body.printing-policy { background: #fff !important; color: #222 !important; } body.printing-policy > header, body.printing-policy > footer, body.printing-policy > main > :not(.policy-builder), body.printing-policy .policy-builder-head, body.printing-policy .policy-stepper, body.printing-policy .context-notice, body.printing-policy #policy-form, body.printing-policy .policy-form-actions, body.printing-policy .policy-preview-actions, body.printing-policy .policy-recommendations, body.printing-policy .policy-result-actions, body.printing-policy .policy-action-status, body.printing-policy .policy-print-note, body.printing-policy .preview-screen-heading { display: none !important; } body.printing-policy .policy-main { width: auto !important; margin: 0 !important; } body.printing-policy .policy-builder { display: block !important; margin: 0 !important; padding: 0 !important; } body.printing-policy .policy-card { display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: #fff !important; box-shadow: none !important; } body.printing-policy .policy-preview-panel { display: block !important; } body.printing-policy .policy-document-wrap { display: block !important; padding: 0 !important; border: 0 !important; background: #fff !important; } body.printing-policy .policy-document { width: auto !important; min-height: 0 !important; padding: 0 !important; box-shadow: none !important; } body.printing-policy .policy-section { break-inside: avoid-page; } body.printing-policy .policy-document a { color: #333 !important; } }
 
-/* DOCFAST identity and final policy tools */
+/* Print the generated policy as a paper document, regardless of the app theme. */
+@media print {
+  @page { size: A4 portrait; margin: 17mm; }
+  html:has(> body.printing-policy), body.printing-policy,
+  body.printing-policy .policy-main, body.printing-policy .policy-builder,
+  body.printing-policy .policy-card, body.printing-policy .policy-preview-panel,
+  body.printing-policy .policy-document-wrap, body.printing-policy .policy-document {
+    color-scheme: light !important;
+    color: #222 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  body.printing-policy .policy-document { border: 0 !important; }
+  body.printing-policy .policy-document :is(h1, h2, h3, h4, p, li, dt, dd, th, td, strong, em, span, a) {
+    color: #222 !important;
+  }
+  body.printing-policy .policy-document :is(table, th, td, hr) { border-color: #777 !important; }
+  body.printing-policy .policy-document :is(h1, h2, h3) { break-after: avoid-page; }
+  body.printing-policy .policy-document :is(tr, .document-identity, .document-generated-date, .policy-document-footer) {
+    break-inside: avoid-page;
+  }
+  body.printing-policy .policy-section { break-inside: auto; }
+}
+
+/* FOLIOX Studio identity and final policy tools */
 .policy-page .policy-header-brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
 .policy-header-logo-frame { display: inline-flex; align-items: center; justify-content: flex-start; width: 160px; height: 54px; padding: 0; overflow: visible; border: 0; border-radius: 0; background: transparent; }
 .policy-header-logo { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left center; user-select: none; -webkit-user-drag: none; pointer-events: none; }
@@ -95,3 +119,424 @@ html { scroll-padding-top: 90px; }
 @media (prefers-reduced-motion: reduce) { .policy-recommendation, .policy-result-actions > button { transition: none !important; } }
 
 .policy-page .policy-field select:focus-visible { outline: 3px solid #ff9299; outline-offset: 2px; }
+
+/* FOLIOX Studio light theme for the privacy policy builder. */
+:root { color-scheme: light; --policy-red: #cf2635; --policy-coral: #a51f2b; --policy-bg: #f5f7fa; --policy-panel: #fff; --policy-card: #fff; --policy-border: #d5dee8; --policy-text: #172b45; --policy-muted: #596b80; }
+.policy-page { color: #172b45; background: #f5f7fa; }
+.policy-page .site-header { border-bottom-color: #dce3eb; background: #fff; box-shadow: 0 2px 10px #1b35500c; }
+.policy-page .brand, .policy-page .main-nav { color: #172b45; }.policy-page .main-nav { color: #40556d; }
+.policy-page .main-nav a[aria-current="page"] { color: #a51f2b; }
+.policy-page .main-nav .nav-cta { border-color: #cf2635; background: #cf2635; color: #fff; }.policy-page .main-nav .nav-cta:hover { background: #b91f2c; }
+.policy-page .menu-toggle { border-color: #cbd5e0; background: #fff; }.policy-page .menu-toggle span { background: #263b55; }
+.policy-page button:focus-visible, .policy-page a:focus-visible, .policy-page input:focus-visible, .policy-page select:focus-visible { outline-color: #a51f2b; }
+.policy-breadcrumb { color: #65768a; }.policy-breadcrumb a { color: #a51f2b; }.policy-breadcrumb a:hover { color: #7f1621; }
+.policy-availability { border-color: #ecc8cc; background: #fff2f3; color: #9f2732; }.policy-availability i { background: #cf2635; box-shadow: 0 0 0 3px #cf26351a; }
+.policy-intro h1 { color: #172b45; }.policy-intro h1 span { color: #c92332; }.policy-intro > p:not(.policy-breadcrumb) { color: #586a7f; }
+.policy-assurances { color: #52667d; }.policy-assurances span::first-letter { color: #a51f2b; }
+.policy-builder-head h2 { color: #203650; }.policy-builder-head p { color: #596b80; }
+.policy-card { border-color: #d5dee8; background: #fff; box-shadow: 0 12px 32px #1b35500d; }
+.policy-progress-copy { color: #586b80; }.policy-progress-copy strong { color: #a51f2b; }.policy-progress-track { background: #e2e8ee; }.policy-progress-track > span { background: #cf2635; }
+.policy-step-labels li { border-bottom-color: #d9e1e9; color: #697a8d; }.policy-step-labels li > span { border-color: #cbd5e0; color: #586b80; }
+.policy-step-labels li[aria-current="step"] { border-color: #cf2635; color: #203650; }.policy-step-labels li[aria-current="step"] > span, .policy-step-labels li.is-complete > span { border-color: #d88c93; background: #fff0f1; color: #a51f2b; }
+.context-notice { border-color: #e5d3ae; background: #fff9ed; color: #5e4b2c; }
+.policy-step-heading .step-eyebrow, .preview-screen-heading .step-eyebrow { color: #a51f2b; }
+.policy-step-heading h3, .preview-screen-heading h3 { color: #203650; }.policy-step-heading p, .preview-screen-heading p { color: #596b80; }
+.policy-field > label, .conditional-field > label { color: #263b55; }.policy-field label > span:not(.field-optional) { color: #a51f2b; }.field-optional { color: #66788c; }
+.policy-field input, .policy-field select, .conditional-field input { border-color: #c7d2de; background-color: #fff; color: #172b45; color-scheme: light; }
+.policy-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m3 6 5 5 5-5' fill='none' stroke='%23566B82' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.policy-field select:hover { border-color: #aab8c7; background-color: #f9fbfd; }.policy-field select:required:invalid { color: #738398; }
+.policy-field select option { background: #fff; color: #172b45; }.policy-field select option:checked { background: #fff0f1; color: #7f202b; }
+.policy-field input::placeholder, .conditional-field input::placeholder { color: #77869a; }
+.policy-field input:focus, .policy-field select:focus, .conditional-field input:focus { border-color: #a51f2b; background: #fff; box-shadow: 0 0 0 3px #cf26351a; }
+.field-hint { color: #68798d; }.field-error { color: #a51f2b; }.field-warning { color: #80540d; }
+.policy-group legend { color: #263b55; }.legend-hint { color: #67798d; }
+.policy-choice { border-color: #d6dfe8; background: #f8fafc; color: #263b55; }.policy-choice:hover { border-color: #bdcbd9; background: #f0f4f8; }
+.policy-choice:focus-within { outline-color: #a51f2b; }.policy-choice input { accent-color: #cf2635; }
+.conditional-field { border-color: #d5dee8; background: #f7f9fb; }.conditional-field input { background: #fff; }
+.policy-step-error { border-color: #e5bfc3; background: #fff2f3; color: #83202a; }
+.policy-form-actions, .policy-preview-actions { border-top-color: #e0e6ed; }
+.policy-form-actions .primary-link, .policy-preview-actions .primary-link { background: #cf2635; color: #fff; }.policy-form-actions .primary-link:hover, .policy-preview-actions .primary-link:hover { background: #b91f2c; }
+.policy-page .secondary-button { border-color: #cbd5e0; background: #f5f7fa; color: #263b55; }.policy-page .secondary-button:hover:not(:disabled) { border-color: #b9c6d3; background: #eaf0f6; }
+.policy-document-wrap { border-color: #d6dfe8; background: #edf1f6; }.policy-document { background: #fff; color: #263244; }
+.policy-legal-note { border-color: #d7e0e9; background: #fff; }.policy-legal-note h2 { color: #203650; }.policy-legal-note p { color: #596b80; }.policy-legal-note a { color: #a51f2b; }
+.policy-footer-note { border-left-color: #cf2635; background: #f1f4f8; color: #53677d; }
+.policy-page .site-footer { border-top-color: #d8e0e9; background: #edf1f5; color: #53657a; }.policy-page .footer-bottom { color: #53657a; }.policy-page .footer-bottom a { color: #a51f2b; }
+.policy-page .policy-header-logo-frame { width: 340px; height: 110px; background: transparent; }
+.policy-page .site-header { height: auto; min-height: 112px; }
+.policy-page .policy-header-logo, .policy-page .policy-document-logo { width: 100%; height: 100%; object-fit: contain; object-position: center; background: transparent; }
+.policy-page .policy-document-brand { margin-bottom: 16px; }.policy-page .policy-document-logo { width: 240px; height: 100px; object-position: left center; }
+@media (max-width: 800px) { .policy-page .policy-header-logo-frame { width: 300px; height: 100px; } }
+@media (max-width: 620px) {
+  .policy-page .site-header { width: 100%; height: auto; min-height: 74px; flex-wrap: wrap; gap: 4px; padding: 4px 18px; background: #fff; }
+  .policy-page .policy-header-logo-frame { width: 240px; height: 90px; }
+  .policy-page .main-nav { border-color: #d7e0e9; background: #fff; box-shadow: 0 12px 28px #1d36521c; }
+  .policy-page .main-nav > a { color: #354b65; }.policy-page .main-nav .nav-cta { background: #cf2635; color: #fff; }
+  .policy-page .policy-document-logo { width: 200px; height: 82px; }
+}
+
+/* Dark treatment for the conditional "Otros titulares" field only. */
+body.policy-page #subjects-other-wrap {
+  width: 100%;
+  max-width: 580px;
+  padding: 14px;
+  border: 1px solid #66303a;
+  border-radius: 9px;
+  background: #15161b;
+  color: #f0f0f3;
+}
+body.policy-page #subjects-other-wrap > label {
+  display: block;
+  margin: 0 0 8px;
+  color: #f0f0f3;
+  font-size: 12px;
+  line-height: 1.45;
+}
+body.policy-page #subjects-other-wrap > label span { color: #ff7888; }
+body.policy-page #subjects-other-wrap input {
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  border: 1px solid #41424a;
+  border-radius: 8px;
+  background: #101115;
+  color: #f4f4f6;
+  color-scheme: dark;
+  caret-color: #ff7888;
+}
+body.policy-page #subjects-other-wrap input::placeholder { color: #999ba4; opacity: 1; }
+body.policy-page #subjects-other-wrap input:focus,
+body.policy-page #subjects-other-wrap input:focus-visible {
+  border-color: #ff7888;
+  outline: 3px solid #ff7888;
+  outline-offset: 2px;
+  background: #191a20;
+  box-shadow: 0 0 0 3px #d8203a30;
+}
+body.policy-page #subjects-other-wrap .field-error { margin-top: 8px; color: #ff9aa7; }
+
+/* Keep the conditional purposes field aligned with its choice grid in the dark theme. */
+body.policy-page #purposes-other-wrap {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 12px 0 0;
+  padding: 13px;
+  border: 1px solid #34353c;
+  border-radius: 8px;
+  background: #14151a;
+  color: #f4f4f6;
+  animation: policy-enter .2s ease both;
+}
+body.policy-page #purposes-other-wrap > label {
+  display: block;
+  margin: 0 0 7px;
+  color: #f0f0f3;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+body.policy-page #purposes-other-wrap > label span { color: #ff7888; }
+body.policy-page #purposes-other-wrap input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 10px 12px;
+  border: 1px solid #41424a;
+  border-radius: 8px;
+  background: #101115;
+  color: #f4f4f6;
+  color-scheme: dark;
+  caret-color: #ff7888;
+}
+body.policy-page #purposes-other-wrap input::placeholder { color: #999ba4; opacity: 1; }
+body.policy-page #purposes-other-wrap input:focus,
+body.policy-page #purposes-other-wrap input:focus-visible {
+  border-color: #ff7888;
+  outline: 3px solid #ff7888;
+  outline-offset: 2px;
+  background: #191a20;
+  box-shadow: 0 0 0 3px #d8203a30;
+}
+body.policy-page #purposes-other-wrap .field-error { margin-top: 8px; color: #ff9aa7; }
+
+/* Step 4 conditional fields: recipients, international services and retention. */
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 12px 0 0;
+  padding: 13px;
+  border: 1px solid #34353c;
+  border-radius: 8px;
+  background: #14151a;
+  color: #f4f4f6;
+}
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) > label {
+  display: block;
+  margin: 0 0 7px;
+  color: #f0f0f3;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) > label span { color: #ff7888; }
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 10px 12px;
+  border: 1px solid #41424a;
+  border-radius: 8px;
+  background: #101115;
+  color: #f4f4f6;
+  color-scheme: dark;
+  caret-color: #ff7888;
+}
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) input::placeholder { color: #999ba4; opacity: 1; }
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) input:focus,
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) input:focus-visible {
+  border-color: #ff7888;
+  outline: 3px solid #ff7888;
+  outline-offset: 2px;
+  background: #191a20;
+  box-shadow: 0 0 0 3px #d8203a30;
+}
+body.policy-page [data-policy-step="3"] :is(#recipients-other-wrap, #international-details-wrap, #retention-years-wrap) .field-error,
+body.policy-page [data-policy-step="3"] :is(#error-recipients, #error-international, #error-retention, #error-retention-years) { color: #ff9aa7; }
+body.policy-page [data-policy-step="3"] #retention-years-wrap .field-error { margin-top: 8px; }
+
+/* Keep both conditional fields in Datos personales visually identical. */
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 12px 0 0;
+  padding: 13px;
+  border: 1px solid #34353c;
+  border-radius: 8px;
+  background: #14151a;
+  color: #f4f4f6;
+}
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) > label {
+  display: block;
+  margin: 0 0 7px;
+  color: #f0f0f3;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) > label span { color: #ff7888; }
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 45px;
+  padding: 10px 12px;
+  border: 1px solid #41424a;
+  border-radius: 8px;
+  background: #101115;
+  color: #f4f4f6;
+  color-scheme: dark;
+  caret-color: #ff7888;
+}
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) input::placeholder { color: #999ba4; opacity: 1; }
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) input:focus,
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) input:focus-visible {
+  border-color: #ff7888;
+  outline: 3px solid #ff7888;
+  outline-offset: 2px;
+  background: #191a20;
+  box-shadow: 0 0 0 3px #d8203a30;
+}
+body.policy-page :is(#data-other-wrap, #subjects-other-wrap) .field-error { margin-top: 8px; color: #ff9aa7; }
+
+/* The generated policy is a white paper document inside the dark application. */
+body.policy-page #policy-document,
+body.policy-page #policy-document * {
+  color: #263244 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body.policy-page #policy-document {
+  color-scheme: light;
+  border-color: #d5dbe3;
+}
+body.policy-page #policy-document :is(h1, h2, h3, h4, p, li, dt, dd, th, td, strong, em, span, footer) {
+  color: #263244 !important;
+}
+body.policy-page #policy-document :is(a, .policy-document-brand) { color: #8f2435 !important; }
+body.policy-page #policy-document :is(table, th, td, hr, .policy-document-header, .document-identity, .policy-document-footer) {
+  border-color: #cbd2dc !important;
+}
+body.policy-page .policy-document-wrap {
+  border-color: #34353c;
+  background: #101115;
+}
+@media print {
+  body.printing-policy .policy-document-wrap { background: #fff !important; }
+  body.printing-policy #policy-document,
+  body.printing-policy #policy-document * {
+    color: #222 !important;
+    background-color: #fff !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-color: #888 !important;
+  }
+}
+
+/* Bottom actions use one consistent control system on the preview screen. */
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > button {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid #41424a;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: border-color .18s ease, background-color .18s ease, transform .18s ease;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > .secondary-button {
+  border-color: #41424a;
+  background: #191a20;
+  color: #f0f0f3;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > .secondary-button:hover:not(:disabled) {
+  border-color: #78404a;
+  background: #24171b;
+  color: #fff;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > .primary-link {
+  border-color: #d8203a;
+  background: #d8203a;
+  color: #fff;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > .primary-link:hover:not(:disabled) {
+  border-color: #f0344e;
+  background: #f0344e;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > button:active:not(:disabled) { transform: translateY(1px); }
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > button:focus-visible {
+  outline: 3px solid #ff7888;
+  outline-offset: 3px;
+}
+body.policy-page :is(.policy-result-actions, .policy-preview-actions) > button:disabled {
+  border-color: #383940;
+  background: #202126;
+  color: #85868d;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* Complete branded footer with the real FOLIOX destinations. */
+body.policy-page .policy-site-footer {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #303138;
+  background: #090a0d;
+  color: #d0d1d6;
+}
+body.policy-page .policy-footer-inner {
+  width: min(1120px, calc(100% - 48px));
+  margin-inline: auto;
+  padding: 34px 0 18px;
+}
+body.policy-page .policy-footer-main {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 36px;
+  padding-bottom: 27px;
+}
+body.policy-page .policy-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  color: #fff;
+  text-decoration: none;
+}
+body.policy-page .policy-footer-brand img { display: block; width: 44px; height: 44px; flex: 0 0 44px; object-fit: contain; }
+body.policy-page .policy-footer-brand span { color: #fff; font-size: 16px; font-weight: 750; letter-spacing: -.02em; }
+body.policy-page .policy-footer-about p {
+  max-width: 310px;
+  margin: 11px 0 0;
+  color: #b5b6be;
+  font-size: 13px;
+  line-height: 1.6;
+}
+body.policy-page .policy-footer-links > strong { display: block; margin: 0 0 12px; color: #f4f4f6; font-size: 14px; }
+body.policy-page .policy-footer-link-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 22px; }
+body.policy-page .policy-footer-link-grid a {
+  min-width: 0;
+  color: #c3c4cb;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: #ffffff40;
+  text-underline-offset: 3px;
+}
+body.policy-page .policy-footer-link-grid a:hover { color: #ff7888; text-decoration-color: currentColor; }
+body.policy-page .policy-footer-brand:focus-visible,
+body.policy-page .policy-footer-link-grid a:focus-visible,
+body.policy-page .policy-footer-bottom a:focus-visible { outline: 3px solid #ff7888; outline-offset: 3px; }
+body.policy-page .policy-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 18px;
+  padding-top: 15px;
+  border-top: 1px solid #303138;
+  color: #b5b6be;
+  font-size: 12px;
+  line-height: 1.5;
+}
+body.policy-page .policy-footer-bottom a { color: #ff7888; text-underline-offset: 3px; }
+body.policy-page .policy-footer-bottom a:hover { color: #fff; }
+body.policy-page .policy-footer-note {
+  margin-bottom: 32px;
+  border-left-color: #d8203a;
+  background: #14151a;
+  color: #c3c4cb;
+  font-size: 12px;
+}
+@media (max-width: 760px) {
+  body.policy-page .policy-footer-inner { width: min(100% - 36px, 620px); }
+  body.policy-page .policy-footer-main { grid-template-columns: 1fr; gap: 25px; }
+}
+@media (max-width: 620px) {
+  body.policy-page :is(.policy-result-actions, .policy-preview-actions) { align-items: stretch; flex-direction: column; }
+  body.policy-page :is(.policy-result-actions, .policy-preview-actions) > button { width: 100%; }
+  body.policy-page .policy-footer-inner { width: calc(100% - 32px); padding-top: 27px; }
+  body.policy-page .policy-footer-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 15px; }
+  body.policy-page .policy-footer-link-grid a { font-size: 12px; }
+  body.policy-page .policy-footer-bottom { align-items: flex-start; flex-direction: column; }
+  body.policy-page .policy-footer-note { margin-bottom: 24px; }
+}
+@media (max-width: 400px) {
+  body.policy-page .policy-footer-link-grid { grid-template-columns: 1fr; }
+}

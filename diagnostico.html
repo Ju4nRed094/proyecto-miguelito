@@ -3,18 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0c1322">
+    <meta name="theme-color" content="#090a0d">
     <meta name="description" content="Revisa de forma orientativa cómo organiza tu negocio el tratamiento y cuidado de datos personales.">
-    <meta name="application-name" content="DOCFAST">
-    <title>Diagnóstico de Cumplimiento — DOCFAST</title>
+    <meta name="application-name" content="FOLIOX Studio">
+    <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+    <title>Diagnóstico de Cumplimiento — FOLIOX Studio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="diagnostico.css">
     <script src="vendor/jspdf.umd.min.js" defer></script>
     <script src="diagnostico.js" defer></script>
-  </head>
-  <body class="diagnostic-page">
+    <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+  <body class="diagnostic-page tool-theme-page">
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a>
+      <a class="brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
         <a href="index.html#herramientas">Herramientas</a>
@@ -28,7 +31,7 @@
     <main>
       <section class="diagnostic-hero page-wrap" aria-labelledby="page-title">
         <div class="diagnostic-hero-copy">
-          <p class="breadcrumb"><a href="index.html">DOCFAST</a><span aria-hidden="true">/</span><span>Diagnóstico</span></p>
+          <p class="breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><span>Diagnóstico</span></p>
           <span class="availability"><span class="availability-dot"></span> HERRAMIENTA DISPONIBLE</span>
           <h1 id="page-title">Diagnóstico de <span>Cumplimiento</span></h1>
           <p class="diagnostic-lede">Una revisión guiada para ordenar cómo tu organización maneja datos personales y qué prácticas puede fortalecer.</p>
@@ -167,9 +170,9 @@
               <div class="results-header"><div><h3 id="results-title" tabindex="-1">Tu nivel de preparación</h3><p>Resultado dinámico basado en tus respuestas. Es orientativo y no evalúa la legalidad de tus procesos.</p></div><span class="result-level" id="result-level"></span></div>
               <div class="score-layout"><div class="score-ring" id="score-ring"><div><strong id="score-value">—</strong><span>de 100</span></div></div><div class="score-copy"><h4 id="score-heading"></h4><p id="score-explanation"></p><div class="result-meter" role="progressbar" aria-label="Puntaje orientativo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="result-meter"><span id="result-meter-fill"></span></div><p class="context-summary" id="context-summary"></p><p class="score-method">Se suman seis dimensiones con máximos fijos que totalizan 100 puntos: política 20; consentimiento 15; registro 20; solicitudes de titulares 15; capacitación o persona responsable 15; plan ante incidentes 15. Las respuestas de contexto no alteran el puntaje. Dimensiones sin respuesta: 0 puntos provisionales y pendientes. Cuando el cuestionario está completo, los niveles son: 0–39 Inicio, 40–69 En progreso, 70–99 Preparación declarada y 100 Preparación completa. El nivel describe respuestas declaradas, no cumplimiento legal.</p></div></div>
               <section class="dimension-section" aria-labelledby="dimension-title"><div class="result-section-heading"><h4 id="dimension-title">Desglose por dimensión</h4><span>Puntos obtenidos / máximo</span></div><div class="dimension-breakdown" id="dimension-breakdown"></div></section>
-              <section class="action-section" aria-labelledby="action-title"><div class="result-section-heading"><h4 id="action-title">Acciones pendientes, por prioridad</h4><span id="action-count"></span></div><p class="empty-result" id="attention-empty" hidden>No aparecen brechas en estas dimensiones según tus respuestas. Puedes revisar las respuestas o mantener una revisión periódica interna.</p><ol class="action-list" id="action-list"></ol><p class="related-tools-note">Las dimensiones corresponden a una revisión general de preparación; no hay un tipo de documento seleccionado. Las acciones se ordenan desde la menor proporción de puntos y se complementan con el contexto declarado.</p></section>
+              <section class="action-section" aria-labelledby="action-title"><div class="result-section-heading"><h4 id="action-title">Acciones pendientes, por prioridad</h4><span id="action-count"></span></div><p class="empty-result" id="attention-empty" hidden>No hay acciones pendientes según tus respuestas.</p><ol class="action-list" id="action-list"></ol><p class="related-tools-note">Las dimensiones corresponden a una revisión general de preparación; no hay un tipo de documento seleccionado. Las acciones se ordenan desde la menor proporción de puntos y se complementan con el contexto declarado.</p></section>
               <section class="results-next-step" aria-labelledby="results-next-step-title">
-                <div><span class="step-eyebrow">SIGUIENTE PASO</span><h4 id="results-next-step-title">Política de Privacidad en DOCFAST</h4><p id="policy-generator-status">El generador crea un borrador editable con los datos que completes. Si llegas desde este diagnóstico, se sugieren el tipo de negocio y solo las categorías que coinciden exactamente; las respuestas sobre sitio web y seguimiento aparecen como avisos para que las confirmes, no como datos precargados. No se infieren razón social, RUT, dirección, URL, titulares, finalidades, terceros, bases de licitud ni plazos. El puntaje no bloquea el acceso.</p></div>
+                <div><span class="step-eyebrow">SIGUIENTE PASO</span><h4 id="results-next-step-title">Política de Privacidad en FOLIOX Studio</h4><p id="policy-generator-status">El generador crea un borrador editable con los datos que completes. Si llegas desde este diagnóstico, se sugieren el tipo de negocio y solo las categorías que coinciden exactamente; las respuestas sobre sitio web y seguimiento aparecen como avisos para que las confirmes, no como datos precargados. No se infieren razón social, RUT, dirección, URL, titulares, finalidades, terceros, bases de licitud ni plazos. El puntaje no bloquea el acceso.</p></div>
                 <a class="primary-link" id="policy-generator-cta" href="politica-privacidad.html" aria-describedby="policy-generator-status">Genera tus documentos ahora <span aria-hidden="true">↗</span></a>
               </section>
               <div class="results-actions result-separators"><button class="primary-link" type="button" id="generate-document-button">Preparar ficha de contexto</button><button class="secondary-button" type="button" id="review-button">Editar respuestas del diagnóstico</button><button class="reset-button" type="button" id="reset-button">Reiniciar diagnóstico <span aria-hidden="true">↻</span></button></div>
@@ -276,8 +279,8 @@
     </main>
 
     <footer class="site-footer diagnostic-footer">
-      <div class="footer-top"><div class="footer-about"><a class="brand footer-brand" href="index.html" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a><p>Herramientas claras para trabajar con documentos.</p></div><div class="footer-column"><strong>Diagnóstico</strong><a href="#cuestionario">Cuestionario</a><a href="#que-evalua">Qué evalúa</a><a href="#preguntas">Preguntas frecuentes</a></div><div class="footer-column"><strong>DOCFAST</strong><a href="index.html#herramientas">Catálogo de herramientas</a><a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Ley 21.719 · BCN</a></div><div class="footer-column"><strong>Nota</strong><span>Resultado orientativo</span><span>No es asesoría legal</span></div></div>
-      <div class="footer-bottom"><span id="footer-copyright">© 2026 DOCFAST</span><span>Respuestas procesadas en tu navegador</span><a href="#page-title">Volver arriba ↑</a></div>
+      <div class="footer-top"><div class="footer-about"><a class="brand footer-brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a><p>Herramientas claras para trabajar con documentos.</p></div><div class="footer-column"><strong>Diagnóstico</strong><a href="#cuestionario">Cuestionario</a><a href="#que-evalua">Qué evalúa</a><a href="#preguntas">Preguntas frecuentes</a></div><div class="footer-column"><strong>FOLIOX Studio</strong><a href="index.html#herramientas">Catálogo de herramientas</a><a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Ley 21.719 · BCN</a></div><div class="footer-column"><strong>Nota</strong><span>Resultado orientativo</span><span>No es asesoría legal</span></div></div>
+      <div class="footer-bottom"><span id="footer-copyright">© 2026 FOLIOX Studio</span><span>Respuestas procesadas en tu navegador</span><a href="#page-title">Volver arriba ↑</a></div>
     </footer>
   </body>
 </html>

@@ -1,0 +1,221 @@
+/* Styles scoped to the security incident protocol. */
+.breach-page { --dt-bg: #f4f6f9; --dt-card: #fff; --dt-line: #d8e1eb; --dt-text: #172b45; --dt-muted: #586b80; --dt-red: #a72533; --dt-coral: #9f2633; background: #f4f6f9; color: #172b45; }
+.breach-page .breach-header { border-color: #dce3eb; background: #fff; box-shadow: 0 3px 14px #1934520a; }
+.breach-page .doc-tool-nav { color: #40556d; }
+.breach-page .doc-tool-nav a:hover, .breach-page .doc-tool-breadcrumb a:hover { color: #9f2633; }
+.breach-page .breach-main { width: min(1060px, calc(100% - 48px)); padding-top: 29px; }
+.breach-page .doc-tool-breadcrumb { color: #687b8f; }
+.breach-page .doc-tool-breadcrumb a { color: #9f2633; }
+.breach-page .doc-tool-intro { max-width: 830px; margin-bottom: 27px; }
+.breach-page .doc-tool-availability { border-color: #e8c7cb; background: #fff4f5; color: #942330; }
+.breach-page .doc-tool-intro h1 { color: #172b45; }
+.breach-page .doc-tool-intro > p { color: #586b80; }
+.breach-page .breach-workspace { width: min(100%, 850px); margin-inline: auto; }
+.breach-page .breach-progress { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin: 0 0 12px; padding: 0; list-style: none; }
+.breach-page .breach-progress li { min-width: 0; display: flex; align-items: center; gap: 9px; padding: 10px 12px; border: 1px solid #d8e1eb; border-radius: 10px; background: #fff; color: #6a7d90; font-size: 12px; }
+.breach-page .breach-progress li > span { width: 29px; height: 29px; flex: 0 0 29px; display: grid; place-items: center; border-radius: 50%; background: #edf1f5; color: #61758b; font-weight: 750; }
+.breach-page .breach-progress li[aria-current="step"] { border-color: #d9a3a9; background: #fffafb; color: #84212b; }
+.breach-page .breach-progress li[aria-current="step"] > span, .breach-page .breach-progress li.is-complete > span { background: #a72533; color: #fff; }
+.breach-page .breach-progress li.is-complete { border-color: #ead1d4; color: #40556d; }
+.breach-page .breach-progress-track { height: 4px; overflow: hidden; margin: 0 2px 15px; border-radius: 9px; background: #e0e6ed; }
+.breach-page .breach-progress-track span { width: 25%; height: 100%; display: block; border-radius: inherit; background: #a72533; transition: width .25s ease; }
+.breach-page .breach-card, .breach-page .breach-generated-card { padding: clamp(20px, 3vw, 30px); border-color: #d8e1eb; border-radius: 14px; background: #fff; color: #172b45; box-shadow: 0 12px 32px #1934520d; }
+.breach-page .breach-card .doc-tool-card-heading { margin-bottom: 21px; }
+.breach-page .breach-card .doc-tool-kicker, .breach-page .breach-generated-card .doc-tool-kicker { color: #9f2633; }
+.breach-page .breach-card .doc-tool-card-heading h2 { color: #20364f; font-size: clamp(22px, 3vw, 27px); }
+.breach-page .breach-card .doc-tool-card-heading p { color: #586b80; font-size: 13px; }
+.breach-page .breach-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+.breach-page .breach-field { min-width: 0; }
+.breach-page .breach-field-full { grid-column: 1 / -1; }
+.breach-page .breach-field label, .breach-page .breach-choice-fieldset legend, .breach-page .breach-summary-wrap > label { display: block; margin-bottom: 7px; color: #2d435d; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.breach-page .breach-optional { margin-left: 5px; color: #73869a; font-size: 11px; font-weight: 500; }
+.breach-page .breach-field input, .breach-page .breach-field select, .breach-page .breach-field textarea, .breach-page .breach-summary-wrap textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #c8d3df; border-radius: 8px; outline: 0; background: #fff; color: #172b45; font: inherit; font-size: 14px; }
+.breach-page .breach-field textarea, .breach-page .breach-summary-wrap textarea { min-height: 92px; resize: vertical; }
+.breach-page .breach-field input:focus-visible, .breach-page .breach-field textarea:focus-visible, .breach-page .breach-field select:focus-visible, .breach-page .breach-summary-wrap textarea:focus-visible, .breach-page .breach-choice input:focus-visible, .breach-page .breach-button:focus-visible, .breach-page .breach-text-button:focus-visible { outline: 3px solid #ad3340; outline-offset: 2px; border-color: #a72533; }
+.breach-page .breach-field small, .breach-page .breach-summary-wrap small { display: block; margin-top: 6px; color: #687b8f; font-size: 11px; line-height: 1.5; }
+.breach-page .breach-error { margin: 7px 0 0; color: #a72533; font-size: 12px; line-height: 1.5; }
+.breach-page .breach-error[hidden], .breach-page [hidden] { display: none !important; }
+.breach-page [aria-invalid="true"] { border-color: #a72533 !important; }
+.breach-page .breach-note, .breach-page .breach-legal-note { margin: 19px 0 0; padding: 12px 14px; border-left: 3px solid #a72533; border-radius: 0 8px 8px 0; background: #f7f8fa; color: #53677d; font-size: 12px; line-height: 1.65; }
+.breach-page .breach-legal-note { border-left-color: #b77b21; background: #fff9ed; color: #5e4a2c; }
+.breach-page .breach-choice-fieldset { min-width: 0; margin: 0 0 17px; padding: 0; border: 0; }
+.breach-page .breach-choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.breach-page .breach-choice-grid-short { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 340px; }
+.breach-page .breach-choice { min-width: 0; display: flex; align-items: center; gap: 10px; padding: 12px 13px; border: 1px solid #d8e1eb; border-radius: 9px; background: #fff; color: #304760; font-size: 13px; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
+.breach-page .breach-choice:hover, .breach-page .breach-choice:has(input:checked) { border-color: #b76c75; background: #fffafb; }
+.breach-page .breach-choice input { width: 17px; height: 17px; flex: 0 0 17px; margin: 0; accent-color: #a72533; }
+.breach-page .breach-subheading { margin: 0 0 13px; color: #304760; font-size: 15px; }
+.breach-page .breach-team-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: 24px 0 12px; padding-top: 20px; border-top: 1px solid #e3e9ef; }
+.breach-page .breach-team-heading .breach-subheading { margin-bottom: 3px; }
+.breach-page .breach-team-heading p { margin: 0; color: #687b8f; font-size: 12px; }
+.breach-page .breach-team-heading .breach-button { margin: 0; white-space: nowrap; }
+.breach-page .breach-members { display: grid; gap: 12px; }
+.breach-page .breach-member { padding: 16px; border: 1px solid #dfe6ed; border-radius: 10px; background: #f9fafb; }
+.breach-page .breach-member-heading { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; color: #344b65; font-size: 13px; font-weight: 700; }
+.breach-page .breach-member-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; }
+.breach-page .breach-member-grid label { display: block; margin-bottom: 6px; color: #52677d; font-size: 11px; font-weight: 650; }
+.breach-page .breach-member-grid input { width: 100%; min-height: 41px; padding: 9px 10px; border: 1px solid #c8d3df; border-radius: 7px; background: #fff; color: #172b45; font: inherit; font-size: 13px; }
+.breach-page .breach-member-grid .member-name-field { grid-column: 1 / -1; }
+.breach-page .breach-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 9px; padding: 0 17px; border: 1px solid #a72533; border-radius: 8px; background: #a72533; color: #fff; font-size: 13px; font-weight: 700; cursor: pointer; transition: background .16s ease, transform .16s ease, border-color .16s ease; }
+.breach-page .breach-button:hover:not(:disabled) { transform: translateY(-1px); border-color: #861d29; background: #861d29; }
+.breach-page .breach-button:disabled { border-color: #d8e0e8; background: #e8edf2; color: #8795a5; cursor: not-allowed; }
+.breach-page .breach-button-secondary { border-color: #cbd5df; background: #fff; color: #304760; }
+.breach-page .breach-button-secondary:hover:not(:disabled) { border-color: #a9b7c5; background: #f2f5f8; color: #20364f; }
+.breach-page .breach-remove-member { min-height: 34px; padding: 0 10px; border: 1px solid #d9c7ca; border-radius: 7px; background: #fff; color: #8f2632; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.breach-page .breach-remove-member:hover { border-color: #a72533; background: #fff4f5; }
+.breach-page .breach-remove-member:focus-visible { outline: 3px solid #ad3340; outline-offset: 2px; }
+.breach-page .breach-summary-wrap { margin-top: 20px; }
+.breach-page .breach-summary-wrap textarea { min-height: 165px; line-height: 1.6; }
+.breach-page .breach-step-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 15px; }
+.breach-page .breach-step-error { margin: 13px 0 0; color: #a72533; font-size: 12px; }
+.breach-page .breach-step-error[hidden] { display: none !important; }
+.breach-page .breach-final-success { max-width: 700px; margin: 0 auto 24px; padding: clamp(24px, 5vw, 42px); border: 1px solid #d6e3df; border-radius: 16px; background: linear-gradient(145deg, #fff, #f6faf8); box-shadow: 0 16px 40px #1b45300d; text-align: center; }
+.breach-page .breach-lock-icon { width: 56px; height: 56px; display: grid; place-items: center; margin: 0 auto 14px; border-radius: 15px; background: #e9f4ef; font-size: 27px; }
+.breach-page .breach-success-kicker { color: #317056; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.breach-page .breach-final-success h2 { margin: 7px 0 8px; color: #20364f; font-size: clamp(25px, 4vw, 34px); letter-spacing: -.04em; }
+.breach-page .breach-final-success > p { max-width: 510px; margin: 0 auto; color: #586b80; font-size: 14px; line-height: 1.65; }
+.breach-page .breach-success-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 21px; }
+.breach-page .breach-success-actions .breach-button { margin: 0; }
+.breach-page .breach-text-button { padding: 8px 10px; border: 0; background: transparent; color: #65788c; font: inherit; font-size: 12px; font-weight: 650; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.breach-page .breach-text-button:hover { color: #9f2633; }
+.breach-page .breach-complementary { max-width: 850px; margin: 0 auto 22px; padding: 18px 20px; border: 1px solid #dfe5eb; border-radius: 12px; background: #fff; }
+.breach-page .breach-complementary h2 { margin: 0 0 12px; color: #435a72; font-size: 14px; }
+.breach-page .breach-complementary > div { display: flex; flex-wrap: wrap; gap: 9px 20px; }
+.breach-page .breach-complementary a { color: #8f2632; font-size: 12px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.breach-page .breach-complementary a:hover { color: #6e1822; }
+.breach-page .breach-complementary a:focus-visible { outline: 3px solid #ad3340; outline-offset: 3px; }
+.breach-page .breach-generated-card { margin-top: 20px; }
+.breach-page .breach-document-heading { margin-bottom: 16px; }
+.breach-page .breach-document-heading h2 { margin: 6px 0; color: #20364f; font-size: 23px; }
+.breach-page .breach-document-heading p { margin: 0; color: #687b8f; font-size: 12px; }
+.breach-page .breach-document { padding: clamp(20px, 4vw, 36px); border: 1px solid #e1e6ec; border-radius: 7px; background: #fff; color: #263244; font: 14px/1.68 Arial, sans-serif; overflow-wrap: anywhere; }
+.breach-page .breach-document .breach-doc-brand { color: #9b2639; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.breach-page .breach-document h1 { margin: 6px 0 4px; color: #172337; font-size: 26px; line-height: 1.2; }
+.breach-page .breach-document h2 { margin: 23px 0 8px; padding-bottom: 5px; border-bottom: 1px solid #e4e8ed; color: #243a54; font-size: 18px; line-height: 1.3; }
+.breach-page .breach-document h3 { margin: 14px 0 5px; color: #344b65; font-size: 14px; }
+.breach-page .breach-document p, .breach-page .breach-document li { color: #3e4c5e; }
+.breach-page .breach-document ul, .breach-page .breach-document ol { padding-left: 22px; }
+.breach-page .breach-document .breach-doc-note { padding: 10px 12px; border-left: 3px solid #9b2639; background: #f7f8fa; color: #4f5f72; font-size: 12px; }
+.breach-page .breach-document .breach-doc-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.breach-page .breach-document .breach-doc-table th, .breach-page .breach-document .breach-doc-table td { padding: 8px; border: 1px solid #d9e0e7; text-align: left; vertical-align: top; }
+.breach-page .breach-document .breach-doc-table th { background: #faf3f4; }
+.breach-page .breach-document a { color: #8f2632; text-decoration: underline; }
+.breach-page .breach-privacy-note { color: #64778a; }
+.breach-page .breach-footer { border-color: #dce3eb; color: #64778a; }
+.breach-page .breach-footer a { color: #9f2633; }
+@media (max-width: 700px) {
+  .breach-page .breach-main { width: calc(100% - 30px); padding-top: 22px; }
+  .breach-page .breach-progress { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .breach-page .breach-progress li { padding: 8px; font-size: 11px; }
+  .breach-page .breach-progress li > span { width: 26px; height: 26px; flex-basis: 26px; }
+  .breach-page .breach-fields, .breach-page .breach-choice-grid { grid-template-columns: 1fr; }
+  .breach-page .breach-field-full { grid-column: auto; }
+  .breach-page .breach-member-grid { grid-template-columns: 1fr; }
+  .breach-page .breach-member-grid .member-name-field { grid-column: auto; }
+  .breach-page .breach-team-heading { align-items: flex-start; flex-direction: column; }
+  .breach-page .breach-team-heading .breach-button { width: 100%; }
+  .breach-page .breach-success-actions { display: grid; grid-template-columns: 1fr; }
+  .breach-page .breach-success-actions .breach-button { width: 100%; }
+  .breach-page .breach-complementary > div { display: grid; gap: 12px; }
+}
+/* FOLIOX dark workspace; the generated protocol keeps its paper-white document surface. */
+/* The preview is a paper sheet inside the dark FOLIOX workspace. */
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document { border:1px solid #d7d7db !important; background:#fff !important; color:#303036 !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document * { color:#303036 !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h1, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h2, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h3 { color:#25252a !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h2 { border-bottom-color:#d8203a !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-brand { color:#b51f32 !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document a { color:#a91d31 !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-note { color:#484044 !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table th { background:#faf3f4 !important; color:#34292b !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table td { background:#fff !important; color:#303036 !important; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] { --dt-bg:#090a0d; --dt-card:#14151a; --dt-line:#34353c; --dt-text:#f4f4f6; --dt-muted:#b5b6be; --dt-red:#d8203a; --dt-coral:#ff7888; background:#090a0d; color:#f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-header { border-color:#2a2b31; background:#090a0df4; color:#f4f4f6; box-shadow:0 4px 18px #0008; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-nav, body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-nav a, body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-breadcrumb { color:#c4c5cb; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-breadcrumb a { color:#ff7888; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-intro h1 { color:#f7f7f8; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-intro > p { color:#b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .doc-tool-availability { border-color:#672431; background:#2a1419; color:#ff9aa7; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress li { border-color:#34353c; background:#14151a; color:#b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress li > span { background:#24252c; color:#d4d4d9; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress li[aria-current="step"], body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress li.is-complete { border-color:#77303c; background:#21161a; color:#fff; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress li[aria-current="step"] > span, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress li.is-complete > span, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress-track span { background:#d8203a; color:#fff; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-progress-track { background:#292a30; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-card, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-final-success, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-complementary { border-color:#34353c; background:#14151a; color:#f4f4f6; box-shadow:0 12px 30px #0004; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-card .doc-tool-card-heading h2, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-subheading, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-complementary h2 { color:#f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-card .doc-tool-card-heading p, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-team-heading p, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-field small, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-summary-wrap small { color:#b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-field label, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-choice-fieldset legend, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-summary-wrap > label, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-member-grid label { color:#e6e6ea; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-optional { color:#a6a8b1; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-field input, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-field select, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-field textarea, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-summary-wrap textarea, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-member-grid input { border-color:#41424a; background:#191a20; color:#f4f4f6; color-scheme:dark; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-choice { border-color:#393a42; background:#191a20; color:#e6e6ea; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-choice:hover, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-choice:has(input:checked) { border-color:#d8203a; background:#32151c; color:#fff; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-choice input { accent-color:#d8203a; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-button-secondary, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-remove-member { border-color:#41424a; background:#191a20; color:#eeeef1; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-button-secondary:hover:not(:disabled), body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-remove-member:hover { border-color:#d8203a; background:#32151c; color:#fff; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-team-heading { border-top-color:#34353c; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-member { border-color:#34353c; background:#101115; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-member-heading { color:#f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-note { border-left-color:#d8203a; background:#1d171b; color:#d0c9cc; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-legal-note { border-left-color:#c08a3c; background:#211d16; color:#e3d6c2; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-final-success h2 { color:#f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-final-success > p { color:#b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-success-kicker { color:#ff9aa7; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-complementary a, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-footer a, body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-text-button { color:#ff7888; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-footer { border-color:#303138; background:#0d0e12; color:#b5b6be; }
+/* Large, readable paper preview inside the dark workspace. */
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-workspace { width:100%; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-generated-card { width:min(100%, 1080px); margin:28px auto 36px; padding:clamp(18px, 3vw, 30px); border:1px solid #34353c; border-radius:14px; background:#14151a; box-shadow:0 16px 44px #0006; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document-heading { max-width:1000px; margin:0 auto 18px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document-heading h2 { color:#f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document-heading p { color:#b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document { box-sizing:border-box; width:100%; max-width:1000px; margin-inline:auto; padding:clamp(24px, 5vw, 58px); border:1px solid #d7d7db !important; border-radius:3px; background:#fff !important; color:#303036 !important; box-shadow:0 8px 26px #0004; font-size:16px; line-height:1.72; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h1 { font-size:34px; line-height:1.2; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h2 { margin-top:30px; font-size:23px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h3 { font-size:18px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-brand { font-size:12px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-note { font-size:14px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table { table-layout:fixed; font-size:14px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table th,
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table td { padding:11px; border:1px solid #cbd0d7; overflow-wrap:anywhere; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-write-cell { height:52px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-write-cell[data-write-lines="3"] { height:78px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-write-cell[data-write-lines="2"] { height:58px; }
+body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-communication-template { padding:18px; }
+@media (max-width:700px) {
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-generated-card { padding:12px; margin-top:20px; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document { padding:20px 16px; font-size:15px; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h1 { font-size:28px; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document h2 { font-size:20px; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table { font-size:12px; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table th,
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-doc-table td { padding:7px 6px; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-write-table th { width:40%; }
+  body.tool-theme-page.doc-tool-page[data-tool="breach"] .breach-document .breach-write-table td { width:60%; }
+}
+.breach-page .breach-document .breach-doc-table td { min-height:30px; background:#fff; color:#263244; }
+.breach-page .breach-document .breach-doc-table .breach-write-cell { height:38px; white-space:pre-wrap; }
+.breach-page .breach-document .breach-doc-table .breach-write-cell[data-write-lines="3"] { height:57px; }
+.breach-page .breach-document .breach-doc-table .breach-write-cell[data-write-lines="2"] { height:42px; }
+.breach-page .breach-document .breach-write-table { margin:8px 0 16px; table-layout:fixed; }
+.breach-page .breach-document .breach-write-table th { width:34%; }
+.breach-page .breach-document .breach-write-table td { width:66%; }
+.breach-page .breach-document .breach-communication-template { padding:14px; border:1px solid #d9e0e7; background:#fff; }
+@media print {
+  .breach-page .breach-document .breach-doc-table td { background:#fff !important; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+  .breach-page .breach-document .breach-doc-table .breach-write-cell { min-height:38px; }
+  .breach-page .breach-document .breach-write-table, .breach-page .breach-document .breach-doc-table { page-break-inside:auto; }
+  .breach-page .breach-document .breach-doc-table tr { page-break-inside:avoid; }
+  .breach-page .breach-document .breach-write-table th { background:#faf3f4 !important; }
+}
+@media print {
+  @page { size: A4 portrait; margin: 18mm; }
+  body.breach-page { display: block !important; background: #fff !important; color: #222 !important; }
+  .breach-page .breach-header, .breach-page .doc-tool-breadcrumb, .breach-page .breach-intro, .breach-page .breach-progress, .breach-page .breach-progress-track, .breach-page #breach-form, .breach-page #breach-final-success, .breach-page #breach-complementary, .breach-page .breach-privacy-note, .breach-page .breach-footer { display: none !important; }
+  .breach-page .breach-main, .breach-page .breach-workspace { width: auto !important; margin: 0 !important; padding: 0 !important; }
+  .breach-page .breach-generated-card { display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: #fff !important; box-shadow: none !important; }
+  .breach-page .breach-document-heading { display:none !important; }
+  .breach-page .breach-document { padding: 0 !important; border: 0 !important; }
+  .breach-page .breach-document h2, .breach-page .breach-document h3 { break-after: avoid; }
+  .breach-page .breach-document li, .breach-page .breach-document p, .breach-page .breach-document tr { break-inside: avoid; }
+  .breach-page .breach-document a { color: #222 !important; }
+}

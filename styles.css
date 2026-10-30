@@ -157,7 +157,7 @@ label { color: #e1e6ee; }.field-hint { color: #a8b3c4; }input, textarea { border
   .steps-grid::before { top: 24px; right: auto; bottom: 24px; left: 32px; border-top: 0; border-left: 1px solid #ed405344; }
 }
 
-/* DOCFAST catalog illustration and non-interactive upcoming tool cards. */
+/* FOLIOX Studio catalog illustration and non-interactive upcoming tool cards. */
 .catalog-preview { position: relative; z-index: 1; width: min(310px, calc(100% - 40px)); padding: 22px; transform: rotate(-3deg); border: 1px solid #40506a; border-radius: 13px; background: linear-gradient(155deg, #202c40, #172338); color: #f0f3f8; box-shadow: 0 24px 60px #050a14a6; animation: float-in 700ms cubic-bezier(.2,.8,.2,1) both; }
 .catalog-preview-top, .catalog-option, .catalog-preview-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .catalog-preview-top .preview-logo { font-size: 17px; }.catalog-count { padding: 5px 8px; border: 1px solid #46536a; border-radius: 99px; color: #ff9ba0; font-size: 8px; font-weight: 750; letter-spacing: .08em; }
@@ -169,8 +169,142 @@ label { color: #e1e6ee; }.field-hint { color: #a8b3c4; }input, textarea { border
 @media (max-width: 800px) { .catalog-preview { transform: scale(.94) rotate(-3deg); } }
 @media (max-width: 620px) { .catalog-preview { width: min(310px, calc(100% - 36px)); transform: scale(.9) rotate(-3deg); }.hero-art { min-height: 370px; }.tile-card-bottom { padding-top: 9px; } }
 
-/* DOCFAST actual logo asset */
+/* FOLIOX Studio actual logo asset */
 .brand-logo-frame { display: inline-flex; align-items: center; justify-content: center; width: 176px; height: 52px; padding: 5px 9px; overflow: hidden; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .brand-logo { display: block; width: 100%; height: 100%; border: 0; background: transparent; box-shadow: none; object-fit: contain; object-position: center; }
 .footer-brand .brand-logo-frame { width: 148px; height: 46px; padding: 5px 8px; }
 @media (max-width: 620px) { .brand-logo-frame { width: 148px; height: 46px; padding: 5px 7px; }.footer-brand .brand-logo-frame { width: 142px; height: 44px; } }
+
+/* FOLIOX Studio visual refresh: navy surfaces, clear red actions, quiet borders. */
+:root { --background: #06152a; --paper: #fff; --accent: #f12632; --accent-dark: #d91d2a; --lime: #ffd9dc; }
+html { background: #06152a; }
+body { background: #06152a; }
+.site-header { border-bottom-color: #183352; background: #06152a; box-shadow: none; backdrop-filter: none; }
+.hero { min-height: 480px; padding-block: 48px 55px; }
+.hero h1 { max-width: 570px; font-size: clamp(42px, 5.3vw, 64px); line-height: 1.03; letter-spacing: -.055em; }
+.availability { padding: 0; border: 0; border-radius: 0; background: transparent; color: #cbd7e8; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.availability-dot { width: 34px; height: 3px; margin-right: 5px; border-radius: 0; background: #f12632; box-shadow: none; }
+.hero-art { min-height: 390px; overflow: visible; border: 0; border-radius: 0; background: transparent; }
+.art-orbit { border: 0; border-radius: 12px; background: #0a2b50; transform: rotate(-8deg); }
+.orbit-one { width: 320px; height: 285px; opacity: .72; }
+.orbit-two { width: 275px; height: 255px; background: #0c3762; opacity: .72; transform: rotate(7deg); }
+.catalog-preview { width: 270px; min-height: 325px; padding: 22px 24px; transform: rotate(-4deg); border: 1px solid #dce5ef; border-radius: 7px; background: #fff; color: #14243b; box-shadow: 0 22px 52px #01091480; }
+.catalog-preview-top .preview-logo { color: #14243b; }.catalog-count { color: #dc202d; border-color: #f2c5c8; }
+.catalog-preview .preview-rule { background: #dbe3ee; }.catalog-preview .preview-kicker { color: #60718a; }
+.catalog-preview-title { color: #14243b; }.catalog-option { border-color: #dce4ee; background: #f5f7fa; }.catalog-option strong { color: #15243a; }.catalog-option small { color: #5e6d82; }
+.catalog-preview-footer { color: #5e6d82; }.catalog-preview-footer .preview-seal { color: #dc202d; border-color: #e44b56; }
+.art-spark { display: none; }
+.art-caption { right: max(0px, calc((100% - 480px) / 2)); bottom: 5px; padding: 10px 13px; border-color: #29415e; background: #11233a; color: #f3f6fb; box-shadow: 0 8px 26px #02091470; }
+.caption-check { background: #42222d; color: #ff6874; }.art-caption small { color: #b8c5d6; }
+.benefit-strip { border-top: 1px solid #183352; border-bottom: 1px solid #183352; background: #0a1d35; }
+.benefit-grid { min-height: 94px; }.benefit-item { border-left-color: #1d3858; }.benefit-number { color: #ff3b46; }
+.how-section, .tools-section { background: #081a30; }.section-kicker { color: #ff626c; }
+.section-heading h2, .tools-heading h2, .audience-heading h2, .faq-heading h2 { color: #f3f6fb; }
+.section-heading p, .tools-heading p { color: #bcc8d8; }
+.steps-grid::before { border-color: #f1263240; }
+.step-card { border-color: #1d3858; border-radius: 10px; background: #0b2039; }.step-card:hover { border-color: #385a7c; box-shadow: 0 12px 28px #02091460; }
+.step-icon, .icon-review, .icon-download { border-radius: 10px; background: #17385f; color: #ff5864; }
+.tools-section { padding-block: 58px 56px; }
+.tools-heading { align-items: center; margin-bottom: 28px; }.tools-heading h2 { font-size: clamp(30px, 3.5vw, 42px); }
+.tools-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+.tool-tile { min-height: 230px; padding: 18px; border-color: #1d4d7a; border-radius: 10px; background: #081d36; }
+.tool-tile-active { border-color: #1d4d7a; background: #091f39; box-shadow: none; }
+.tool-tile:hover, .tool-tile-active:hover { border-color: #4980b1; box-shadow: 0 12px 26px #02091450; }
+.tile-icon { width: 42px; height: 42px; border-radius: 12px; background: #173d69; color: #ff626c; }
+.tile-status { border-color: #364966; }.tile-status.status-ready { border-color: #70404c; background: #351e2b; }
+.tile-card-bottom { border-color: #1e3855; }.tile-arrow { display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; background: #f12632; color: #fff; }
+.tile-disabled { color: #9eacc0; }
+.audience-section, .faq-section { background: #06152a; }.audience-pills span { border-color: #27405d; background: #0b2039; }
+.faq-section { border-top: 1px solid #183352; }.faq-list details, .faq-list details:first-child { border-color: #243b58; }
+.site-footer { background: #041123; }
+.brand-logo-frame { padding: 0; }
+.main-nav a[aria-current="page"] { color: #ff626c; }
+:focus-visible { outline: 3px solid #ff7b83; outline-offset: 3px; }
+@media (max-width: 1100px) { .tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .hero { grid-template-columns: 1fr 1fr; gap: 22px; }.tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.catalog-preview { transform: scale(.94) rotate(-4deg); } }
+@media (max-width: 620px) {
+  .site-header { background: #06152a; }
+  .main-nav { border-color: #28405d; background: #0a1d35; box-shadow: 0 15px 30px #020914b8; }
+  .main-nav > a { color: #e4eaf3; }
+  .main-nav .nav-cta { background: #f12632; }
+  .hero { grid-template-columns: 1fr; gap: 24px; padding-block: 42px 34px; }
+  .hero h1 { font-size: clamp(40px, 12vw, 56px); }
+  .hero-art { min-height: 340px; }
+  .catalog-preview { transform: scale(.9) rotate(-4deg); }
+  .art-caption { right: 0; bottom: 0; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .tool-tile { min-height: 205px; }
+  .benefit-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .reveal, .catalog-preview, .hero-copy, .hero-art, .step-card, .tool-tile, .main-nav, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+/* FOLIOX Studio light theme shared by the catalog and diagnostic. */
+:root { color-scheme: light; --background: #f5f7fa; --ink: #172b45; --muted: #596a7d; --soft: #edf1f6; --line: #d5dde7; --accent: #d92837; --accent-dark: #b91f2c; --lime: #ffe1e3; }
+html, body { background: #f5f7fa; color: #172b45; }
+.site-header { background: #ffffffed; border-bottom-color: #dce3eb; box-shadow: 0 2px 10px #1b35500c; backdrop-filter: blur(12px); }
+.brand { color: #172b45; }
+.main-nav { color: #465970; }
+.main-nav a:hover, .main-nav a[aria-current="page"] { color: #c31f2e; }
+.main-nav .nav-cta { border-color: #d92837; background: #d92837; color: #fff; }
+.main-nav .nav-cta:hover { background: #b91f2c; }
+.hero { background: transparent; }
+.hero h1, .hero h1 span { color: #172b45; }
+.hero h1 span { color: #c92332; }
+.hero-description { color: #52657b; }
+.availability { color: #40556d; }
+.hero-assurance { color: #617185; }
+.hero-art { background: transparent; }
+.art-orbit { background: #e5edf7; }
+.orbit-one { opacity: .78; }.orbit-two { background: #d6e3f1; opacity: .75; }
+.catalog-preview { border-color: #d5dee8; background: #fff; color: #172b45; box-shadow: 0 18px 44px #19345218; }
+.catalog-preview-title { color: #172b45; }.catalog-option { border-color: #dce3ec; background: #f6f8fb; }
+.catalog-option strong { color: #172b45; }.catalog-option small, .catalog-preview-footer { color: #596b80; }
+.preview-mark { color: #c92332; font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+.catalog-count { border-color: #e9c4c8; background: #fff8f8; color: #bd2633; }
+.art-caption { border-color: #dce3ec; background: #fff; color: #172b45; box-shadow: 0 7px 22px #19345216; }
+.art-caption small { color: #607187; }.caption-check { background: #ffebec; color: #c92332; }
+.benefit-strip { border-color: #e0e6ed; background: #fff; }
+.benefit-item { border-left-color: #e0e6ed; }.benefit-item strong { color: #243850; }.benefit-item small { color: #66778a; }
+.how-section, .tools-section { background: #f1f4f8; }
+.section-kicker { color: #ad2733; }.section-heading h2, .tools-heading h2, .audience-heading h2, .faq-heading h2 { color: #172b45; }
+.section-heading p, .tools-heading p, .audience-heading p, .faq-heading p { color: #596a7d; }
+.steps-grid::before { border-color: #d9283730; }
+.step-card { border-color: #d8e0e9; background: #fff; }.step-card:hover { border-color: #bdcbd9; box-shadow: 0 12px 28px #243b5510; }
+.step-number { color: #64758a; }.step-card h3 { color: #203650; }.step-card p { color: #586b80; }
+.step-icon, .icon-review, .icon-download { background: #fff0f1; color: #c92332; }
+.tools-heading h2 { color: #172b45; }.tools-heading p { color: #586a7e; }
+.tools-summary { border-color: #d9e1eb; background: #fff; color: #344a64; }.tools-summary i { background: #d92837; box-shadow: 0 0 0 3px #d928371a; }
+.tool-tile, .tool-tile-active { border-color: #d5dee8; background: #fff; box-shadow: 0 6px 18px #1d36520a; }
+.tool-tile:hover, .tool-tile-active:hover { border-color: #bdcbd9; box-shadow: 0 12px 25px #1d365214; }
+.tool-tile h3 { color: #1c314a; }.tool-tile p { color: #596b80; }
+.tile-icon { background: #fff0f1; color: #c92332; }.tile-icon-soft { background: #edf1f5; color: #64758a; }
+.tile-status { border-color: #d5dde6; color: #66768a; }.tile-status.status-ready { border-color: #ecc6ca; background: #fff3f4; color: #a91f2c; }
+.tile-card-bottom { border-color: #e1e6ed; }.tile-disabled { color: #77869a; }.tile-arrow { background: #d92837; color: #fff; }
+.audience-section, .faq-section { background: #fff; }.audience-pills span { border-color: #d8e0e9; background: #f5f7fa; color: #344961; }
+.audience-pills span:hover { border-color: #cbb3b6; background: #fff5f5; }
+.faq-section { border-top-color: #e0e6ed; }.faq-list details, .faq-list details:first-child { border-color: #dbe2ea; }
+.faq-list summary { color: #1d334d; }.faq-list details p { color: #596b80; }
+.site-footer { background: #edf1f5; border-top-color: #d8e0e9; }.footer-about p, .footer-column { color: #53657a; }.footer-column strong { color: #1d334d; }.footer-bottom { border-top-color: #d4dce5; color: #53657a; }.footer-bottom a { color: #b5212f; }
+.menu-toggle { border-color: #cbd5e0; background: #fff; }.menu-toggle span { background: #263b55; }
+label { color: #233850; }
+input, textarea, select { border-color: #c7d1dd; background-color: #fff; color: #172b45; color-scheme: light; }
+input::placeholder, textarea::placeholder { color: #748398; }
+input:focus, textarea:focus, select:focus { border-color: #b92735; background: #fff; box-shadow: 0 0 0 3px #d928371a; }
+.form-dialog { border-color: #d2dce7; background: #fff; color: #172b45; box-shadow: 0 25px 70px #18324f2b; }.form-dialog::backdrop { background: #182d4650; backdrop-filter: blur(3px); }
+.dialog-close { border-color: #d5dee8; background: #f5f7fa; color: #263b55; }.dialog-privacy { border-color: #dce3eb; background: #f4f6f9; color: #586a7e !important; }
+.coming-card { border-color: #d7e0e9; background: #fff; }.coming-card strong { color: #213750; }.coming-card small, .coming-tag { color: #67788c; }
+.form-card { border-color: #d7e0e9; background: #fff; box-shadow: 0 12px 34px #1b355010; }.tool-card-heading h3 { color: #203650; }.tool-card-heading p { color: #5c6e82; }
+.progress-track { background: #e0e6ed; }.progress-fill { background: #d92837; }.step-caption { color: #566980; }
+.faq-list summary:focus-visible, .primary-link:focus-visible, .menu-toggle:focus-visible, .submit-button:focus-visible, a:focus-visible { outline-color: #a61e2c; }
+.brand-logo-frame { width: 340px; height: 110px; padding: 0; overflow: visible; background: transparent; }
+.site-header { height: auto; min-height: 112px; }
+.brand-logo { width: 100%; height: 100%; object-fit: contain; object-position: center; background: transparent; }
+.footer-brand .brand-logo-frame { width: 300px; height: 100px; padding: 0; }
+@media (max-width: 800px) { .brand-logo-frame { width: 300px; height: 100px; }.footer-brand .brand-logo-frame { width: 270px; height: 90px; } }
+@media (max-width: 620px) {
+  .site-header { width: 100%; min-height: 72px; height: auto; flex-wrap: wrap; gap: 4px; padding: 4px 18px; background: #fff; }
+  .brand-logo-frame { width: 240px; height: 90px; }.footer-brand .brand-logo-frame { width: 240px; height: 90px; }
+  .main-nav { border-color: #d7e0e9; background: #fff; box-shadow: 0 12px 28px #1d36521c; }
+  .main-nav > a { color: #354b65; }.main-nav .nav-cta { background: #d92837; color: #fff; }
+  .benefit-grid { grid-template-columns: 1fr 1fr; }.benefit-item strong { color: #243850; }.benefit-item small { color: #66778a; }
+}

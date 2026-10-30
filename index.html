@@ -1,121 +1,182 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0c1322">
-    <meta name="description" content="DOCFAST — documento rápido. Un catálogo de herramientas para documentos, en preparación.">
-    <meta name="application-name" content="DOCFAST">
-    <title>DOCFAST — documentos rápidos</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
-      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-        <a href="#herramientas">Herramientas</a>
-        <a href="#como-funciona">Cómo funciona</a>
-        <a href="#para-quien">Para quién es</a>
-        <a href="#preguntas">Preguntas frecuentes</a>
-        <a class="nav-cta" href="#herramientas">Explorar herramientas <span aria-hidden="true">↘</span></a>
-      </nav>
-    </header>
-
-    <main id="inicio">
-      <section class="hero section-wrap" aria-labelledby="hero-title">
-        <div class="hero-copy reveal">
-          <div class="availability"><span class="availability-dot"></span> Primera herramienta disponible</div>
-          <h1 id="hero-title">Herramientas para documentos,<br><span>en un solo lugar.</span></h1>
-          <p class="hero-description">Explora herramientas para organizar información y preparar documentos. El Diagnóstico de Cumplimiento ya está disponible; las demás opciones siguen en preparación.</p>
-          <a class="primary-link" href="#herramientas">Explorar herramientas <span aria-hidden="true">↓</span></a>
-          <a class="secondary-link" href="#como-funciona">Cómo funcionará <span aria-hidden="true">↘</span></a>
-          <p class="hero-assurance"><span aria-hidden="true">✳</span> Revisa el diagnóstico sin ingresar datos personales reales.</p>
-        </div>
-
-        <div class="hero-art reveal" role="img" aria-label="Vista previa ilustrada del catálogo DOCFAST">
-          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-          <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
-          <div class="catalog-preview">
-            <div class="catalog-preview-top"><span class="preview-logo"><span class="preview-name"></span><span>.</span></span><span class="catalog-count">10 OPCIONES</span></div>
-            <div class="preview-rule"></div>
-            <span class="preview-kicker">CENTRO DE HERRAMIENTAS</span>
-            <div class="catalog-preview-title">Documentos<br>más claros.</div>
-            <div class="catalog-option"><span class="catalog-option-icon">📄</span><span><strong>Política de Privacidad</strong><small>Disponible</small></span><span class="catalog-option-arrow">↗</span></div>
-            <div class="catalog-option"><span class="catalog-option-icon">🩺</span><span><strong>Diagnóstico</strong><small>Disponible</small></span><span class="catalog-option-arrow">↗</span></div>
-            <div class="catalog-option"><span class="catalog-option-icon">📊</span><span><strong>Registro de Tratamiento</strong><small>Disponible</small></span><span class="catalog-option-arrow">↗</span></div>
-            <div class="catalog-preview-footer"><span>Catálogo informativo</span><span class="preview-seal">10</span></div>
-          </div>
-          <div class="art-caption"><span class="caption-check">✓</span><span><strong>Diagnóstico disponible</strong><small>Otras 5 herramientas, en preparación</small></span></div>
-        </div>
-      </section>
-
-      <section class="benefit-strip" aria-label="Estado del catálogo DOCFAST">
-        <div class="section-wrap benefit-grid">
-          <div class="benefit-item"><span class="benefit-number">10</span><span><strong>opciones en el catálogo</strong><small>Herramientas en preparación</small></span></div>
-          <div class="benefit-item"><span class="benefit-number">1</span><span><strong>herramienta disponible</strong><small>Diagnóstico de Cumplimiento</small></span></div>
-          <div class="benefit-item"><span class="benefit-number">9</span><span><strong>opciones en preparación</strong><small>Sin enlaces hasta estar listas</small></span></div>
-          <div class="benefit-item"><span class="benefit-number">DOC</span><span><strong>una página simple</strong><small>Explora las opciones previstas</small></span></div>
-        </div>
-      </section>
-
-      <section class="how-section" id="como-funciona" aria-labelledby="how-title">
-        <div class="section-wrap">
-          <div class="section-heading reveal"><span class="section-kicker">PRIMERA HERRAMIENTA ACTIVA</span><h2 id="how-title">Así funciona el diagnóstico.</h2><p>Responde sobre prácticas generales, revisa el resultado orientativo y decide qué conversar internamente.</p></div>
-          <div class="steps-grid">
-            <article class="step-card reveal"><span class="step-number">01</span><div class="step-icon icon-enter" aria-hidden="true">↳</div><h3>Responde</h3><p>Completa cuatro pasos con información general, sin ingresar datos reales de personas.</p></article>
-            <article class="step-card reveal"><span class="step-number">02</span><div class="step-icon icon-review" aria-hidden="true">◎</div><h3>Revisa el resultado</h3><p>Consulta un puntaje transparente, sus dimensiones y los puntos que podrías atender.</p></article>
-            <article class="step-card reveal"><span class="step-number">03</span><div class="step-icon icon-download" aria-hidden="true">↗</div><h3>Explora acciones</h3><p>Usa las sugerencias como punto de partida. Las otras herramientas siguen en preparación.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="tools-section" id="herramientas" aria-labelledby="tools-title">
-        <div class="section-wrap">
-          <div class="tools-heading reveal"><div><span class="section-kicker">CENTRO DE HERRAMIENTAS</span><h2 id="tools-title">Herramientas para tus documentos.</h2><p>El Diagnóstico de Cumplimiento y el generador de Política de Privacidad ya están disponibles. Tres herramientas adicionales ya están disponibles; las otras cinco continúan en preparación.</p></div><span class="tools-summary"><i></i> 5 disponibles <b>·</b> 5 en desarrollo</span></div>
-          <div class="tools-grid">
-            <a class="tool-tile tool-tile-active reveal" href="diagnostico.html" aria-label="Abrir Diagnóstico de Cumplimiento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🩺</span><span class="tile-status status-ready">DISPONIBLE</span></div><h3>Diagnóstico de Cumplimiento</h3><p>Responde un cuestionario orientativo y revisa acciones que podrías priorizar.</p><div class="tile-card-bottom"><span class="tile-disabled tile-action">Iniciar diagnóstico</span><span class="tile-arrow" aria-hidden="true">↗</span></div></a>
-            <a class="tool-tile tool-tile-active reveal" href="politica-privacidad.html" id="politica-privacidad" aria-label="Abrir generador de Política de Privacidad"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📄</span><span class="tile-status status-ready">DISPONIBLE</span></div><h3>Política de Privacidad</h3><p>Prepara un borrador revisable con los datos de tu organización.</p><div class="tile-card-bottom"><span class="tile-disabled tile-action">Crear borrador</span><span class="tile-arrow" aria-hidden="true">↗</span></div></a>
-            <a class="tool-tile tool-tile-active reveal" href="registro-tratamiento.html" aria-label="Abrir Registro de Tratamiento (RAT)"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📊</span><span class="tile-status status-ready">DISPONIBLE</span></div><h3>Registro de Tratamiento (RAT)</h3><p>Añade actividades y descarga un registro local en HTML o imprímelo como PDF.</p><div class="tile-card-bottom"><span class="tile-disabled tile-action">Crear registro</span><span class="tile-arrow" aria-hidden="true">↗</span></div></a>
-            <a class="tool-tile tool-tile-active reveal" href="formulario-consentimiento.html" aria-label="Abrir Formulario de Consentimiento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">✅</span><span class="tile-status status-ready">DISPONIBLE</span></div><h3>Formulario de Consentimiento</h3><p>Prepara un borrador imprimible con la finalidad y las categorías de datos que indiques.</p><div class="tile-card-bottom"><span class="tile-disabled tile-action">Crear formulario</span><span class="tile-arrow" aria-hidden="true">↗</span></div></a>
-            <a class="tool-tile tool-tile-active reveal" href="banner-cookies.html" aria-label="Abrir Banner de Cookies"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🍪</span><span class="tile-status status-ready">DISPONIBLE</span></div><h3>Banner de Cookies</h3><p>Personaliza y descarga un fragmento de banner HTML/CSS/JS para tu sitio.</p><div class="tile-card-bottom"><span class="tile-disabled tile-action">Crear código</span><span class="tile-arrow" aria-hidden="true">↗</span></div></a>
-            <article class="tool-tile reveal"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📨</span><span class="tile-status">PRÓXIMAMENTE</span></div><h3>Protocolo ARCOP</h3><p>Opción planificada para organizar la atención de solicitudes.</p><div class="tile-card-bottom"><span class="tile-disabled">En desarrollo</span><span class="tile-arrow" aria-hidden="true">↗</span></div></article>
-            <article class="tool-tile reveal"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🔐</span><span class="tile-status">PRÓXIMAMENTE</span></div><h3>Protocolo de Brechas</h3><p>Herramienta prevista para organizar información ante incidentes de seguridad.</p><div class="tile-card-bottom"><span class="tile-disabled">En desarrollo</span><span class="tile-arrow" aria-hidden="true">↗</span></div></article>
-            <article class="tool-tile reveal"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📝</span><span class="tile-status">PRÓXIMAMENTE</span></div><h3>Cláusula Laboral</h3><p>Opción planificada para preparar contenido relacionado con el ámbito laboral.</p><div class="tile-card-bottom"><span class="tile-disabled">En desarrollo</span><span class="tile-arrow" aria-hidden="true">↗</span></div></article>
-            <article class="tool-tile reveal"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🧮</span><span class="tile-status">PRÓXIMAMENTE</span></div><h3>Calculadora de Multas</h3><p>Calculadora informativa planificada; todavía no está disponible.</p><div class="tile-card-bottom"><span class="tile-disabled">En desarrollo</span><span class="tile-arrow" aria-hidden="true">↗</span></div></article>
-            <article class="tool-tile reveal"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🚨</span><span class="tile-status">PRÓXIMAMENTE</span></div><h3>Notificación de Brecha a la APDP</h3><p>Opción prevista para organizar la información de una notificación.</p><div class="tile-card-bottom"><span class="tile-disabled">En desarrollo</span><span class="tile-arrow" aria-hidden="true">↗</span></div></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="audience-section" id="para-quien" aria-labelledby="audience-title">
-        <div class="section-wrap audience-layout">
-          <div class="audience-heading reveal"><span class="section-kicker">PARA QUIÉN ES</span><h2 id="audience-title">Herramientas para distintos contextos.</h2><p>DOCFAST prepara un catálogo para personas y organizaciones que necesitan trabajar con documentos. Estas categorías son orientativas; no implican herramientas especializadas ya disponibles.</p></div>
-          <div class="audience-pills reveal"><span>Personas</span><span>Independientes</span><span>Pequeños equipos</span><span>Trámites cotidianos</span></div>
-        </div>
-      </section>
-
-      <section class="faq-section" id="preguntas" aria-labelledby="faq-title">
-        <div class="section-wrap faq-layout">
-          <div class="faq-heading reveal"><span class="section-kicker">PREGUNTAS FRECUENTES</span><h2 id="faq-title">Lo esencial, claro.</h2><p>Respuestas sobre el catálogo de herramientas.</p></div>
-          <div class="faq-list reveal">
-            <details><summary>¿Qué herramientas están disponibles?<span aria-hidden="true">+</span></summary><p>Están disponibles el Diagnóstico de Cumplimiento, la Política de Privacidad, el RAT, el Formulario de Consentimiento y el Banner de Cookies. Las otras cinco opciones siguen en preparación.</p></details>
-            <details><summary>¿Qué datos necesito?<span aria-hidden="true">+</span></summary><p>El diagnóstico solicita respuestas generales; no ingreses datos reales de terceros. El generador de Política de Privacidad pide información del negocio, sus categorías de datos, finalidades, destinatarios y conservación.</p></details>
-            <details><summary>¿Se guardan o envían mis respuestas?<span aria-hidden="true">+</span></summary><p>Ambas herramientas procesan sus datos en tu navegador y no los envían a un servidor. Si navegas del diagnóstico al generador, sus respuestas se conservan temporalmente en esta pestaña para poder volver; los datos del formulario de política no se guardan.</p></details>
-            <details><summary>¿Cuándo estarán listas las otras herramientas?<span aria-hidden="true">+</span></summary><p>El Diagnóstico de Cumplimiento, la Política de Privacidad, el RAT, el Formulario de Consentimiento y el Banner de Cookies están disponibles. Las otras cinco opciones siguen en preparación y no tienen fecha de lanzamiento definida.</p></details>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-top"><div class="footer-about"><a class="brand footer-brand" href="#inicio" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a><p>DOCFAST: herramientas de documentos en preparación.</p></div>
-        <div class="footer-column"><strong>Explora</strong><a href="#como-funciona">Cómo funciona</a><a href="#herramientas">Herramientas</a><a href="#para-quien">Para quién</a></div>
-        <div class="footer-column"><strong>Información</strong><a href="#como-funciona">Cómo funcionarán</a><a href="#preguntas">Preguntas frecuentes</a></div>
-        <div class="footer-column"><strong>El proyecto</strong><span>Primera versión</span><span>Hecho para ser simple</span></div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090c">
+  <meta name="application-name" content="FOLIOX Studio">
+  <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+  <meta name="description" content="Herramientas de FOLIOX Studio para organizar información y preparar documentos relacionados con privacidad y tratamiento de datos.">
+  <title>FOLIOX Studio — herramientas para privacidad y documentos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
+  <script src="app.js" defer></script>
+  <script src="home.js" defer></script>
+</head>
+<body class="home-page">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header home-header">
+      <a class="brand" href="#inicio" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#inicio" aria-current="page">Inicio</a><a href="#herramientas">Herramientas</a><a href="#como-funciona">Cómo funciona</a><a href="#datos-personales">Privacidad</a><a href="#uso-responsable">Uso responsable</a><a class="nav-cta" href="diagnostico.html">Comenzar <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="home-hero section-wrap" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="home-eyebrow"><span aria-hidden="true"></span> Herramientas prácticas de FOLIOX Studio</p>
+        <h1 id="hero-title">Ordena la información.<br><span>Prepara tus documentos.</span></h1>
+        <p class="hero-description">Un espacio con herramientas para describir prácticas de privacidad, organizar actividades de tratamiento y preparar borradores a partir de la información que tú proporcionas.</p>
+        <div class="hero-actions"><a class="primary-link" href="diagnostico.html">Empezar con el Diagnóstico <span aria-hidden="true">↗</span></a><a class="secondary-link" href="#herramientas">Explorar el catálogo <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-assurance"><span aria-hidden="true">●</span> Respuestas procesadas en el navegador; revisa cada resultado antes de usarlo.</p>
       </div>
-      <div class="footer-bottom"><span id="footer-copyright"></span><span>Una herramienta interactiva disponible</span><a href="#inicio">Volver arriba ↑</a></div>
-    </footer>
-  </body>
+      <aside class="hero-overview" aria-label="Recorrido por FOLIOX Studio">
+        <div class="overview-top"><span>UN RECORRIDO CLARO</span><span class="overview-mark" aria-hidden="true">F.</span></div>
+        <h2>De tus respuestas a un borrador revisable</h2><p>Elige la herramienta según la tarea que quieras organizar.</p>
+        <ol class="overview-steps">
+          <li><span>01</span><div><strong>Describe</strong><small>Ingresa información que conozcas y puedas confirmar.</small></div></li>
+          <li><span>02</span><div><strong>Revisa</strong><small>Comprueba datos, selecciones y pendientes.</small></div></li>
+          <li><span>03</span><div><strong>Prepara</strong><small>Usa la vista previa, impresión, descarga o código disponible.</small></div></li>
+        </ol>
+        <div class="overview-bottom"><span class="overview-dot"></span> Diez herramientas disponibles</div>
+      </aside>
+    </section>
+    <section class="quick-facts" aria-label="Qué encontrarás en FOLIOX Studio">
+      <div class="section-wrap quick-facts-grid">
+        <article><span class="fact-number">10</span><div><h2>Herramientas disponibles</h2><p>Para diagnóstico, documentos y sitios web.</p></div></article>
+        <article><span class="fact-mark" aria-hidden="true">↳</span><div><h2>Información que tú proporcionas</h2><p>Completa los campos según tus procesos.</p></div></article>
+        <article><span class="fact-mark" aria-hidden="true">✓</span><div><h2>Resultados para revisar</h2><p>Confirma el contenido antes de utilizarlo.</p></div></article>
+      </div>
+    </section>
+    <section class="home-tools" id="herramientas" aria-labelledby="tools-title">
+      <div class="section-wrap">
+        <div class="section-heading home-section-heading"><p class="section-kicker">CATÁLOGO FOLIOX STUDIO</p><h2 id="tools-title">Herramientas para organizar tu trabajo</h2><p>Prepara documentos y organiza información de privacidad con herramientas que convierten tus respuestas en resultados revisables.</p></div>
+        <div class="catalog-controls" aria-label="Buscar y filtrar herramientas">
+          <label class="catalog-search-label" for="tool-search">Buscar herramientas y acciones</label>
+          <div class="catalog-control-row">
+            <input id="tool-search" class="catalog-search" type="search" placeholder="Nombre o descripción" autocomplete="off" aria-controls="tool-cards">
+            <div class="catalog-filters" role="group" aria-label="Filtrar por tipo de tarea">
+              <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">Todas</button>
+              <button type="button" class="filter-button" data-filter="diagnostico" aria-pressed="false">Diagnóstico</button>
+              <button type="button" class="filter-button" data-filter="documento" aria-pressed="false">Documentos</button>
+              <button type="button" class="filter-button" data-filter="sitio" aria-pressed="false">Sitio web</button>
+            </div>
+          </div>
+          <p class="catalog-result-count" id="catalog-result-count" role="status" aria-live="polite">10 disponibles · 0 en preparación</p>
+        </div>
+        <div class="tools-grid home-tools-grid" id="tool-cards">
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="diagnostico"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🩺</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Diagnóstico</span><h3>Diagnóstico de Cumplimiento</h3><p>Revisa tus respuestas sobre prácticas de privacidad y consulta un resultado orientativo.</p><div class="tile-card-bottom"><a class="tile-button" href="diagnostico.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📄</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Documento</span><h3>Política de Privacidad</h3><p>Prepara un borrador con la información, finalidades y criterios que proporciones.</p><div class="tile-card-bottom"><a class="tile-button" href="politica-privacidad.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📊</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Registro</span><h3>Registro de Actividades de Tratamiento (RAT)</h3><p>Organiza las actividades, categorías de datos, finalidades, destinatarios y medidas declaradas.</p><div class="tile-card-bottom"><a class="tile-button" href="registro-tratamiento.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">✅</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Documento</span><h3>Formulario de Consentimiento</h3><p>Prepara un borrador de solicitud con su finalidad y las categorías de datos involucradas.</p><div class="tile-card-bottom"><a class="tile-button" href="formulario-consentimiento.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="sitio"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🍪</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Sitio web</span><h3>Banner de Cookies</h3><p>Personaliza el aviso, revisa su vista previa y prepara el código para tu sitio.</p><div class="tile-card-bottom"><a class="tile-button" href="banner-cookies.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🧭</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Protocolo</span><h3>Generador de Protocolo ARCOP</h3><p>Organiza canales, responsables, revisión y respuestas a solicitudes sobre datos personales.</p><div class="tile-card-bottom"><a class="tile-button" href="protocolo-arcop.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🛡️</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Protocolo</span><h3>Protocolo de Brechas de Seguridad</h3><p>Prepara una guía preventiva con equipo, infraestructura, comunicación y revisión interna.</p><div class="tile-card-bottom"><a class="tile-button" href="protocolo-brechas.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📝</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Documento</span><h3>Generador de Cláusula Laboral de Datos</h3><p>Configura un borrador sobre acceso a datos, equipos, modalidad de trabajo y medidas declaradas.</p><div class="tile-card-bottom"><a class="tile-button" href="clausula-laboral.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="calculadora"><div class="tile-top"><span class="tile-icon" aria-hidden="true">🧮</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Calculadora</span><h3>Calculadora de Multas — Ley 21.719</h3><p>Consulta topes legales y factores relevantes sin predecir la decisión de la Agencia.</p><div class="tile-card-bottom"><a class="tile-button" href="calculadora-multas.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+          <article class="tool-tile tool-tile-active" data-kind="tool" data-type="documento"><div class="tile-top"><span class="tile-icon" aria-hidden="true">📣</span><span class="tile-status status-ready">Disponible</span></div><span class="tool-category">Notificación</span><h3>Notificación de Brecha</h3><p>Prepara un borrador editable con los antecedentes del incidente, datos y medidas declaradas.</p><div class="tile-card-bottom"><a class="tile-button" href="notificacion-brecha.html">Abrir herramienta <span aria-hidden="true">↗</span></a></div></article>
+        </div>
+        <p class="catalog-empty" id="catalog-empty" role="status" aria-live="polite" hidden>No hay resultados que coincidan. Prueba otra búsqueda o selecciona “Todas”.</p>
+      </div>
+    </section>
+    <section class="home-cta section-wrap" aria-labelledby="home-cta-title">
+      <div><p class="section-kicker">ELIGE POR DÓNDE EMPEZAR</p><h2 id="home-cta-title">Haz un primer repaso de tus prácticas.</h2><p>El Diagnóstico organiza tus respuestas y muestra un resultado orientativo que puedes revisar.</p></div>
+      <a class="primary-link" href="diagnostico.html">Empezar con el Diagnóstico <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="home-how section-wrap" id="como-funciona" aria-labelledby="how-title">
+      <div class="section-heading home-section-heading"><p class="section-kicker">CÓMO FUNCIONA</p><h2 id="how-title">Tres pasos para preparar un resultado.</h2><p>El contenido final depende de la herramienta y de la información que aportes.</p></div>
+      <ol class="how-grid">
+        <li class="how-card"><span class="how-number">01</span><h3>Completa la información</h3><p>Elige la herramienta y responde con datos que conozcas y puedas confirmar. En el Diagnóstico, evita ingresar datos reales de otras personas.</p></li>
+        <li class="how-card"><span class="how-number">02</span><h3>Revisa y corrige</h3><p>Comprueba el resultado, las selecciones y los campos pendientes. Asegúrate de que el contenido refleje las prácticas reales.</p></li>
+        <li class="how-card"><span class="how-number">03</span><h3>Usa la salida disponible</h3><p>Según la herramienta, podrás consultar una vista previa, imprimir, descargar HTML o CSV, o copiar texto y código.</p></li>
+      </ol>
+      <div class="review-list"><h3>Antes de usar el resultado, revisa:</h3><ul><li>Nombres y categorías de datos</li><li>Finalidades y base declarada</li><li>Destinatarios y proveedores</li><li>Transferencias y países indicados</li><li>Conservación y medidas declaradas</li></ul><p>La herramienta organiza lo que declaras; no valida automáticamente esos datos.</p></div>
+    </section>
+    <section class="home-audience section-wrap" aria-labelledby="audience-title">
+      <div class="section-heading home-section-heading"><p class="section-kicker">DISTINTAS TAREAS, UN PUNTO DE PARTIDA</p><h2 id="audience-title">¿Para quién puede ser útil?</h2><p>Elige un contexto para filtrar las herramientas y acciones disponibles.</p></div>
+      <div class="audience-chips" role="group" aria-label="Filtrar por contexto de uso">
+        <button type="button" data-filter="documento" aria-pressed="false">Organizaciones que documentan procesos</button>
+        <button type="button" data-filter="sitio" aria-pressed="false">Equipos que administran un sitio</button>
+        <button type="button" data-filter="diagnostico" aria-pressed="false">Personas que preparan información</button>
+        <button type="button" data-filter="all" aria-pressed="true">Ver todas las opciones</button>
+      </div>
+    </section>
+    <section class="home-faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="section-wrap faq-layout">
+        <div class="faq-heading"><p class="section-kicker">PREGUNTAS FRECUENTES</p><h2 id="faq-title">Respuestas antes de empezar.</h2><p>Información sobre las herramientas, sus resultados y sus límites.</p></div>
+        <div class="faq-list">
+          <details><summary>¿Qué herramientas existen en FOLIOX Studio?<span aria-hidden="true">+</span></summary><p>El catálogo incluye diez herramientas disponibles: Diagnóstico de Cumplimiento, Política de Privacidad, Registro de Actividades de Tratamiento (RAT), Formulario de Consentimiento, Banner de Cookies, Generador de Protocolo ARCOP, Protocolo de Brechas de Seguridad, Generador de Cláusula Laboral de Datos, Calculadora de Multas y Notificación de Brecha.</p></details>
+          <details><summary>¿Qué información conviene preparar?<span aria-hidden="true">+</span></summary><p>Reúne nombres, canales de contacto, categorías de datos, grupos de personas, finalidades, destinatarios, transferencias, criterios de conservación y medidas que puedas confirmar. Los datos necesarios dependen de la herramienta.</p></details>
+          <details><summary>¿Qué resultados o archivos puedo obtener?<span aria-hidden="true">+</span></summary><p>Según la herramienta puedes revisar un informe y descargar su ficha PDF; copiar, descargar en HTML o imprimir una Política; imprimir el RAT o descargar su CSV; descargar o imprimir el Formulario; y copiar o descargar el código HTML del Banner.</p></details>
+          <details><summary>¿Las respuestas se envían o almacenan?<span aria-hidden="true">+</span></summary><p>El código de estas herramientas procesa los datos en el navegador y no los envía a un servidor de FOLIOX Studio. El Diagnóstico conserva contexto temporal en la sesión para volver al formulario relacionado; los cambios del RAT permanecen mientras la página está abierta. El Banner generado guarda la elección de la persona en el sitio donde se instale.</p></details>
+          <details><summary>¿Qué debo revisar antes de utilizar un resultado?<span aria-hidden="true">+</span></summary><p>Confirma nombres, categorías, finalidades, base declarada, destinatarios, transferencias, conservación y medidas. Corrige los campos pendientes y comprueba que el contenido represente las prácticas reales de tu organización.</p></details>
+          <details><summary>¿Qué funciones no ofrece actualmente el sitio?<span aria-hidden="true">+</span></summary><p>FOLIOX Studio no ofrece un gestor de solicitudes ARCOP. El código del Banner no bloquea por sí solo otras cookies o scripts. Las herramientas tampoco verifican automáticamente el cumplimiento ni sustituyen una evaluación profesional.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="home-tool-guide section-wrap" aria-labelledby="tool-guide-title">
+      <div class="section-heading home-section-heading"><p class="section-kicker">DETALLE DE LAS HERRAMIENTAS</p><h2 id="tool-guide-title">Qué puedes hacer en cada una</h2><p>Elige según el resultado que necesitas preparar. Las salidas se construyen con los datos que aportes; revisa el contenido antes de implementarlo, compartirlo o archivarlo.</p></div>
+      <div class="tool-guide-grid">
+        <article class="tool-guide-card"><span class="guide-index">01 · REVISIÓN INICIAL</span><h3>Diagnóstico de Cumplimiento</h3><p>Contesta preguntas sobre seis dimensiones declaradas: política, consentimiento, registro, solicitudes de titulares, capacitación o responsable y preparación ante incidentes. El resultado presenta un puntaje orientativo, el detalle de las respuestas y aspectos que puedes revisar. No inspecciona sistemas ni comprueba documentos o hechos externos.</p><h4>Salida disponible</h4><p>Consulta el informe en pantalla o descarga una ficha PDF. Puedes volver a las respuestas para corregirlas; el diagnóstico no convierte el puntaje en una evaluación legal.</p><a href="diagnostico.html">Abrir el Diagnóstico <span aria-hidden="true">↗</span></a></article>
+        <article class="tool-guide-card"><span class="guide-index">02 · INFORMACIÓN PARA EL SITIO</span><h3>Política de Privacidad</h3><p>Recorre cuatro pasos para ingresar la identidad del negocio y un canal de contacto, las categorías de datos, los grupos de personas, las finalidades, los destinatarios, la posible transferencia internacional y criterios de conservación. La vista previa reúne lo que declaraste y señala secciones que quedaron pendientes.</p><h4>Salida disponible</h4><p>Revisa y edita las respuestas; copia el texto, descarga una versión HTML o abre la impresión del navegador para guardar como PDF. El generador no decide por ti la base de legitimidad ni confirma que el texto sea suficiente para tu caso.</p><a href="politica-privacidad.html">Preparar un borrador <span aria-hidden="true">↗</span></a></article>
+        <article class="tool-guide-card"><span class="guide-index">03 · INVENTARIO DE PROCESOS</span><h3>Registro de Actividades de Tratamiento (RAT)</h3><p>Registra cada actividad por separado con su nombre, categorías de datos y titulares, finalidad, base de legitimidad, destinatarios o encargados, transferencia internacional y país, conservación y medidas de seguridad. Puedes revisar las actividades, editarlas, añadir otras o eliminar las que ya no correspondan.</p><h4>Salida disponible</h4><p>La vista del documento reúne los datos de la organización y las actividades registradas. Puedes imprimir o guardar como PDF y descargar un CSV. Los cambios se conservan mientras la página permanece abierta; descarga o imprime el registro antes de salir.</p><a href="registro-tratamiento.html">Abrir el RAT <span aria-hidden="true">↗</span></a></article>
+        <article class="tool-guide-card"><span class="guide-index">04 · SOLICITUD DE CONSENTIMIENTO</span><h3>Formulario de Consentimiento</h3><p>Indica quién presenta la solicitud, un correo de contacto, la finalidad específica, las categorías de datos involucradas y, si hace falta, información adicional para explicar la solicitud. El resultado es un borrador imprimible con espacios para que la persona manifieste su decisión.</p><h4>Salida disponible</h4><p>Descarga el formulario como HTML o imprímelo y guárdalo como PDF. La herramienta prepara el documento, pero no recoge ni registra la respuesta de quien lo complete.</p><a href="formulario-consentimiento.html">Preparar el formulario <span aria-hidden="true">↗</span></a></article>
+        <article class="tool-guide-card"><span class="guide-index">05 · AVISO PARA UN SITIO</span><h3>Banner de Cookies</h3><p>Define el nombre del sitio, el mensaje y los textos de aceptación y rechazo; también puedes añadir un enlace a tu política. Revisa la vista previa antes de copiar o descargar el fragmento HTML, CSS y JavaScript que genera la herramienta.</p><h4>Al integrarlo</h4><p>El fragmento guarda en el navegador la elección de la persona que visita el sitio. Por sí solo no bloquea otras cookies ni scripts: quien lo implemente debe revisar y adaptar la integración a su sitio.</p><a href="banner-cookies.html">Personalizar el banner <span aria-hidden="true">↗</span></a></article>
+        <article class="tool-guide-card"><span class="guide-index">06 · DOCUMENTO LABORAL</span><h3>Generador de Cláusula Laboral de Datos</h3><p>Configura las partes, el alcance del acceso a datos, las condiciones de trabajo, los equipos, la modalidad y las secciones adicionales que quieras incluir.</p><h4>Salida disponible</h4><p>Revisa el borrador, vuelve a editar las respuestas o utiliza la impresión real del navegador para imprimir o guardar como PDF. El contenido requiere adaptación al caso concreto.</p><a href="clausula-laboral.html">Preparar el borrador <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </section>
+    <section class="home-preparation" aria-labelledby="preparation-title">
+      <div class="section-wrap preparation-layout">
+        <div><p class="section-kicker">ANTES DE EMPEZAR</p><h2 id="preparation-title">Reúne información que puedas respaldar.</h2><p>No hace falta adivinar ni completar todos los campos de memoria. Consulta a las personas que conocen cada proceso y deja anotado qué debes confirmar antes de preparar un documento.</p></div>
+        <div class="preparation-checklist">
+          <article><span>01</span><div><h3>Identifica el proceso y el responsable</h3><p>Ten a mano el nombre del negocio, su canal de contacto y una descripción concreta de la actividad o servicio. En la Política de Privacidad algunos datos identificatorios y el correo tienen campos obligatorios.</p></div></article>
+          <article><span>02</span><div><h3>Describe datos, personas y propósito</h3><p>Indica qué categorías utilizas, a qué grupos pertenecen y para qué se usan. Una misma organización puede tratar información distinta para tareas distintas; registra cada propósito con claridad.</p></div></article>
+          <article><span>03</span><div><h3>Comprueba terceros y recorrido</h3><p>Revisa proveedores, destinatarios y servicios tecnológicos que intervienen. Confirma si algún dato se aloja o accede desde otro país; no deduzcas una transferencia solo por usar un servicio que desconoces.</p></div></article>
+          <article><span>04</span><div><h3>Define qué falta verificar</h3><p>Consulta las reglas internas o fuentes aplicables para explicar conservación, medidas de seguridad y fundamento del tratamiento. Si no tienes certeza, deja el punto pendiente en vez de presentar una suposición como un hecho.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="home-data" id="datos-personales" aria-labelledby="data-title">
+      <div class="section-wrap data-layout">
+        <div class="data-intro"><p class="section-kicker">PRIVACIDAD Y TRATAMIENTO</p><h2 id="data-title">Entender el recorrido de los datos ayuda a describirlo mejor.</h2><p>Al preparar una política o un registro, resulta útil separar algunas preguntas. Las herramientas de FOLIOX Studio solicitan varias de estas respuestas para organizar la información que tú conoces.</p></div>
+        <div class="data-points">
+          <article><span>01</span><div><h3>¿Qué información se usa?</h3><p>Identifica categorías como contacto, identificación u otras que correspondan a la actividad. Selecciona o escribe únicamente lo que puedas confirmar.</p></div></article>
+          <article><span>02</span><div><h3>¿Para qué se utiliza?</h3><p>Describe el propósito de cada uso con palabras concretas. Una misma organización puede tener finalidades diferentes en distintos procesos.</p></div></article>
+          <article><span>03</span><div><h3>¿A quién corresponden los datos?</h3><p>Reconoce los grupos de personas vinculados a la actividad, por ejemplo clientes, trabajadores o usuarios de un sitio.</p></div></article>
+          <article><span>04</span><div><h3>¿Con quién se comparten y por cuánto tiempo?</h3><p>Revisa destinatarios o encargados, transferencias declaradas y criterios de conservación. No completes estos puntos por suposición.</p></div></article>
+          <article><span>05</span><div><h3>¿Qué fundamento se declara para cada uso?</h3><p>La finalidad y la base de legitimidad son preguntas relacionadas, pero distintas. El RAT permite declarar una base para cada actividad; la herramienta no la determina ni confirma su pertinencia.</p></div></article>
+          <article><span>06</span><div><h3>¿Qué resguardos se han implementado?</h3><p>El RAT permite registrar medidas de seguridad seleccionadas. Describe las que realmente existen y comprueba su alcance con quienes administran los sistemas y los procesos.</p></div></article>
+          <article><span>07</span><div><h3>¿Qué solicitudes pueden hacer las personas?</h3><p>El acceso, la corrección, la eliminación u otras consultas sobre datos personales requieren canales y una gestión propia de cada organización. FOLIOX Studio no ofrece actualmente un gestor de solicitudes ARCOP; identifica el proceso interno y revisa los requisitos que correspondan.</p></div></article>
+        </div>
+      </div>
+    </section>
+    <section class="home-concepts section-wrap" aria-labelledby="concepts-title">
+      <div class="concepts-heading"><p class="section-kicker">CONCEPTOS PARA LEER Y COMPLETAR LOS DOCUMENTOS</p><h2 id="concepts-title">Una guía rápida de los términos del formulario.</h2><p>Estas definiciones ayudan a organizar la información, no sustituyen una revisión de las reglas aplicables a cada organización.</p></div>
+      <div class="concepts-grid">
+        <article><h3>Dato personal</h3><p>Información que identifica o puede vincularse con una persona, como un nombre, un identificador, datos de contacto o información sobre su relación con un servicio. Considera también datos que, combinados con otros, permitan reconocer a alguien.</p></article>
+        <article><h3>Categorías y sensibilidad</h3><p>Agrupar los datos por tipo ayuda a describir un proceso sin repetir cada campo. El editor RAT contempla, entre otras, categorías de identificación, contacto, finanzas, salud, biometría, información laboral y académica, navegación y datos de menores. Identifica solo lo que se utiliza efectivamente; algunas clases pueden requerir especial cuidado. Evita ingresar datos reales de terceros en formularios de ejemplo.</p></article>
+        <article><h3>Titulares</h3><p>Son las personas a quienes se refieren los datos. Por ejemplo, una actividad podría involucrar a clientes, trabajadores, estudiantes o visitantes de un sitio. Distingue los grupos según el proceso concreto.</p></article>
+        <article><h3>Finalidad</h3><p>Explica el resultado o propósito para el que se utiliza la información. Es más útil describir una acción concreta que usar expresiones vagas como “mejorar el servicio” sin aclarar qué significa en la práctica.</p></article>
+        <article><h3>Destinatarios y encargados</h3><p>Registra quién recibe o procesa información además de la organización, incluidos los proveedores que intervienen cuando corresponda. Comprueba contratos, servicios y flujos reales antes de declarar destinatarios.</p></article>
+        <article><h3>Conservación y seguridad</h3><p>Documenta el plazo o criterio que efectivamente guía la conservación y las medidas que el equipo puede confirmar. Una casilla o una frase en un documento no implementa por sí misma controles técnicos u organizativos.</p></article>
+      </div>
+    </section>
+    <section class="home-responsible" id="uso-responsable" aria-labelledby="responsible-title">
+      <div class="section-wrap responsible-card"><div class="responsible-icon" aria-hidden="true">i</div><div><p class="section-kicker">ANTES DE COMPARTIR O IMPLEMENTAR</p><h2 id="responsible-title">El resultado necesita tu revisión.</h2><p>Los documentos y textos se preparan a partir de tus respuestas. Comprueba que la información sea exacta, completa y adecuada a tu organización; ajusta los pendientes y valida el contenido antes de usarlo. FOLIOX Studio organiza información y genera borradores, pero no garantiza cumplimiento ni reemplaza una evaluación profesional.</p></div></div>
+    </section>
+    <section class="home-transparency section-wrap" aria-labelledby="transparency-title">
+      <div><p class="section-kicker">TRANSPARENCIA</p><h2 id="transparency-title">Qué ocurre con tus respuestas</h2></div>
+      <div><p>Las herramientas del sitio procesan las respuestas en el navegador y no las envían a un servidor de FOLIOX Studio. El Diagnóstico conserva temporalmente contexto en la sesión de la pestaña para poder volver al formulario relacionado. En el RAT, los cambios se mantienen mientras la página siga abierta; descarga el CSV o imprime el registro antes de salir.</p><p>El código del Banner de Cookies almacena la elección de quien visita el sitio donde se instale, pero no bloquea por sí solo otras cookies o scripts.</p></div>
+    </section>
+  </main>
+  <footer class="site-footer home-footer">
+    <div class="footer-top">
+      <div class="footer-about"><a class="brand footer-brand" href="#inicio" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a><p>Herramientas para organizar información y preparar documentos.</p></div>
+      <div class="footer-column"><strong>Herramientas</strong><a href="diagnostico.html">Diagnóstico</a><a href="politica-privacidad.html">Política de Privacidad</a><a href="registro-tratamiento.html">Registro de Tratamiento</a><a href="formulario-consentimiento.html">Consentimiento</a><a href="banner-cookies.html">Banner de Cookies</a><a href="protocolo-arcop.html">Protocolo ARCOP</a><a href="protocolo-brechas.html">Protocolo de Brechas</a><a href="clausula-laboral.html">Cláusula Laboral</a><a href="calculadora-multas.html">Calculadora de Multas</a><a href="notificacion-brecha.html">Notificación de Brecha</a></div>
+      <div class="footer-column"><strong>Guía</strong><a href="#como-funciona">Cómo funciona</a><a href="#datos-personales">Privacidad y datos</a><a href="#uso-responsable">Uso responsable</a><a href="#preguntas">Preguntas frecuentes</a></div>
+    </div>
+    <div class="footer-bottom"><span id="footer-copyright"></span><span>Revisa los documentos antes de utilizarlos.</span><a href="#inicio">Volver arriba ↑</a></div>
+  </footer>
+</body>
 </html>

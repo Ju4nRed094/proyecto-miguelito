@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a0d">
+    <meta name="application-name" content="FOLIOX Studio">
+    <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+    <meta name="description" content="Prepara una guía editable para organizar la recepción y gestión interna de solicitudes sobre datos personales.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="document-tools.css">
+    <link rel="stylesheet" href="protocolo-arcop.css">
+    <script src="rut-input.js" defer></script>
+    <script src="protocolo-arcop.js" defer></script>
+    <title>Generador de Protocolo ARCOP — FOLIOX Studio</title>
+    <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+  <body class="doc-tool-page arcop-page tool-theme-page" data-tool="arcop">
+    <header class="site-header doc-tool-header arcop-header">
+      <a class="brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+      <button class="tool-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tool-main-nav"><span></span><span></span></button><nav class="doc-tool-nav" id="tool-main-nav" aria-label="Navegación FOLIOX Studio"><a href="index.html#herramientas">Herramientas</a><a href="index.html">Inicio</a></nav>
+    </header>
+    <main class="doc-tool-main arcop-main" id="main-content">
+      <p class="doc-tool-breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span aria-current="page">Protocolo ARCOP</span></p>
+      <section class="doc-tool-intro arcop-intro" aria-labelledby="arcop-title"><span class="doc-tool-availability">HERRAMIENTA DISPONIBLE</span><h1 id="arcop-title">Generador de Protocolo ARCOP</h1><p>Organiza cómo tu organización recibe, revisa y responde solicitudes sobre datos personales. El resultado es una guía editable que debes adaptar a tus procesos y revisar antes de usar.</p></section>
+      <div class="arcop-workspace" id="arcop-workspace">
+        <ol class="arcop-progress" id="arcop-progress" aria-label="Pasos del protocolo">
+          <li aria-current="step"><span>1</span><strong>Organización</strong></li><li><span>2</span><strong>Canal</strong></li><li><span>3</span><strong>Responsable</strong></li><li><span>4</span><strong>Protocolo</strong></li>
+        </ol>
+        <div class="arcop-progress-track" id="arcop-progress-track" role="progressbar" aria-label="Avance del protocolo" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Paso 1 de 4"><span id="arcop-progress-fill"></span></div>
+        <form id="arcop-form" novalidate>
+          <section class="doc-tool-card arcop-card arcop-step" data-step="0" aria-labelledby="arcop-step-1-title">
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 1 · ORGANIZACIÓN</span><h2 id="arcop-step-1-title" tabindex="-1">Datos de la organización</h2><p>Completa la identificación de la organización que recibirá y gestionará las solicitudes.</p></div>
+            <div class="arcop-fields">
+              <div class="arcop-field arcop-field-full"><label for="arcop-organization">Nombre de la empresa u organización <span aria-hidden="true">*</span></label><input id="arcop-organization" name="organization" type="text" autocomplete="organization" required aria-describedby="arcop-organization-error"><p class="arcop-error" id="arcop-organization-error" role="alert" hidden>Ingresa el nombre de la organización.</p></div>
+              <div class="arcop-field"><label for="arcop-rut">RUT <span class="arcop-optional">Opcional</span></label><input id="arcop-rut" data-rut-input name="rut" type="text" inputmode="text" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="arcop-rut-hint arcop-rut-error"><small id="arcop-rut-hint">Se dará formato automáticamente. No se verifica el dígito verificador.</small><p class="arcop-error" id="arcop-rut-error" role="alert" hidden>Revisa el formato del RUT.</p></div>
+              <div class="arcop-field"><label for="arcop-address">Domicilio <span class="arcop-optional">Opcional</span></label><input id="arcop-address" name="address" type="text" autocomplete="street-address"></div>
+            </div>
+            <p class="arcop-privacy-note">No precargamos datos de organizaciones. La información se procesa en este navegador.</p>
+          </section>
+          <section class="doc-tool-card arcop-card arcop-step" data-step="1" aria-labelledby="arcop-step-2-title" hidden>
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 2 · CANAL</span><h2 id="arcop-step-2-title" tabindex="-1">Canal para recibir solicitudes</h2><p>Selecciona los canales que la organización declarará para recibir solicitudes.</p></div>
+            <fieldset class="arcop-choice-fieldset"><legend>Canales disponibles <span aria-hidden="true">*</span></legend><div class="arcop-channel-options">
+              <label class="arcop-choice"><input type="radio" name="channelMode" value="email"><span><strong><span aria-hidden="true">✉️ </span>Correo electrónico</strong><small>Un canal de contacto por correo.</small></span></label>
+              <label class="arcop-choice"><input type="radio" name="channelMode" value="web"><span><strong><span aria-hidden="true">🌐 </span>Formulario web</strong><small>Un formulario o instrucciones para encontrarlo.</small></span></label>
+              <label class="arcop-choice"><input type="radio" name="channelMode" value="inperson"><span><strong><span aria-hidden="true">🏢 </span>Atención presencial</strong><small>Una dirección o instrucciones de atención.</small></span></label>
+              <label class="arcop-choice"><input type="radio" name="channelMode" value="multiple"><span><strong><span aria-hidden="true">🔀 </span>Múltiples canales</strong><small>Elige dos o más vías para incluirlas.</small></span></label>
+            </div><p class="arcop-error" id="arcop-channel-mode-error" role="alert" hidden>Selecciona un canal para continuar.</p></fieldset>
+            <div class="arcop-multiple-picker" id="arcop-multiple-picker" hidden><fieldset class="arcop-choice-fieldset"><legend>Selecciona las vías que corresponden</legend><div class="arcop-inline-checks"><label><input type="checkbox" name="multiChannel" value="email"><span aria-hidden="true">✉️</span> Correo electrónico</label><label><input type="checkbox" name="multiChannel" value="web"><span aria-hidden="true">🌐</span> Formulario web</label><label><input type="checkbox" name="multiChannel" value="inperson"><span aria-hidden="true">🏢</span> Atención presencial</label></div><p class="arcop-error" id="arcop-multiple-error" role="alert" hidden>Selecciona al menos dos vías.</p></fieldset></div>
+            <div class="arcop-channel-fields" id="arcop-channel-fields" aria-live="polite">
+              <div class="arcop-field" id="arcop-email-wrap" hidden><label for="arcop-email">Correo de contacto <span aria-hidden="true">*</span></label><input id="arcop-email" name="email" type="email" autocomplete="email" aria-describedby="arcop-email-error"><p class="arcop-error" id="arcop-email-error" role="alert" hidden>Ingresa una dirección de correo válida.</p></div>
+              <div class="arcop-field" id="arcop-web-wrap" hidden><label for="arcop-web">URL del formulario o instrucciones para encontrarlo <span aria-hidden="true">*</span></label><input id="arcop-web" name="web" type="text" aria-describedby="arcop-web-error"><p class="arcop-error" id="arcop-web-error" role="alert" hidden>Indica la URL o instrucciones para encontrar el formulario.</p></div>
+              <div class="arcop-field" id="arcop-inperson-wrap" hidden><label for="arcop-inperson">Dirección o instrucciones de atención presencial <span aria-hidden="true">*</span></label><textarea id="arcop-inperson" name="inperson" rows="3" aria-describedby="arcop-inperson-error"></textarea><p class="arcop-error" id="arcop-inperson-error" role="alert" hidden>Indica la dirección o instrucciones de atención.</p></div>
+            </div>
+          </section>
+          <section class="doc-tool-card arcop-card arcop-step" data-step="2" aria-labelledby="arcop-step-3-title" hidden>
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 3 · RESPONSABLE</span><h2 id="arcop-step-3-title" tabindex="-1">Responsable interno</h2><p>Identifica a la persona que coordinará internamente la recepción y seguimiento.</p></div>
+            <div class="arcop-fields">
+              <div class="arcop-field"><label for="arcop-responsible">Nombre del encargado o responsable <span aria-hidden="true">*</span></label><input id="arcop-responsible" name="responsible" type="text" autocomplete="name" required aria-describedby="arcop-responsible-error"><p class="arcop-error" id="arcop-responsible-error" role="alert" hidden>Ingresa el nombre del responsable.</p></div>
+              <div class="arcop-field"><label for="arcop-role">Cargo <span class="arcop-optional">Opcional</span></label><input id="arcop-role" name="role" type="text" autocomplete="organization-title"></div>
+              <fieldset class="arcop-choice-fieldset arcop-field-full" aria-describedby="arcop-team-size-error"><legend>¿Cuántas personas manejan datos personales?</legend><div class="arcop-size-options"><label class="arcop-choice compact"><input type="radio" name="teamSize" value="Solo yo"><span><strong>Solo yo</strong></span></label><label class="arcop-choice compact"><input type="radio" name="teamSize" value="1–5"><span><strong>1–5</strong></span></label><label class="arcop-choice compact"><input type="radio" name="teamSize" value="6–20"><span><strong>6–20</strong></span></label><label class="arcop-choice compact"><input type="radio" name="teamSize" value="21–50"><span><strong>21–50</strong></span></label><label class="arcop-choice compact"><input type="radio" name="teamSize" value="Más de 50"><span><strong>Más de 50</strong></span></label></div><p class="arcop-error" id="arcop-team-size-error" role="alert" hidden>Selecciona un rango.</p></fieldset>
+              <fieldset class="arcop-choice-fieldset arcop-field-full" aria-describedby="arcop-system-choice-error"><legend>¿Se utiliza un sistema para gestionar datos personales?</legend><div class="arcop-size-options arcop-size-options-short"><label class="arcop-choice compact"><input type="radio" name="usesSystem" value="yes"><span><strong>Sí</strong></span></label><label class="arcop-choice compact"><input type="radio" name="usesSystem" value="no"><span><strong>No</strong></span></label></div><p class="arcop-error" id="arcop-system-choice-error" role="alert" hidden>Selecciona Sí o No.</p></fieldset>
+              <div class="arcop-field arcop-field-full" id="arcop-system-wrap" hidden><label for="arcop-system">Describe el sistema utilizado <span aria-hidden="true">*</span></label><textarea id="arcop-system" name="systemDescription" rows="3" aria-describedby="arcop-system-error"></textarea><p class="arcop-error" id="arcop-system-error" role="alert" hidden>Describe el sistema utilizado.</p></div>
+            </div>
+          </section>
+          <section class="doc-tool-card arcop-card arcop-step" data-step="3" aria-labelledby="arcop-step-4-title" hidden>
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 4 · PROTOCOLO</span><h2 id="arcop-step-4-title" tabindex="-1">Derechos incluidos en la guía</h2><p>Selecciona los derechos que quieres contemplar. Las selecciones son editables y no validan por sí mismas qué aplica a un caso.</p></div>
+            <p class="arcop-legal-note">Esta plantilla toma como referencia las denominaciones de la Ley 21.719, cuyas modificaciones entran en vigor el 1 de diciembre de 2026. La legislación aplicable depende de la fecha de cada solicitud; revisa y ajusta el protocolo. La ley contempla además el bloqueo del tratamiento, que esta selección de plantilla no pretende agotar.</p>
+            <fieldset class="arcop-rights-fieldset"><legend>Selecciona uno o más derechos</legend><div class="arcop-rights-grid">
+              <label class="arcop-right-card"><input type="checkbox" name="rights" value="Acceso"><span><strong>Acceso</strong><small>Consulta de datos e información asociada.</small></span></label>
+              <label class="arcop-right-card"><input type="checkbox" name="rights" value="Rectificación"><span><strong>Rectificación</strong><small>Corrección o complemento de datos.</small></span></label>
+              <label class="arcop-right-card"><input type="checkbox" name="rights" value="Supresión"><span><strong>Supresión</strong><small>Solicitud de eliminación cuando corresponda.</small></span></label>
+              <label class="arcop-right-card"><input type="checkbox" name="rights" value="Oposición"><span><strong>Oposición</strong><small>Solicitud sobre un tratamiento determinado.</small></span></label>
+              <label class="arcop-right-card"><input type="checkbox" name="rights" value="Portabilidad"><span><strong>Portabilidad</strong><small>Solicitud de copia en formato electrónico.</small></span></label>
+            </div><p class="arcop-error" id="arcop-rights-error" role="alert" hidden>Selecciona al menos un derecho para generar la guía.</p></fieldset>
+          </section>
+          <p class="arcop-step-error" id="arcop-step-error" role="alert" hidden>Revisa los campos señalados para continuar.</p>
+          <div class="arcop-step-actions" id="arcop-step-actions"><button class="arcop-button arcop-button-secondary" id="arcop-previous" type="button" disabled>Anterior</button><button class="arcop-button" id="arcop-next" type="button">Siguiente <span aria-hidden="true">→</span></button></div>
+        </form>
+        <section class="doc-tool-card arcop-result" id="arcop-result" aria-labelledby="arcop-result-title" hidden><div class="arcop-result-heading"><div><span class="doc-tool-kicker">BORRADOR EDITABLE</span><h2 id="arcop-result-title" tabindex="-1">Protocolo de recepción y gestión de solicitudes</h2></div><span class="arcop-result-badge">Guía para revisar</span></div>
+          <div class="arcop-result-warning"><strong>Revisión necesaria.</strong> Esta guía no garantiza cumplimiento ni sustituye una revisión profesional. Confirma las reglas, derechos y plazos que correspondan en la fecha de cada solicitud. No se ha precargado un plazo de respuesta.</div>
+          <article id="arcop-document" class="arcop-document" contenteditable="true" aria-label="Documento generado editable"></article>
+          <div class="arcop-result-actions"><button class="arcop-button" id="arcop-print" type="button">Imprimir / Guardar como PDF</button><button class="arcop-button arcop-button-secondary" id="arcop-edit" type="button">Editar respuestas</button><button class="arcop-button arcop-button-secondary" id="arcop-reset" type="button">Generar nuevo protocolo</button></div>
+        </section>
+      </div>
+      <p class="doc-tool-privacy arcop-page-note">La información ingresada se procesa en este navegador y no se envía a FOLIOX Studio.</p>
+    </main>
+    <footer class="doc-tool-footer arcop-footer"><a href="index.html#herramientas">← Volver al catálogo</a><span>FOLIOX Studio · guía editable</span></footer>
+  </body>
+</html>

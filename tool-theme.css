@@ -1,0 +1,623 @@
+/* Shared dark FOLIOX theme for the ten existing tool routes only. */
+.tool-theme-page {
+  --tool-bg: #090a0d;
+  --tool-surface: #14151a;
+  --tool-surface-raised: #191a20;
+  --tool-surface-soft: #101115;
+  --tool-border: #34353c;
+  --tool-text: #f4f4f6;
+  --tool-muted: #b5b6be;
+  --tool-subtle: #92949d;
+  --tool-red: #d8203a;
+  --tool-red-hover: #f0344e;
+  --tool-red-light: #ff7888;
+  --tool-error: #ff8795;
+  min-width: 320px;
+  color-scheme: dark;
+  color: var(--tool-text);
+  background: var(--tool-bg) !important;
+  font-family: 'Aptos', 'Segoe UI', sans-serif;
+}
+/* The root canvas must follow the dark app surface beyond the body's content height. */
+html:has(> body.tool-theme-page) { min-height: 100%; background: #090a0d; }
+.tool-theme-page :is(h1, h2, h3, h4, h5, legend) { color: var(--tool-text); }
+.tool-theme-page :is(p, small, li) { color: inherit; }
+.tool-theme-page a { text-underline-offset: 3px; }
+.tool-theme-page a:hover { color: var(--tool-red-light); }
+.tool-theme-page :focus-visible { outline: 3px solid var(--tool-red-light); outline-offset: 3px; }
+.tool-theme-page :is(.site-header, .doc-tool-header, .fine-header) { border-color: #2a2b31; background: #090a0df4; color: var(--tool-text); box-shadow: 0 4px 18px #0008; }
+.tool-theme-page :is(.brand, .fine-brand) { display: inline-flex; align-items: center; gap: 10px; color: #fff; }
+.tool-theme-page :is(.brand-logo-frame, .policy-header-logo-frame) { width: 42px; height: 42px; flex: 0 0 42px; padding: 0; overflow: visible; border: 0; background: transparent; }
+.tool-theme-page :is(.brand-logo, .policy-header-logo, .fine-header img) { display: block; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+.tool-theme-page .brand-name { color: #fff; font-size: 15px; font-weight: 750; letter-spacing: -.025em; white-space: nowrap; }
+.tool-theme-page :is(.doc-tool-nav, .main-nav, .fine-header nav) { color: #d1d1d6; }
+.tool-theme-page :is(.doc-tool-nav a, .main-nav a, .fine-header nav a) { color: #d1d1d6; }
+.tool-theme-page :is(.doc-tool-nav a:hover, .main-nav a:hover, .fine-header nav a:hover, .breadcrumb a, .doc-tool-breadcrumb a, .policy-breadcrumb a, .employment-breadcrumb a) { color: var(--tool-red-light); }
+.tool-theme-page :is(.doc-tool-nav a:focus-visible, .main-nav a:focus-visible, .fine-header nav a:focus-visible) { outline-color: var(--tool-red-light); }
+.tool-theme-page :is(.doc-tool-nav .nav-cta, .main-nav .nav-cta, .nav-cta, .primary-link) { border-color: var(--tool-red); background: var(--tool-red); color: #fff; }
+.tool-theme-page :is(.doc-tool-nav .nav-cta:hover, .main-nav .nav-cta:hover, .nav-cta:hover, .primary-link:hover) { border-color: var(--tool-red-hover); background: var(--tool-red-hover); color: #fff; }
+.tool-theme-page .tool-menu-toggle { display: none; width: 42px; height: 42px; flex: 0 0 42px; align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 0; border: 1px solid #45464e; border-radius: 8px; background: #17181d; cursor: pointer; }
+.tool-theme-page .tool-menu-toggle span { width: 17px; height: 2px; border-radius: 3px; background: #f4f4f6; transition: transform .18s ease; }
+.tool-theme-page .tool-menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+.tool-theme-page .tool-menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+body.tool-theme-page.doc-tool-page[data-tool] .doc-tool-header .brand-logo-frame { width: 42px; height: 42px; flex-basis: 42px; }
+.tool-theme-page :is(.doc-tool-main, .employment-main, .policy-main, .page-wrap) { color: var(--tool-text); }
+.tool-theme-page.fine-page main { color: var(--tool-text); }
+.tool-theme-page :is(.doc-tool-breadcrumb, .breadcrumb, .policy-breadcrumb, .employment-breadcrumb) { color: #a6a8b1; }
+.tool-theme-page :is(.doc-tool-intro h1, .diagnostic-hero h1, .policy-intro h1, .employment-intro h1, .intro h1) { color: #f7f7f8; }
+.tool-theme-page :is(.doc-tool-intro > p, .diagnostic-lede, .policy-intro > p:not(.policy-breadcrumb), .employment-intro > p:last-child, .intro > p) { color: var(--tool-muted); }
+.tool-theme-page :is(.doc-tool-availability, .availability, .policy-availability, .employment-availability, .free-badge) { border-color: #672431; background: #2a1419; color: #ff9aa7; }
+.tool-theme-page :is(.doc-tool-kicker, .doc-tool-availability, .step-kicker, .eyebrow, .section-kicker, .employment-kicker, .policy-builder-head .section-kicker, .policy-legal-note .section-kicker) { color: var(--tool-red-light); }
+
+/* Form and result surfaces keep each tool's existing layout and component names. */
+.tool-theme-page :is(.doc-tool-card, .doc-tool-result, .cookie-wizard-card, .consent-wizard-card, .rat-editor-card, .rat-template-card, .arcop-card, .arcop-result, .breach-card, .breach-generated-card, .notification-card, .notification-generated-card, .card, .sources, .questionnaire-card, .hero-summary, .results-panel, .policy-card, .policy-preview-panel, .employment-card, .employment-result, .employment-summary, .info-card, .related-card) {
+  border-color: var(--tool-border);
+  background-color: var(--tool-surface);
+  color: var(--tool-text);
+  box-shadow: 0 12px 30px #0004;
+}
+.tool-theme-page :is(.doc-tool-card, .arcop-card, .breach-card, .notification-card, .employment-card, .policy-card, .card, .sources) { border-radius: 13px; }
+.tool-theme-page :is(.doc-tool-card-heading h2, .card h2, .card-heading h2, .card-heading h3, .employment-builder-head h2, .employment-result-head h2, .policy-builder-head h2, .policy-step-heading h3, .preview-screen-heading h3, .arcop-result-heading h2, .results-header h3) { color: #f4f4f6; }
+.tool-theme-page :is(.doc-tool-card-heading p, .card-heading > p, .result-heading > p, .employment-builder-head p, .employment-result-head p, .employment-step-heading p, .policy-builder-head p, .policy-step-heading p, .preview-screen-heading p, .arcop-result-heading p, .results-header > div > p) { color: var(--tool-muted); }
+.tool-theme-page :is(.doc-tool-field label, .doc-tool-fieldset legend, .field label, .field-group legend, .diagnostic-page .question-group legend, .policy-field > label, .conditional-field > label, .policy-group legend, .employment-field label, .employment-group legend, .arcop-field label, .arcop-choice-fieldset legend, .arcop-rights-fieldset legend, .breach-field label, .breach-choice-fieldset legend, .breach-summary-wrap > label, .notification-field label, .notification-choice-fieldset legend) { color: #e7e7eb; }
+.tool-theme-page :is(.doc-tool-field small, .field small, .group-help, .field-hint, .employment-field small, .employment-group > small, .employment-field .optional, .policy-field .field-optional, .policy-field .field-hint, .arcop-field small, .breach-field small, .breach-summary-wrap small, .notification-hint, .notification-optional) { color: #a5a7b0; }
+.tool-theme-page :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) { border-color: #41424a; background-color: #191a20; color: #f4f4f6; color-scheme: dark; }
+.tool-theme-page :is(input, select, textarea)::placeholder { color: #999ba4; opacity: 1; }
+.tool-theme-page :is(input, select, textarea):focus-visible { border-color: var(--tool-red-light); outline-color: var(--tool-red-light); }
+.tool-theme-page :is(input[type="checkbox"], input[type="radio"]) { accent-color: var(--tool-red); }
+.tool-theme-page :is(.doc-tool-error, .field-error, .question-error, .questionnaire-error, .employment-field-error, .employment-error, .arcop-error, .arcop-step-error, .breach-error, .breach-step-error, .notification-error, .notification-step-error, .error) { color: var(--tool-error); }
+.tool-theme-page [aria-invalid="true"] { border-color: var(--tool-error) !important; }
+.tool-theme-page :is(.doc-tool-privacy, .doc-tool-page-note, .local-data-note, .privacy-chip, .breach-privacy-note, .arcop-page-note) { color: #a5a7b0; }
+.tool-theme-page :is(.doc-tool-status, .employment-status, .success-message) { color: #8fe2b0; }
+.tool-theme-page :is(.doc-tool-error, .field-error, .question-error, .questionnaire-error, .employment-field-error, .employment-error, .arcop-error, .arcop-step-error, .breach-error, .breach-step-error, .notification-error, .notification-step-error)[hidden] { display: none !important; }
+
+/* Selected choices and progress use a visible red state across tools. */
+.tool-theme-page :is(.doc-tool-choice, .choice-card, .choice-pill span, .company-option, .data-row, .policy-choice, .employment-option, .arcop-choice, .arcop-right-card, .breach-choice, .notification-choice, .notification-category-list label) { border-color: #393a42; background-color: #191a20; color: #dedee3; }
+.tool-theme-page :is(.doc-tool-choice:hover, .choice-card:hover, .company-option:hover, .data-row:hover, .policy-choice:hover, .employment-option:hover, .arcop-choice:hover, .arcop-right-card:hover, .breach-choice:hover, .notification-choice:hover) { border-color: #78404a; background-color: #24171b; }
+.tool-theme-page :is(.choice-card:has(input:checked), .company-option:has(input:checked), .data-row:has(input:checked), .policy-choice:has(input:checked), .employment-option:has(input:checked), .arcop-choice:has(input:checked), .arcop-right-card:has(input:checked), .breach-choice:has(input:checked), .notification-choice:has(input:checked), .notification-category-list label:has(input:checked)) { border-color: var(--tool-red); background-color: #32151c; color: #fff; }
+.tool-theme-page :is(.doc-tool-progress li, .steps li, .step-labels li, .policy-step-labels li, .employment-step-labels li, .arcop-progress li, .breach-progress li, .notification-progress li) { border-color: #34353c; background-color: #15161b; color: #b9bac1; }
+.tool-theme-page :is(.steps li[aria-current="step"], .step-labels li[aria-current="step"], .policy-step-labels li[aria-current="step"], .employment-step-labels li[aria-current="step"], .arcop-progress li[aria-current="step"], .breach-progress li[aria-current="step"], .notification-progress li[aria-current="step"]) { border-color: var(--tool-red); background-color: #2b141a; color: #ff9aa7; }
+.tool-theme-page :is(.steps li[aria-current="step"] span, .steps li.is-complete span, .step-labels li[aria-current="step"] > span, .step-labels li.is-complete > span, .policy-step-labels li[aria-current="step"] > span, .policy-step-labels li.is-complete > span, .employment-step-labels li[aria-current="step"] > span, .arcop-progress li[aria-current="step"] > span, .arcop-progress li.is-complete > span, .breach-progress li[aria-current="step"] > span, .breach-progress li.is-complete > span, .notification-progress li[aria-current="step"] > span, .notification-progress li.is-complete > span) { background: var(--tool-red); color: #fff; }
+.tool-theme-page :is(.progress, .progress-track, .policy-progress-track, .employment-progress-track, .arcop-progress-track, .breach-progress-track, .notification-progress-track) { background: #292a30; }
+.tool-theme-page :is(.progress span, .progress-fill, .policy-progress-track > span, .employment-progress-track span, .arcop-progress-track span, .breach-progress-track span, .notification-progress-track span) { background: var(--tool-red); }
+
+/* Buttons: red primary, neutral dark secondary, unmistakable disabled state. */
+.tool-theme-page :is(.doc-tool-button, .button:not(.secondary), .next-button, .employment-button.primary, .employment-button:not(.secondary):not(.primary), .arcop-button:not(.arcop-button-secondary), .breach-button:not(.breach-button-secondary), .notification-button:not(.notification-button-secondary), .policy-form-actions .primary-link, .policy-preview-actions .primary-link, .diagnostic-page .primary-link) { border-color: var(--tool-red); background: var(--tool-red); color: #fff; }
+.tool-theme-page :is(.doc-tool-button:hover:not(:disabled), .button:not(.secondary):hover:not(:disabled), .next-button:hover:not(:disabled), .employment-button.primary:hover:not(:disabled), .employment-button:not(.secondary):not(.primary):hover:not(:disabled), .arcop-button:not(.arcop-button-secondary):hover:not(:disabled), .breach-button:not(.breach-button-secondary):hover:not(:disabled), .notification-button:not(.notification-button-secondary):hover:not(:disabled), .policy-form-actions .primary-link:hover, .policy-preview-actions .primary-link:hover, .diagnostic-page .primary-link:hover) { border-color: var(--tool-red-hover); background: var(--tool-red-hover); color: #fff; }
+.tool-theme-page :is(.doc-tool-button-secondary, .button.secondary, .secondary-button, .reset-button, .employment-button.secondary, .arcop-button-secondary, .breach-button-secondary, .notification-button-secondary) { border-color: #44454d; background: #1b1c22; color: #e0e0e5; }
+.tool-theme-page :is(.doc-tool-button-secondary:hover:not(:disabled), .button.secondary:hover:not(:disabled), .secondary-button:hover:not(:disabled), .reset-button:hover:not(:disabled), .employment-button.secondary:hover:not(:disabled), .arcop-button-secondary:hover:not(:disabled), .breach-button-secondary:hover:not(:disabled), .notification-button-secondary:hover:not(:disabled)) { border-color: #777880; background: #25262d; color: #fff; }
+.tool-theme-page :is(button, .button, .doc-tool-button):disabled { border-color: #383940; background: #202126; color: #85868d; opacity: 1; cursor: not-allowed; }
+.tool-theme-page :is(.doc-tool-button, .button, .next-button, .secondary-button, .reset-button, .employment-button, .arcop-button, .breach-button, .notification-button, .primary-link):focus-visible { outline: 3px solid #ff7888; outline-offset: 3px; }
+
+/* Tool-specific screens retain their structure while using the shared surfaces. */
+.tool-theme-page :is(.questionnaire-section, .info-section, .related-section, .diagnostic-hero, .policy-builder, .employment-builder, .home-data) { color: var(--tool-text); }
+.tool-theme-page :is(.questionnaire-card, .hero-summary, .results-panel, .policy-card, .policy-preview-panel, .employment-card, .employment-result, .employment-summary, .doc-tool-preview, .policy-document, .employment-document, .arcop-document, .breach-document, .notification-document) { border-color: var(--tool-border); background: var(--tool-surface-raised); color: var(--tool-text); }
+.tool-theme-page :is(.questionnaire-heading h2, .info-intro h2, .related-heading h2, .faq-heading h2, .hero-summary h2, .form-step-heading h3, .results-header h3, .policy-builder-head h2, .policy-step-heading h3, .preview-screen-heading h3, .employment-step-heading h3, .employment-summary h4, .arcop-result-heading h2, .arcop-document h1, .breach-document h1, .notification-document h1) { color: #f4f4f6; }
+.tool-theme-page :is(.question-group legend, .policy-group legend, .employment-group legend, .doc-tool-card-heading h2) { color: #e9e9ed; }
+.tool-theme-page :is(.question-group, .policy-group, .employment-group) { border-color: #393a42; }
+.tool-theme-page :is(.choice-card, .policy-choice, .employment-option, .arcop-choice, .arcop-right-card) :is(strong, small) { color: inherit; }
+.tool-theme-page :is(.note, .local-data-note, .hero-note, .context-notice, .policy-legal-note, .arcop-privacy-note, .arcop-legal-note, .breach-note, .breach-legal-note, .notification-legal-note, .notification-inline-note, .arcop-result-warning) { border-color: #70404a; background: #1c171b; color: #d1c6c9; }
+.tool-theme-page :is(.policy-document, .employment-document, .arcop-document, .breach-document, .notification-document, .doc-tool-preview) { color: #e8e8ec; }
+.tool-theme-page :is(.policy-document h1, .policy-document h2, .policy-document h3, .employment-document h2, .employment-document h3, .arcop-document h2, .arcop-document h3, .breach-document h2, .breach-document h3, .notification-document h2, .notification-document h3) { color: #f5f5f6; }
+.tool-theme-page :is(.policy-document p, .policy-document li, .employment-document p, .employment-document li, .arcop-document p, .arcop-document li, .breach-document p, .breach-document li, .notification-document p, .notification-document li) { color: #d0d1d6; }
+.tool-theme-page :is(.sources h2, .result-body h3) { color: #f3f3f5; }
+.tool-theme-page :is(.result-body, .sources, .result-heading > p) { color: #c9cacf; }
+.tool-theme-page :is(.limit-box, .calc-box, .tagline, .disclaimer, .arcop-result-warning) { border-color: #3e3438; background: #1a171b; color: #ddd5d7; }
+.tool-theme-page :is(.sources a, .result-body a, .policy-document a, .employment-document a, .arcop-document a, .breach-document a, .notification-document a) { color: #ff8795; }
+
+/* Pages with denser, older component selectors get the same tokens without changing their layouts. */
+.tool-theme-page.fine-page main { color: var(--tool-text); }
+.tool-theme-page.fine-page footer { border-color: #303138; background: #101115; color: #b5b6be; }
+.tool-theme-page.fine-page .company-option, .tool-theme-page.fine-page .data-row, .tool-theme-page.fine-page .choice-pill span { border-color: #393a42; background: #191a20; color: #dedee3; }
+.tool-theme-page.fine-page :is(.company-name, .data-copy strong, .data-copy small, .company-range, .number-control span, .field label, .field-group legend, .field small, .group-help, .result-body, .sources) { color: #d0d1d6; }
+.tool-theme-page.fine-page .company-option:has(input:checked), .tool-theme-page.fine-page .data-row:has(input:checked), .tool-theme-page.fine-page .choice-pill:has(input:checked) span { border-color: var(--tool-red); background: #32151c; color: #fff; }
+.tool-theme-page.fine-page :is(.limit-box, .calc-box, .disclaimer) { border-color: #40343a; background: #1a171b; color: #ddd5d7; }
+.tool-theme-page.fine-page :is(.card h2, .result-body h3, .sources h2) { color: #f4f4f6; }
+.tool-theme-page.fine-page :is(.tagline, .risk-tag) { background: #32151c; color: #ff9aa7; }
+.tool-theme-page:is(.diagnostic-page, .policy-page, .employment-page) :is(.info-card, .legal-reference, .related-card, .score-layout, .result-list-block, .action-plan, .live-diagnostic, .live-dimension, .dimension-row, .action-item, .result-separators, .context-summary, .information-section, .questionnaire-section, .faq-section, .related-section, .policy-assurances, .policy-step, .policy-document, .employment-stepper, .employment-step, .employment-document, .employment-summary) { border-color: var(--tool-border); background-color: var(--tool-surface); color: var(--tool-text); }
+.tool-theme-page:is(.diagnostic-page, .policy-page, .employment-page) :is(.questionnaire-heading h2, .info-intro h2, .related-heading h2, .faq-heading h2, .hero-summary h2, .form-step-heading h3, .results-header h3, .score-copy h4, .result-list-block h4, .action-plan h4, .result-section-heading h4, .dimension-row h5, .action-content h5, .related-card h3, .info-card h3, .legal-reference h3, .policy-builder-head h2, .policy-step-heading h3, .policy-document h1, .policy-document h2, .policy-document h3, .employment-builder-head h2, .employment-step-heading h3, .employment-result-head h2, .employment-document h2, .employment-document h3) { color: #f4f4f6; }
+.tool-theme-page:is(.diagnostic-page, .policy-page, .employment-page) :is(.hero-facts, .hero-note, .hero-summary > p:not(.summary-kicker), .form-step-heading p, .results-header p, .score-copy > p, .score-copy .score-method, .result-section-heading > span, .dimension-row p, .action-content p, .related-card p, .info-card p, .info-card li, .legal-reference p, .policy-step-heading p, .employment-step-heading p, .employment-builder-head p, .employment-result-head p, .policy-document p, .policy-document li, .employment-document p, .employment-document li) { color: #b8bac2; }
+.tool-theme-page :is(.document-builder, .document-preview-heading, .document-meta, .document-disclaimer, .score-copy .score-method, .live-panel-summary, .result-separators, .context-summary, .action-priority, .empty-result) { border-color: #383940; background-color: #191a20; color: #c9cacf; }
+.tool-theme-page:is(.policy-page, .employment-page, .diagnostic-page) :is(.policy-field input, .policy-field select, .conditional-field input, .document-builder select, .document-builder input, .employment-field input, .employment-field textarea) { border-color: #41424a; background: #191a20; color: #f4f4f6; color-scheme: dark; }
+.tool-theme-page:is(.policy-page, .employment-page, .diagnostic-page) :is(.policy-field input::placeholder, .conditional-field input::placeholder, .employment-field input::placeholder, .employment-field textarea::placeholder) { color: #999ba4; }
+.tool-theme-page:is(.policy-page, .employment-page, .diagnostic-page) :is(.policy-choice, .employment-option, .choice-card, .info-card, .legal-reference, .related-card, .action-item, .dimension-row) { border-color: #393a42; background: #191a20; color: #d7d8dd; }
+.tool-theme-page :is(.policy-choice:has(input:checked), .employment-option:has(input:checked), .choice-card:has(input:checked)) { border-color: var(--tool-red); background: #32151c; color: #fff; }
+.tool-theme-page :is(.privacy-chip, .related-status, .related-tool-status, .info-icon, .summary-icon) { border-color: #63303a; background: #32151c; color: #ff9aa7; }
+.tool-theme-page :is(.progress-fill, .progress-track > span, .policy-progress-track > span, .employment-progress-track span, .dimension-meter > span, .score-ring[data-level]::after) { background-color: var(--tool-red); }
+.tool-theme-page :is(.diagnostic-footer, .employment-footer, .doc-tool-footer) { border-color: #2e2f35; background: #0d0e12; color: #aeb0b8; }
+.tool-theme-page :is(.diagnostic-footer a, .employment-footer a, .doc-tool-footer a) { color: var(--tool-red-light); }
+
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-wizard-card, .cookie-result, .cookie-service-item, .cookie-preview-settings) { border-color: var(--tool-border); background: var(--tool-surface); color: var(--tool-text); }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-progress li, .cookie-choice-option, .cookie-preview-stage, .cookie-preview-banner, .cookie-preview-settings, .cookie-preview-settings-actions button, .cookie-preview-actions button) { border-color: #393a42; background: #191a20; color: #dedee3; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-progress li.is-current, .cookie-progress li.is-complete, .cookie-choice-option:has(input:checked), .cookie-service-item:has(input:checked)) { border-color: var(--tool-red); background: #32151c; color: #fff; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-progress li > span, .cookie-progress li.is-current > span, .cookie-progress li.is-complete > span) { background: var(--tool-red); color: #fff; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-service-row, .cookie-service-name, .cookie-choice-group legend, .cookie-service-details .doc-tool-field label, .cookie-preview-copy strong, .cookie-preview-category) { color: #e6e6ea; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-service-category, .cookie-step-note, .cookie-preview-limit, .cookie-preview-settings p, .cookie-preview-copy p, .cookie-instructions p) { border-color: #49343a; background: #1d171b; color: #c7c0c3; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] :is(.cookie-result-tabs button[aria-selected="true"], .cookie-preview-actions button.is-primary, .cookie-preview-settings-actions button:not(.is-secondary), .cookie-step-actions .doc-tool-button:not(.doc-tool-button-secondary), .cookie-result-actions .doc-tool-button:not(.doc-tool-button-secondary), .cookie-code-actions .doc-tool-button:not(.doc-tool-button-secondary)) { border-color: var(--tool-red); background: var(--tool-red); color: #fff; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-generated-code { border-color: #41424a; background: #101115; color: #ececf0; color-scheme: dark; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .doc-tool-footer { border-color: #303138; background: #0d0e12; color: #aeb0b8; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .doc-tool-footer a { color: var(--tool-red-light); }
+/* Cookie setup fields must remain readable when a service reveals its ID field. */
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .doc-tool-intro h1,
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-wizard-card .doc-tool-card-heading h2 { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-item { border-color: #393a42; background: #191a20; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-row { color: #e6e6ea; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-item:has(.cookie-service-row input:checked) { border-color: var(--tool-red); background: #21161a; box-shadow: inset 0 0 0 1px #d8203a30; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-item:has(.cookie-service-row input:checked) .cookie-service-category { border-color: #77303c; background: #32151c; color: #ff9aa7; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details { border-top-color: #393a42; background: #101115; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .doc-tool-field label { color: #dedee3; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .doc-tool-field input,
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .doc-tool-field textarea { border-color: #41424a; background: #191a20; color: #f4f4f6; color-scheme: dark; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .doc-tool-field input:focus-visible,
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .doc-tool-field textarea:focus-visible { border-color: var(--tool-red-light); outline: 3px solid var(--tool-red-light); outline-offset: 2px; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .doc-tool-field-error { color: var(--tool-error); }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-step-2-fields .cookie-choice-group.rat-choice-services > legend { color: #b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] .cookie-service-details .cookie-field-example { display: block; margin-top: 6px; color: #b5b6be; font-size: 11px; line-height: 1.5; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-stage { display: grid; grid-template-columns: minmax(0, 1fr); align-items: stretch; gap: 12px; min-height: 0; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-banner,
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-settings { box-sizing: border-box; width: 100%; min-width: 0; margin: 0; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-categories { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-category { min-width: 0; display: flex; align-items: flex-start; gap: 9px; padding: 10px; border: 1px solid #393a42; border-radius: 8px; background: #14151a; color: #e6e6ea; line-height: 1.4; overflow-wrap: anywhere; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-category input { flex: 0 0 18px; width: 18px; height: 18px; min-height: 18px; margin: 1px 0 0; padding: 0; accent-color: var(--tool-red); }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-instructions .cookie-instructions :is(h3, ol, li, p) { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-instructions .cookie-instructions p { border-left-color: var(--tool-red); background: #1d171b; }
+@media (max-width: 620px) {
+  body.tool-theme-page.doc-tool-page[data-tool="cookies"] #cookie-panel-preview .cookie-preview-categories { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ARCOP channel choices and conditional fields use readable dark surfaces. */
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-card :is(.arcop-choice, .arcop-right-card) { border-color: #393a42; background: #191a20; color: #e6e6ea; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-card :is(.arcop-choice, .arcop-right-card):hover { border-color: #78404a; background: #24171b; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-card :is(.arcop-choice, .arcop-right-card):has(input:checked) { border-color: var(--tool-red); background: #32151c; color: #fff; box-shadow: inset 0 0 0 1px #d8203a30; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-card :is(.arcop-choice, .arcop-right-card) :is(strong, small) { color: inherit; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-card :is(.arcop-choice-fieldset legend, .arcop-rights-fieldset legend) { color: #e7e7eb; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-choice input,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-right-card input,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-inline-checks input { accent-color: var(--tool-red); }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-multiple-picker,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-channel-fields .arcop-field { border-color: #393a42; background: #191a20; color: #e6e6ea; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-multiple-picker .arcop-choice-fieldset legend,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-channel-fields .arcop-field label,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-inline-checks label { color: #e6e6ea; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-channel-fields .arcop-field :is(input, textarea) { border-color: #41424a; background: #101115; color: #f4f4f6; color-scheme: dark; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-channel-fields .arcop-field :is(input, textarea):focus-visible,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-inline-checks input:focus-visible { border-color: var(--tool-red-light); outline: 3px solid var(--tool-red-light); outline-offset: 2px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-channel-fields .arcop-field .arcop-error,
+body.tool-theme-page.arcop-page[data-tool="arcop"] .arcop-multiple-picker .arcop-error { color: var(--tool-error); }
+/* Keep the generated ARCOP protocol as a white, readable document sheet. */
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document {
+  border-color: #d9e0e7;
+  background: #fff;
+  color: #263244;
+  color-scheme: light;
+}
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document :is(p, li, td, th, strong, em, span) { color: #263244; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-brand { color: #9b2639; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document h1 { color: #172337; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document h2 { border-bottom: 2px solid #00b8d1; color: #172b45; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document h3 { color: #344b65; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-meta { color: #687489; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-note { border-left-color: #9b2639; background: #f7f8fa; color: #4f5f72; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table th,
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table td { border-color: #d9e0e7; color: #263244; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table th { background: #f1f4f7; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document a { color: #8f2430; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document { padding: clamp(24px, 5vw, 52px); font: 14px/1.65 Arial, sans-serif; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-cover { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 18px; border-bottom: 3px solid #172b45; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-brand { display: flex; align-items: center; gap: 10px; margin: 0 0 17px; color: #172b45; font-size: 13px; font-weight: 800; letter-spacing: .08em; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-brand img { display: block; width: 40px; height: 40px; object-fit: contain; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-cover h1 { margin: 0 0 7px; font-size: 27px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-cover p { margin: 3px 0; color: #263244; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-cover-meta { display: grid; align-content: start; gap: 5px; color: #263244; font-size: 12px; text-align: right; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document > section { margin-top: 25px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document h2 { margin: 0 0 14px; padding: 0 0 7px; font-size: 18px; line-height: 1.35; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document > section > p { margin: 10px 0; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-note { margin: 14px 0; padding: 12px 14px; border: 1px solid #cbd6e1; border-left: 3px solid #00a7c4; border-radius: 8px; background: #f5f8fa; color: #263244; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-note-legal { border-color: #9de5c1; background: #f1fbf5; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-note-deadline { border-color: #f2c66d; background: #fff9ec; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-channel p { margin: 3px 0; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table { width: 100%; margin: 12px 0 18px; border-collapse: collapse; table-layout: auto; font-size: 12px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table th,
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table td { padding: 8px 10px; border: 1px solid #d8e0e9; color: #263244; text-align: left; vertical-align: middle; overflow-wrap: anywhere; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table th { background: #f5f7f9; font-weight: 700; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-rights-table th:first-child { width: 21%; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-rights-table th:nth-child(2) { width: 53%; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-rights-table th:nth-child(3) { width: 26%; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-rights-table td:last-child { font-style: italic; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-responsible-table th { width: 34%; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-flow { margin: 14px 0; padding: 0; list-style: none; counter-reset: arcop-flow; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-flow li { position: relative; margin: 0 0 13px; padding: 0 0 0 38px; counter-increment: arcop-flow; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-flow li::before { content: counter(arcop-flow); position: absolute; top: 0; left: 0; width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: #eff8fa; color: #087d96; font-weight: 700; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-flow li > p { margin: 3px 0 0; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-template { margin: 16px 0; padding: 18px; border: 1px solid #d8e0e9; border-radius: 9px; background: #fff; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-template h3 { margin: 0 0 14px; color: #172b45; font-size: 15px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-template p { margin: 11px 0; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-template p:last-child { margin-bottom: 0; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-log-table { table-layout: fixed; font-size: 9px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-log-table th,
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-log-table td { padding: 6px 5px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-log-table tbody tr { height: 32px; }
+body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-note-footer { margin-top: 20px; font-size: 11px; }
+@media (max-width: 700px) {
+  body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document { padding: 22px 16px; }
+  body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-cover { flex-direction: column; gap: 10px; }
+  body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-cover-meta { text-align: left; }
+  body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-doc-table { font-size: 11px; }
+  body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-rights-table { display: block; overflow-x: auto; }
+  body.tool-theme-page.arcop-page[data-tool="arcop"] #arcop-document .arcop-log-table { font-size: 8px; }
+}
+
+body.tool-theme-page.doc-tool-page[data-tool="consent"] :is(.consent-progress li, .consent-choice-option, .consent-generated .consent-choice, .consent-output-source) { border-color: #393a42; background: #191a20; color: #dedee3; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] :is(.consent-progress li.is-current, .consent-progress li.is-complete, .consent-choice-option:has(input:checked)) { border-color: var(--tool-red); background: #32151c; color: #fff; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] :is(.consent-progress li > span, .consent-progress li.is-current > span, .consent-progress li.is-complete > span) { background: var(--tool-red); color: #fff; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] :is(.consent-step-title, .consent-choice-group legend, .consent-output-panel > label, .consent-generated .consent-choice legend) { color: #ededf0; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] .consent-output-source { border-color: #41424a; background: #101115; color: #e7e7eb; color-scheme: dark; }
+
+/* The generated consent form is a document preview, not part of the dark UI. */
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid #d9dee6;
+  border-radius: 5px;
+  background: #fff;
+  color: #263244;
+  font: 14px/1.65 Arial, sans-serif;
+}
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated :is(h1, h2, h3, p, li, strong, label) { color: #263244; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated h1 { color: #172337; font-size: 25px; line-height: 1.25; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated h2 { color: #18263a; font-size: 17px; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated .generated-note { color: #586579; font-size: 12px; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated a { color: #a51f2b; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated .consent-choice {
+  border-color: #cbd6e1;
+  background: #f8fafc;
+  color: #263244;
+}
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated .consent-choice legend { color: #203650; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated .consent-choice input { accent-color: #b91f2c; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated .consent-choice-required { border-left: 4px solid #cf2635; }
+body.tool-theme-page.doc-tool-page[data-tool="consent"] #tool-preview .consent-generated .consent-choice-optional { border-left: 4px solid #607287; }
+
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-panel-heading, .rat-activities-panel, .rat-activity-card, .rat-editor-card, .rat-template-card, .rat-activity-details, .rat-detail, .generated-doc) { border-color: var(--tool-border); background: var(--tool-surface); color: var(--tool-text); }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-panel-heading h2, .rat-activities-heading h2, .rat-detail strong, .rat-activity-card h3, .rat-choice-group legend, .rat-editor-card label) { color: #ececf0; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-panel-heading p, .rat-activities-heading p, .rat-detail span, .rat-count, .rat-template-note) { color: #b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-choice-option, #rat-add-activity, .rat-template-card button) { border-color: #393a42; background: #191a20; color: #dedee3; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-choice-option:has(input:checked) { border-color: var(--tool-red); background: #32151c; color: #fff; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-choice-option input { accent-color: var(--tool-red); }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-editor-card :is(input, select, textarea) { border-color: #41424a; background: #191a20; color: #f4f4f6; color-scheme: dark; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-activity-actions { border-color: #37383f; }
+body.tool-theme-page.doc-tool-page[data-tool] :is(.doc-tool-card-heading h2, .arcop-result-heading h2, .breach-document-heading h2, .notification-document-heading h2) { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool] :is(.doc-tool-card-heading p, .arcop-result-heading p, .breach-document-heading p, .notification-document-heading p) { color: #b5b6be; }
+
+@media (max-width: 760px) {
+  .tool-theme-page :is(.site-header, .doc-tool-header, .fine-header) { position: sticky; top: 0; z-index: 50; min-height: 64px; height: auto; padding: 8px 16px; }
+  .tool-theme-page .brand-name { font-size: 14px; }
+  .tool-theme-page .tool-menu-toggle { display: inline-flex; }
+  .tool-theme-page :is(.doc-tool-header, .fine-header) { position: sticky; justify-content: space-between; flex-wrap: wrap; }
+  .tool-theme-page .main-nav { border: 1px solid #393a42; background: #121318; box-shadow: 0 16px 35px #0009; }
+  .tool-theme-page .main-nav > a { color: #e1e1e5; }
+  .tool-theme-page .doc-tool-nav, .tool-theme-page .fine-header nav { display: none; width: 100%; align-items: stretch; flex-direction: column; gap: 2px; padding: 8px; border: 1px solid #383940; border-radius: 9px; background: #121318; }
+  .tool-theme-page .doc-tool-nav.is-open, .tool-theme-page .fine-header nav.is-open { display: flex; }
+  .tool-theme-page :is(.doc-tool-nav, .fine-header nav) a { padding: 10px; }
+}
+@media (max-width: 520px) {
+  .tool-theme-page :is(.doc-tool-main, .employment-main, .policy-main, .page-wrap), .tool-theme-page.fine-page main { width: calc(100% - 28px); }
+  .tool-theme-page :is(.fine-header nav, .doc-tool-nav) { gap: 2px; }
+  .tool-theme-page :is(.policy-form-grid, .employment-grid, .doc-tool-fields, .arcop-fields, .breach-fields, .notification-fields, .two-col) { grid-template-columns: minmax(0, 1fr); }
+  .tool-theme-page :is(.policy-field.full, .employment-field.full, .doc-tool-field-full, .arcop-field-full, .breach-field-full, .notification-field-full) { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tool-theme-page *, .tool-theme-page *::before, .tool-theme-page *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+@media print {
+  html:has(> body.tool-theme-page), body.tool-theme-page { color-scheme: light; background: #fff !important; color: #222 !important; }
+  .tool-theme-page :is(.policy-document, .employment-document, .arcop-document, .breach-document, .notification-document, .doc-tool-preview, .doc-tool-result, .employment-result, .arcop-result, .breach-generated-card, .notification-generated-card) { border-color: #ddd !important; background: #fff !important; color: #222 !important; box-shadow: none !important; }
+  .tool-theme-page :is(.policy-document *, .employment-document *, .arcop-document *, .breach-document *, .notification-document *, .doc-tool-preview *, .doc-tool-result *, .employment-result *, .arcop-result *, .breach-generated-card *, .notification-generated-card *) { color: #222 !important; }
+  .tool-theme-page :is(.policy-document table, .policy-document th, .policy-document td, .employment-document table, .employment-document th, .employment-document td, .arcop-document table, .arcop-document th, .arcop-document td, .breach-document table, .breach-document th, .breach-document td, .notification-document table, .notification-document th, .notification-document td) { border-color: #777 !important; }
+  .tool-theme-page :is(.policy-document, .employment-document, .arcop-document, .breach-document, .notification-document, .doc-tool-preview, .doc-tool-result, .employment-result, .arcop-result, .breach-generated-card, .notification-generated-card) { break-inside: auto; }
+}
+
+/* Calculadora de multas: alinea las tres etapas con la identidad FOLIOX. */
+body.tool-theme-page.fine-page {
+  --fine-panel: #14151a;
+  --fine-panel-soft: #191a20;
+  --fine-line: #34353c;
+  --fine-red: #d8203a;
+  min-height: 100vh;
+  background: #090a0d !important;
+  color: #f4f4f6;
+}
+body.tool-theme-page.fine-page .fine-header,
+body.tool-theme-page.fine-page footer { border-color: #2a2b31; background: #090a0d; color: #d1d1d6; }
+body.tool-theme-page.fine-page main { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+body.tool-theme-page.fine-page .intro { width: min(100%, 980px); max-width: 980px; margin: 42px auto 34px; text-align: left; }
+body.tool-theme-page.fine-page .intro h1 { color: #f7f7f8; font-size: clamp(38px, 5vw, 58px); }
+body.tool-theme-page.fine-page .intro h1 span { color: #f7f7f8; }
+body.tool-theme-page.fine-page .intro > p { max-width: 820px; margin-inline: 0; color: #c1c2c9; font-size: 16px; }
+body.tool-theme-page.fine-page .intro > .scope-note { margin-top: 10px; color: #a5a7b0; font-size: 13px; }
+body.tool-theme-page.fine-page .workspace { width: min(100%, 1000px); max-width: 1000px; margin-inline: auto; }
+body.tool-theme-page.fine-page .steps { gap: 12px; }
+body.tool-theme-page.fine-page .steps li { min-height: 58px; padding: 12px 16px; border-color: var(--fine-line); border-radius: 10px; background: var(--fine-panel); color: #bfc0c7; font-size: 14px; }
+body.tool-theme-page.fine-page .steps li span { width: 30px; height: 30px; background: #292a31; color: #d7d7dc; font-size: 13px; }
+body.tool-theme-page.fine-page .steps li[aria-current="step"] { border-color: var(--fine-red); background: #32151c; color: #fff; }
+body.tool-theme-page.fine-page .steps li[aria-current="step"] span,
+body.tool-theme-page.fine-page .steps li.is-complete span { background: var(--fine-red); color: #fff; }
+body.tool-theme-page.fine-page .progress { height: 4px; background: #292a31; }
+body.tool-theme-page.fine-page .progress span { background: var(--fine-red); }
+body.tool-theme-page.fine-page .card,
+body.tool-theme-page.fine-page .sources,
+body.tool-theme-page.fine-page .result-main-card,
+body.tool-theme-page.fine-page .result-risk { border-color: var(--fine-line); background: var(--fine-panel); color: #f4f4f6; box-shadow: none; }
+body.tool-theme-page.fine-page .step[data-step="0"],
+body.tool-theme-page.fine-page .step[data-step="1"],
+body.tool-theme-page.fine-page .step[data-step="2"],
+body.tool-theme-page.fine-page .is-step-2 .result-page { width: 100%; max-width: 100%; }
+body.tool-theme-page.fine-page :is(.step[data-step="0"], .step[data-step="1"], .step[data-step="2"]) { padding: clamp(24px, 3vw, 36px); border: 1px solid var(--fine-line); border-radius: 14px; background: var(--fine-panel); }
+body.tool-theme-page.fine-page .card-heading { margin-bottom: 24px; }
+body.tool-theme-page.fine-page .card-heading h2 { color: #f4f4f6; font-size: clamp(24px, 3vw, 30px); }
+body.tool-theme-page.fine-page .card-heading > p { color: #b5b6be; font-size: 15px; }
+body.tool-theme-page.fine-page .step-kicker { color: #ff7888; }
+body.tool-theme-page.fine-page .field-group legend,
+body.tool-theme-page.fine-page .field label { color: #ededf0; font-size: 14px; }
+body.tool-theme-page.fine-page .company-option,
+body.tool-theme-page.fine-page .data-row,
+body.tool-theme-page.fine-page .choice-pill span { border-color: #393a42; background: var(--fine-panel-soft); color: #dedee3; }
+body.tool-theme-page.fine-page .company-option:has(input:checked),
+body.tool-theme-page.fine-page .data-row:has(input:checked),
+body.tool-theme-page.fine-page .choice-pill:has(input:checked) span { border-color: var(--fine-red); background: #32151c; color: #fff; }
+body.tool-theme-page.fine-page :is(.company-name, .company-range, .data-copy, .group-help, .field small) { color: #b5b6be; }
+body.tool-theme-page.fine-page :is(.people-number, .cause-field select, .date-field input) { min-height: 48px; border: 1px solid #41424a; border-radius: 8px; background: #191a20; color: #f4f4f6; color-scheme: dark; font: inherit; }
+body.tool-theme-page.fine-page .people-number { width: min(100%, 360px); padding: 10px 12px; font-size: 20px; font-weight: 750; font-variant-numeric: tabular-nums; }
+body.tool-theme-page.fine-page .people-number:focus-visible { border-color: #ff7888; outline: 3px solid #ff7888; outline-offset: 2px; }
+body.tool-theme-page.fine-page .people-field { gap: 10px; }
+body.tool-theme-page.fine-page .vulnerability-fields { gap: 24px; }
+body.tool-theme-page.fine-page .data-list { gap: 9px; }
+body.tool-theme-page.fine-page .data-row { min-height: 46px; padding: 10px 14px; }
+body.tool-theme-page.fine-page .data-copy { color: #e7e7eb; font-size: 14px; line-height: 1.45; }
+body.tool-theme-page.fine-page .data-row input,
+body.tool-theme-page.fine-page .choice-pill input { accent-color: var(--fine-red); }
+body.tool-theme-page.fine-page .risk-tag { background: #32151c; color: #ff9aa7; }
+body.tool-theme-page.fine-page .risk-tag.high-risk { background: #3b2027; color: #ffabb4; }
+body.tool-theme-page.fine-page .actions { max-width: 100%; margin: 18px auto 0; padding: 0; }
+body.tool-theme-page.fine-page .actions .button,
+body.tool-theme-page.fine-page .result-actions .button { min-height: 46px; padding-inline: 20px; border-color: var(--fine-red); border-radius: 8px; background: var(--fine-red); color: #fff; font-size: 14px; }
+body.tool-theme-page.fine-page .actions .button:hover,
+body.tool-theme-page.fine-page .result-actions .button:hover { background: #f0344e; }
+body.tool-theme-page.fine-page .actions .button.secondary,
+body.tool-theme-page.fine-page .result-actions .button.secondary { border-color: #45464e; background: #191a20; color: #e3e3e7; }
+body.tool-theme-page.fine-page .actions .button:disabled { border-color: #383940; background: #191a20; color: #888a93; }
+/* Keep the Conducta navigation directly below its card, without a narrow nested panel. */
+body.tool-theme-page.fine-page.is-step-2 #form-actions {
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0 0;
+  padding: 18px 0 0;
+  border: 0;
+  border-top: 1px solid #34353c;
+  border-radius: 0;
+  background: transparent;
+}
+body.tool-theme-page.fine-page.is-step-2 #form-actions::before { display: none; }
+body.tool-theme-page.fine-page.is-step-2 #form-actions .button {
+  min-width: 132px;
+  min-height: 46px;
+  padding-inline: 20px;
+  border: 1px solid #d8203a;
+  border-radius: 8px;
+  background: #d8203a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+body.tool-theme-page.fine-page.is-step-2 #form-actions .button:hover { border-color: #f0344e; background: #f0344e; }
+body.tool-theme-page.fine-page.is-step-2 #form-actions .button.secondary {
+  border-color: #45464e;
+  background: #191a20;
+  color: #e3e3e7;
+}
+body.tool-theme-page.fine-page.is-step-2 #form-actions .button.secondary:hover { border-color: #777982; background: #24252b; }
+body.tool-theme-page.fine-page.is-step-2 #form-actions .button:disabled { border-color: #383940; background: #191a20; color: #888a93; }
+body.tool-theme-page.fine-page .sources { margin: 28px auto 42px; }
+body.tool-theme-page.fine-page .sources h2 { color: #f4f4f6; }
+body.tool-theme-page.fine-page .sources p,
+body.tool-theme-page.fine-page .sources li { color: #c1c2c9; font-size: 14px; }
+body.tool-theme-page.fine-page .sources a { color: #ff8795; }
+body.tool-theme-page.fine-page .disclaimer,
+body.tool-theme-page.fine-page .calc-box,
+body.tool-theme-page.fine-page .limit-box { border-color: #40343a; background: #1a171b; color: #ddd5d7; }
+body.tool-theme-page.fine-page .result-page { width: min(100%, 960px); max-width: 960px; margin-inline: auto; }
+body.tool-theme-page.fine-page .result-main-card h2 { color: #ff7888; }
+body.tool-theme-page.fine-page .result-cap-amount { color: #fff; }
+body.tool-theme-page.fine-page footer { padding-inline: max(32px, calc((100% - 1180px) / 2)); }
+@media (max-width: 760px) {
+  body.tool-theme-page.fine-page main { width: calc(100% - 32px); }
+  body.tool-theme-page.fine-page .intro { margin: 28px auto 24px; }
+  body.tool-theme-page.fine-page .intro > p { font-size: 15px; }
+  body.tool-theme-page.fine-page .steps { gap: 7px; }
+  body.tool-theme-page.fine-page .steps li { min-height: 50px; gap: 7px; padding: 8px; font-size: 12px; }
+  body.tool-theme-page.fine-page :is(.step[data-step="0"], .step[data-step="1"], .step[data-step="2"]) { padding: 22px 18px; }
+  body.tool-theme-page.fine-page .company-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.tool-theme-page.fine-page .result-page { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  body.tool-theme-page.fine-page main { width: calc(100% - 24px); }
+  body.tool-theme-page.fine-page .intro h1 { font-size: clamp(34px, 9vw, 44px); }
+  body.tool-theme-page.fine-page .steps { grid-template-columns: 1fr; gap: 6px; }
+  body.tool-theme-page.fine-page .steps li { min-height: 42px; }
+  body.tool-theme-page.fine-page .company-grid { grid-template-columns: minmax(0, 1fr); }
+  body.tool-theme-page.fine-page :is(.step[data-step="0"], .step[data-step="1"], .step[data-step="2"]) { padding: 20px 15px; }
+  body.tool-theme-page.fine-page .data-row { align-items: center; }
+  body.tool-theme-page.fine-page .data-copy { font-size: 13px; }
+  body.tool-theme-page.fine-page .actions .button { padding-inline: 14px; }
+  body.tool-theme-page.fine-page.is-step-2 #form-actions .button { min-width: 0; padding-inline: 15px; }
+  body.tool-theme-page.fine-page footer { gap: 10px; padding-inline: 12px; font-size: 12px; }
+}
+
+/* Layout rhythm shared by the tool pages. These rules normalize sizing while
+   leaving each tool's existing form order and page composition intact. */
+.tool-theme-page :is(.doc-tool-main, .employment-main, .policy-main, .page-wrap, .arcop-main, .breach-main, .notification-main) {
+  width: min(1080px, calc(100% - 48px));
+  min-width: 0;
+  margin-inline: auto;
+}
+.tool-theme-page :is(.doc-tool-intro, .diagnostic-hero, .policy-intro, .employment-intro, .intro) {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.tool-theme-page :is(.doc-tool-intro h1, .diagnostic-hero h1, .policy-intro h1, .employment-intro h1, .intro h1) {
+  margin-bottom: 12px;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -.04em;
+}
+.tool-theme-page :is(.doc-tool-card, .arcop-card, .breach-card, .notification-card, .employment-card, .policy-card, .card) {
+  border-radius: 12px;
+}
+.tool-theme-page :is(.doc-tool-card-heading, .card-heading, .employment-builder-head, .policy-builder-head, .arcop-result-heading, .breach-document-heading, .notification-document-heading) {
+  margin-bottom: 20px;
+}
+.tool-theme-page :is(.doc-tool-card-heading h2, .card-heading h2, .employment-builder-head h2, .policy-builder-head h2, .arcop-result-heading h2, .breach-document-heading h2, .notification-document-heading h2) {
+  font-size: clamp(21px, 2.5vw, 26px);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+.tool-theme-page :is(.doc-tool-field, .field, .policy-field, .employment-field, .arcop-field, .breach-field, .notification-field) { min-width: 0; }
+.tool-theme-page :is(.doc-tool-field label, .field label, .policy-field > label, .employment-field label, .arcop-field label, .breach-field label, .notification-field label) {
+  margin-bottom: 7px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.tool-theme-page :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select) { min-height: 42px; }
+.tool-theme-page :is(.doc-tool-button, .button, .next-button, .secondary-button, .reset-button, .employment-button, .arcop-button, .breach-button, .notification-button) {
+  min-height: 40px;
+  border-radius: 7px;
+}
+@media (max-width: 760px) {
+  .tool-theme-page :is(.doc-tool-main, .employment-main, .policy-main, .page-wrap, .arcop-main, .breach-main, .notification-main) { width: calc(100% - 36px); }
+  .tool-theme-page :is(.doc-tool-card, .arcop-card, .breach-card, .notification-card, .employment-card, .policy-card, .card) { padding: 22px; }
+}
+@media (max-width: 520px) {
+  .tool-theme-page :is(.doc-tool-main, .employment-main, .policy-main, .page-wrap, .arcop-main, .breach-main, .notification-main) { width: calc(100% - 28px); }
+  .tool-theme-page :is(.doc-tool-card, .arcop-card, .breach-card, .notification-card, .employment-card, .policy-card, .card) { padding: 18px 16px; }
+  .tool-theme-page :is(.doc-tool-card-heading, .card-heading, .employment-builder-head, .policy-builder-head, .arcop-result-heading, .breach-document-heading, .notification-document-heading) { margin-bottom: 16px; }
+}
+
+/* RAT workflow surfaces must stay dark after the legacy light component rules. */
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-flow-panel {
+  border-color: #34353c;
+  background: #14151a;
+  color: #f4f4f6;
+  box-shadow: 0 12px 30px #0004;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-panel-heading {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-panel-heading h2, .rat-activities-heading h2) { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-panel-heading p, .rat-activities-heading p) { color: #b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-company-field label { color: #e7e7eb; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-company-field label .rat-optional-label,
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-company-field small { color: #aeb0b8; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-company-field input {
+  border-color: #41424a;
+  background: #101115;
+  color: #f4f4f6;
+  color-scheme: dark;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-company-field input:focus-visible {
+  border-color: #ff7888;
+  outline: 3px solid #ff7888;
+  outline-offset: 2px;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template-disabled-note { color: #ff9aa7; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template {
+  border-color: #41424a;
+  background: #191a20;
+  color: #e4e4e8;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template:hover:not(:disabled) {
+  border-color: #78404a;
+  background: #24171b;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template:focus-visible {
+  outline: 3px solid #ff7888;
+  outline-offset: 3px;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template[aria-pressed="true"] {
+  border-color: var(--tool-red);
+  background: #32151c;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px #d8203a55;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template:disabled {
+  border-color: #383940;
+  background: #17181d;
+  color: #c4c5cb;
+  opacity: 1;
+  cursor: not-allowed;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template-icon,
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-activity-number,
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-empty-state > span {
+  background: #32151c;
+  color: #ff7888;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template:disabled .rat-template-icon {
+  background: #252126;
+  color: #d7a0a7;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template-copy strong { color: inherit; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template-copy small { color: #b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template-count { border-color: #574047; color: #ff9aa7; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-template-note {
+  border-left-color: var(--tool-red);
+  background: #1c171b;
+  color: #d1c6c9;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-activity-card, .rat-activity-details, .rat-detail, .rat-editor-card, .rat-empty-state, .rat-empty-suggestions) {
+  border-color: #34353c;
+  background: #191a20;
+  color: #e1e1e5;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-activity-card-heading { border-bottom-color: #383940; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-activity-card-heading h3 { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-detail strong { color: #ff9aa7; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-detail span { color: #d0d1d6; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-detail span.is-pending { color: #a5a7b0; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-empty-state h3,
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-empty-suggestions h3 { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] :is(.rat-empty-state p, .rat-empty-suggestions p) { color: #b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-empty-suggestion-list { background: transparent; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-activity-actions { border-color: #383940; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-count { color: #b5b6be; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-editor-card .doc-tool-card-heading h2 { color: #f4f4f6; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-editor-card .doc-tool-card-heading p,
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-editor-card .doc-tool-field label { color: #e7e7eb; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-editor-card :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  border-color: #41424a;
+  background: #101115;
+  color: #f4f4f6;
+  color-scheme: dark;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-choice-option {
+  border-color: #41424a;
+  background: #191a20;
+  color: #dedee3;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-choice-option:has(input:checked) {
+  border-color: var(--tool-red);
+  background: #32151c;
+  color: #fff;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] .rat-choice-option input { accent-color: var(--tool-red); }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] #tool-result .generated-doc {
+  border-color: #d5dbe3;
+  background: #fff;
+  color: #263244;
+}
+body.tool-theme-page.doc-tool-page[data-tool="rat"] #tool-result .generated-doc :is(h1, h2, h3, p, li, th, td, strong, span) { color: #263244; }
+body.tool-theme-page.doc-tool-page[data-tool="rat"] #tool-result .rat-document-table-wrap { background: #fff; }

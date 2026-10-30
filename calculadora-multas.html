@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content="FOLIOX Studio">
+  <title>Calculadora de Multas — Ley 21.719 | FOLIOX Studio</title>
+  <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+  <link rel="stylesheet" href="calculadora-multas.css">
+  <script src="calculadora-multas.js" defer></script>
+  <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+<body class="fine-page tool-theme-page">
+  <header class="fine-header">
+    <a class="brand fine-brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+    <button class="tool-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fine-main-nav"><span></span><span></span></button><nav id="fine-main-nav" aria-label="Navegación"><a href="index.html#herramientas">Herramientas</a><a href="index.html">Inicio</a></nav>
+  </header>
+  <main id="main-content">
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">Calculadora de Multas<br><span>— Ley 21.719</span></h1>
+      <p>Revisa qué infracción podría corresponder según los hechos declarados y consulta el máximo legal aplicable. La herramienta no predice la multa que impondría la autoridad.</p>
+      <p class="scope-note">La Ley 21.719 entra en vigor el 1 de diciembre de 2026. El escenario temporal distingue hechos anteriores y posteriores sin solicitar ni inferir una fecha exacta; el régimen anterior solo permite consultar las multas judiciales específicas del artículo 16 de la Ley 19.628.</p>
+      <p class="scope-note">Este cálculo cubre a responsables privados. Los organismos públicos tienen un régimen sancionador distinto en el artículo 44 de la Ley 21.719.</p>
+    </section>
+    <div class="workspace">
+      <ol class="steps" id="steps" aria-label="Pasos de la calculadora">
+        <li aria-current="step"><span>1</span><strong>Empresa</strong></li>
+        <li><span>2</span><strong>Vulneración</strong></li>
+        <li><span>3</span><strong>Conducta</strong></li>
+      </ol>
+      <div class="progress" id="progress" role="progressbar" aria-label="Progreso de la calculadora" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-valuetext="Paso 1 de 3"><span></span></div>
+      <form id="fine-form" novalidate>
+        <section class="card step" data-step="0" aria-labelledby="step1-title">
+          <div class="card-heading"><span class="step-kicker">PASO 1 · EMPRESA</span><h2 id="step1-title" tabindex="-1">Tu empresa</h2><p>Indica su tamaño y responde el escenario temporal del incidente.</p></div>
+          <fieldset class="field-group company-group" id="company-group" aria-describedby="size-help size-error" aria-required="true">
+            <legend>Tamaño de la empresa</legend>
+            <div class="company-grid" id="company-grid">
+              <label class="company-option"><input type="radio" name="size" value="micro" required><span class="company-name">Microempresa</span><span class="company-range">Hasta 2.400 UF</span></label>
+              <label class="company-option"><input type="radio" name="size" value="small"><span class="company-name">Pequeña</span><span class="company-range">Más de 2.400 y hasta 25.000 UF</span></label>
+              <label class="company-option"><input type="radio" name="size" value="medium"><span class="company-name">Mediana</span><span class="company-range">Más de 25.000 y hasta 100.000 UF</span></label>
+              <label class="company-option"><input type="radio" name="size" value="large"><span class="company-name">Grande</span><span class="company-range">Más de 100.000 UF</span></label>
+            </div>
+            <p class="field-error" id="size-error" role="alert" hidden>Selecciona una categoría de empresa.</p>
+            <small class="group-help" id="size-help">La Ley 20.416, artículo segundo, clasifica según ingresos del giro del último año calendario, descontado IVA e impuestos específicos. La ley contempla exclusiones adicionales; esta selección no verifica esos supuestos.</small>
+          </fieldset>
+          <fieldset class="field-group compact-group" id="dpo-group" aria-describedby="dpo-error dpo-help" aria-required="true">
+            <legend>¿Tienes Delegado de Protección de Datos (DPO)?</legend>
+            <div class="choice-row"><label class="choice-pill"><input type="radio" name="dpo" value="yes" required><span>Sí</span></label><label class="choice-pill"><input type="radio" name="dpo" value="no"><span>No</span></label></div>
+            <p class="field-error" id="dpo-error" role="alert" hidden>Selecciona Sí o No.</p>
+            <small class="group-help" id="dpo-help">El delegado forma parte del modelo de prevención; su sola designación no da una rebaja automática (arts. 36, 49 y 51).</small>
+          </fieldset>
+          <fieldset class="field-group compact-group" id="temporal-group" aria-describedby="temporal-error temporal-help" aria-required="true">
+            <legend>Escenario temporal del incidente: ¿ocurrió desde la entrada en vigor de la Ley 21.719?</legend>
+            <div class="choice-row"><label class="choice-pill"><input type="radio" name="temporal" value="yes" required><span>Sí</span></label><label class="choice-pill"><input type="radio" name="temporal" value="no"><span>No</span></label></div>
+            <p class="field-error" id="temporal-error" role="alert" hidden>Selecciona Sí o No.</p>
+            <small class="group-help" id="temporal-help">Sí: el escenario supone que la Ley 21.719 ya está vigente. No: el escenario es anterior a su entrada en vigor prevista para el 1 de diciembre de 2026. No se solicita ni se infiere una fecha exacta.</small>
+          </fieldset>
+        </section>
+
+        <section class="card step" data-step="1" aria-labelledby="step2-title" hidden>
+          <div class="card-heading"><span class="step-kicker">PASO 2 · VULNERACIÓN</span><h2 id="step2-title" tabindex="-1">La vulneración</h2><p>Características del incidente hipotético.</p></div>
+          <div class="vulnerability-fields">
+            <div class="field people-field">
+              <label for="people">Número de titulares afectados</label>
+              <input id="people" name="people" class="people-number" type="number" min="0" step="1" inputmode="numeric" value="460200" aria-describedby="people-hint people-error">
+              <small id="people-hint">Escribe el número entero de titulares afectados.</small>
+              <p class="field-error" id="people-error" role="alert" hidden>Ingresa un entero no negativo.</p>
+            </div>
+            <fieldset class="field-group wide data-group">
+              <legend>Tipos de datos comprometidos (puedes seleccionar varios)</legend>
+              <div class="data-list">
+                <label class="data-row"><input type="checkbox" name="data" value="identification"><span class="data-copy">Datos de identificación (RUT, nombre, dirección)</span></label>
+                <label class="data-row"><input type="checkbox" name="data" value="contact"><span class="data-copy">Datos de contacto (email, teléfono)</span></label>
+                <label class="data-row"><input type="checkbox" name="data" value="economic"><span class="data-copy">Datos económicos (transacciones, deudas)</span></label>
+                <label class="data-row is-sensitive"><input type="checkbox" name="data" value="health"><span class="data-copy">Datos sensibles: salud</span><span class="risk-tag">Sensible</span></label>
+                <label class="data-row is-sensitive"><input type="checkbox" name="data" value="biometric"><span class="data-copy">Datos sensibles: biométricos</span><span class="risk-tag">Sensible</span></label>
+                <label class="data-row is-sensitive"><input type="checkbox" name="data" value="sensitive"><span class="data-copy">Datos sensibles: orientación sexual, creencias, origen</span><span class="risk-tag">Sensible</span></label>
+                <label class="data-row is-sensitive"><input type="checkbox" name="data" value="minors"><span class="data-copy">Datos de niños, niñas o adolescentes</span><span class="risk-tag high-risk">Alto riesgo</span></label>
+                <label class="data-row"><input type="checkbox" name="data" value="credentials"><span class="data-copy">Credenciales de acceso (passwords, tokens)</span></label>
+              </div>
+            </fieldset>
+            <div class="field cause-field"><label for="incident-kind">Causa probable</label><select id="incident-kind" name="incident"><option value="">Selecciona si se conoce</option><option value="access">Acceso no autorizado</option><option value="loss">Pérdida o destrucción</option><option value="disclosure">Divulgación o comunicación</option><option value="alteration">Alteración</option><option value="other">Otro</option><option value="unknown">No se sabe</option></select></div>
+          </div>
+        </section>
+
+        <section class="card step" data-step="2" aria-labelledby="step3-title" hidden>
+          <div class="card-heading"><span class="step-kicker">PASO 3 · CONDUCTA</span><h2 id="step3-title" tabindex="-1">Conducta de la empresa</h2><p>Cómo respondiste tras detectar la vulneración.</p></div>
+          <div class="conduct-fields">
+            <fieldset class="field-group conduct-question" id="notified-group" aria-describedby="notified-error notified-help" aria-required="true">
+              <legend>¿Notificaste a la Agencia “sin dilaciones indebidas”?</legend>
+              <div class="choice-row"><label class="choice-pill"><input type="radio" name="notified" value="yes" required><span>Sí</span></label><label class="choice-pill"><input type="radio" name="notified" value="no"><span>No</span></label><label class="choice-pill"><input type="radio" name="notified" value="na"><span>No aplica</span></label></div>
+              <p class="field-error" id="notified-error" role="alert" hidden>Selecciona una opción para continuar.</p>
+              <small class="group-help" id="notified-help">El art. 14 sexies exige avisar sin dilaciones indebidas cuando la vulneración pueda producir un riesgo razonable a los derechos y libertades. No establece un plazo general de 72 horas.</small>
+            </fieldset>
+            <fieldset class="field-group conduct-question" id="affected-group" aria-describedby="affected-error" aria-required="true">
+              <legend>¿Notificaste a los titulares afectados?</legend>
+              <div class="choice-row"><label class="choice-pill"><input type="radio" name="affectedNotice" value="yes" required><span>Sí</span></label><label class="choice-pill"><input type="radio" name="affectedNotice" value="partial"><span>Parcialmente</span></label><label class="choice-pill"><input type="radio" name="affectedNotice" value="no"><span>No</span></label></div>
+              <p class="field-error" id="affected-error" role="alert" hidden>Selecciona una opción para continuar.</p>
+            </fieldset>
+            <fieldset class="field-group conduct-question" id="protocol-group" aria-describedby="protocol-error" aria-required="true">
+              <legend>¿Tenías protocolo de seguridad escrito antes del incidente?</legend>
+              <div class="choice-row"><label class="choice-pill"><input type="radio" name="protocol" value="yes" required><span>Sí</span></label><label class="choice-pill"><input type="radio" name="protocol" value="no"><span>No</span></label></div>
+              <p class="field-error" id="protocol-error" role="alert" hidden>Selecciona Sí o No para continuar.</p>
+            </fieldset>
+            <fieldset class="field-group conduct-question" id="recurrence-group" aria-describedby="recurrence-error recurrence-help" aria-required="true">
+              <legend>¿Es reincidente?</legend>
+              <div class="choice-row"><label class="choice-pill"><input type="radio" name="priorSanctions" value="zero" required><span>Primer incidente</span></label><label class="choice-pill"><input type="radio" name="priorSanctions" value="one"><span>Segunda infracción</span></label><label class="choice-pill"><input type="radio" name="priorSanctions" value="twoPlus"><span>Tercera o más</span></label></div>
+              <p class="field-error" id="recurrence-error" role="alert" hidden>Selecciona una opción para continuar.</p>
+              <small class="group-help" id="recurrence-help">La reincidencia (art. 36 letra a) requiere dos o más sanciones firmes o ejecutoriadas en los últimos 30 meses; incidentes internos sin sanción firme no cuentan.</small>
+            </fieldset>
+            <div id="current-law-questions">
+            <div class="field conduct-legal-question">
+              <label for="conduct-processing">¿Se trataron datos sin consentimiento ni otro fundamento legal, o para una finalidad distinta a la informada al recolectarlos?</label>
+              <select id="conduct-processing" name="conductProcessing" required><option value="">Selecciona una respuesta</option><option value="no">No, no se observa esa conducta</option><option value="yes">Sí, ocurrió una de esas conductas</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>Una respuesta afirmativa apunta al artículo 34 ter letra a. La Agencia debe verificar si faltaba una base de licitud o si el propósito efectivamente era distinto.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-disclosure">¿Se comunicaron o cedieron datos personales sin consentimiento cuando era necesario, o para un fin distinto del autorizado?</label>
+              <select id="conduct-disclosure" name="conductDisclosure" required><option value="">Selecciona una respuesta</option><option value="no">No, no se observa esa conducta</option><option value="yes">Sí, ocurrió una de esas conductas</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>Puede ser infracción grave (art. 34 ter letra b). Debe verificarse si el consentimiento era necesario o si el fin excedió lo autorizado.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-quality">¿Se trataron datos innecesarios para la finalidad, o datos inexactos, incompletos o desactualizados?</label>
+              <select id="conduct-quality" name="conductQuality" required><option value="">Selecciona una respuesta</option><option value="no">No, no se observa esa conducta</option><option value="unnecessary">Sí, se trataron datos innecesarios para el fin</option><option value="inaccurate">Sí, se trataron datos inexactos, incompletos o desactualizados</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>Puede ser infracción grave (art. 34 ter letras c/d), salvo la excepción legal para datos cuya actualización corresponde al titular por ley o contrato.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-transparency">¿Se incumplió el deber legal de información y transparencia del tratamiento?</label>
+              <select id="conduct-transparency" name="conductTransparency" required><option value="">Selecciona una respuesta</option><option value="no">No, se cumplió o no aplica</option><option value="yes">Sí, se omitió o incumplió total o parcialmente</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>La omisión total o parcial puede corresponder a infracción leve (art. 34 bis letra a; deber del art. 14 ter). La Agencia debe revisar los hechos.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-rights">¿Qué ocurrió con solicitudes de derechos de titulares?</label>
+              <select id="conduct-rights" name="conductRights" required><option value="">Selecciona una respuesta</option><option value="none">No hubo solicitudes, o se respondieron completas y oportunamente</option><option value="incomplete">Se omitió, incompletó o retrasó una respuesta</option><option value="obstructed">Se impidió u obstaculizó el ejercicio de un derecho</option><option value="blocking">Se omitió, retrasó o denegó sin causa una solicitud fundada de bloqueo temporal</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>La respuesta incompleta o tardía puede ser leve (art. 34 bis letra c); la obstaculización o el incumplimiento relativo al bloqueo temporal puede ser grave (art. 34 ter letras e/f). La calificación depende de la solicitud y sus plazos.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-security">¿Qué ocurrió con las obligaciones de seguridad y sus comunicaciones obligatorias?</label>
+              <select id="conduct-security" name="conductSecurity" required><option value="">Selecciona una respuesta</option><option value="none">No se identifica incumplimiento de seguridad ni comunicación omitida</option><option value="security">Se incumplieron obligaciones legales de seguridad</option><option value="report">Se omitió una comunicación o registro obligatorio ante una vulneración de seguridad</option><option value="deliberateReport">Se omitió deliberadamente una comunicación obligatoria sobre una vulneración</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>El incumplimiento de seguridad y la omisión de comunicaciones o registros obligatorios pueden ser graves (art. 34 ter letras j/k); la omisión deliberada de comunicación puede ser gravísima (art. 34 quáter letra f). Solo aplica si existía el deber legal en ese caso.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-special-data">¿Se trataron datos de niños, niñas o adolescentes contra las reglas legales, o datos sensibles a sabiendas y contra la ley?</label>
+              <select id="conduct-special-data" name="conductSpecialData" required><option value="">Selecciona una respuesta</option><option value="none">No, o no aplica a los datos seleccionados</option><option value="minorsUnlawful">Sí, se trataron datos de NNA infringiendo las reglas legales</option><option value="knowingSensitive">Sí, a sabiendas se trataron, comunicaron o cedieron datos sensibles o de NNA contra la ley</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>El tratamiento ilícito de datos de NNA puede ser grave (art. 34 ter letra g); hacerlo a sabiendas con datos sensibles o de NNA puede ser gravísimo (art. 34 quáter letra e). Debe coincidir con las categorías de datos marcadas en el paso anterior.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-secrecy">¿Se vulneró el deber de secreto o confidencialidad?</label>
+              <select id="conduct-secrecy" name="conductSecrecy" required><option value="">Selecciona una respuesta</option><option value="no">No, no se observa esa conducta</option><option value="general">Sí, respecto de datos personales en general</option><option value="sensitive">Sí, respecto de datos sensibles marcados en el paso anterior</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>La vulneración del deber puede ser grave (art. 34 ter letra i); respecto de datos sensibles o datos sobre infracciones penales, civiles, administrativas o disciplinarias es gravísima (art. 34 quáter letra d). Esta herramienta solo recoge categorías sensibles, no valida categorías especiales adicionales.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-transfer">¿Se hizo una transferencia internacional de datos que contravenía las reglas legales?</label>
+              <select id="conduct-transfer" name="conductTransfer" required><option value="">Selecciona una respuesta</option><option value="no">No, no se observa esa conducta</option><option value="ordinary">Sí, la transferencia contravenía la ley</option><option value="knowing">Sí, se realizó a sabiendas de la contravención</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>La transferencia contraria a la ley puede ser grave (art. 34 ter letra m); realizarla a sabiendas es gravísima (art. 34 quáter letra h). Debe identificarse el mecanismo de transferencia y la regla infringida.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-false-data">¿Se comunicó o cedió a sabiendas información no veraz, incompleta, inexacta o desactualizada sobre un titular?</label>
+              <select id="conduct-false-data" name="conductFalseData" required><option value="">Selecciona una respuesta</option><option value="no">No, no se observa esa conducta</option><option value="yes">Sí, se comunicó o cedió a sabiendas</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>Puede ser gravísima (art. 34 quáter letra c). Se requiere conocimiento de la falsedad, incompletitud, inexactitud o falta de actualización.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-intent">¿Hay antecedentes de tratamiento fraudulento o de desvío malicioso de datos a otra finalidad?</label>
+              <select id="conduct-intent" name="conductIntent" required><option value="">Selecciona una respuesta</option><option value="none">No se identifica ninguna de esas conductas</option><option value="fraudulent">Sí, el tratamiento habría sido fraudulento</option><option value="maliciousPurpose">Sí, los datos se destinaron maliciosamente a otra finalidad</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>Ambas conductas están tipificadas como gravísimas (art. 34 quáter letras a/b). Un error, propósito distinto o incumplimiento ordinario no acredita por sí solo fraude o malicia.</small>
+            </div>
+            <div class="field conduct-legal-question">
+              <label for="conduct-authority">¿Se incumplió alguna instrucción o resolución de la Agencia?</label>
+              <select id="conduct-authority" name="conductAuthority" required><option value="">Selecciona una respuesta</option><option value="none">No hubo incumplimiento</option><option value="general">Se incumplió una instrucción general, sin otro tipo grave aplicable</option><option value="specific">Se incumplió una resolución o requerimiento específico y directo</option><option value="rightsResolution">Se incumplió una resolución que resolvió una reclamación de derechos</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>La instrucción general puede ser leve solo si el hecho no está calificado como grave o gravísimo (art. 34 bis letra e); un requerimiento específico y directo es grave (art. 34 ter letra n); incumplir la resolución de una reclamación es gravísimo (art. 34 quáter letra i).</small>
+            </div>
+            <fieldset class="field-group conduct-question" id="recurrence-proof-group" aria-describedby="recurrence-proof-help">
+              <legend>¿Puedes confirmar que existen dos o más sanciones previas por infracciones a esta ley en los últimos 30 meses, con resoluciones firmes o ejecutoriadas?</legend>
+              <div class="choice-row"><label class="choice-pill"><input type="radio" name="recurrenceVerified" value="yes" required><span>Sí, tengo antecedentes</span></label><label class="choice-pill"><input type="radio" name="recurrenceVerified" value="no"><span>No</span></label><label class="choice-pill"><input type="radio" name="recurrenceVerified" value="unknown"><span>No lo puedo confirmar</span></label></div>
+              <small class="group-help" id="recurrence-proof-help">Solo un “Sí” junto con “Tercera o más” en la pregunta anterior activa el máximo por reincidencia (art. 35, inciso tercero; art. 36 letra a). Es una declaración, no una verificación documental.</small>
+            </fieldset>
+            </div>
+            <div class="field conduct-legal-question legacy-only" id="legacy-fine-group" hidden>
+              <label for="legacy-fine">Si el escenario es anterior al 1 de diciembre de 2026, ¿qué resolvió un tribunal bajo el procedimiento del artículo 16 de la Ley 19.628?</label>
+              <select id="legacy-fine" name="legacyFine"><option value="">Selecciona si se conoce</option><option value="none">No existe esa resolución o no se conoce una multa impuesta</option><option value="general">Reclamación acogida: multa de 1 a 10 UTM prevista para el caso general</option><option value="economic">Reclamación acogida por datos de obligaciones económicas: 10 a 50 UTM</option><option value="noncompliance">Incumplimiento de la orden judicial: 2 a 50 UTM</option><option value="unknown">No se sabe o faltan antecedentes</option></select>
+              <small>La Ley 19.628 anterior no establece una multa administrativa general por cualquier vulneración. El art. 16 contempla estos rangos dentro de un procedimiento judicial específico; la multa concreta depende de la sentencia.</small>
+            </div>
+          </div>
+        </section>
+        <p class="error" id="step-error" role="alert" hidden>Revisa los campos señalados antes de continuar.</p>
+        <div class="actions" id="form-actions"><button class="button secondary" id="previous" type="button" disabled>Anterior</button><button class="button" id="next" type="button">Siguiente <span aria-hidden="true">→</span></button></div>
+      </form>
+
+      <section class="result result-page" id="result" aria-labelledby="result-title" hidden>
+        <div id="result-body" class="result-screen"></div>
+        <p class="result-return-note">“Calcular otra vez” vuelve al formulario y conserva tus respuestas. Usa “Borrar respuestas” para empezar de cero.</p>
+        <div class="actions result-actions"><button class="button" id="again" type="button">Calcular otra vez</button><button class="button secondary" id="reset" type="button">Borrar respuestas</button></div>
+      </section>
+      <aside class="sources">
+        <h2>Fuentes oficiales y fecha de revisión</h2>
+        <p>Revisión realizada el 28 de octubre de 2026. Ley Chile muestra la Ley 21.719 con vigencia diferida al 1 de diciembre de 2026 y su última modificación registrada al 5 de febrero de 2026 (Ley 21.806).</p>
+        <ul>
+          <li><a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener">Ley 21.719 — Ley Chile</a> (arts. 2, 14 quinquies, 33–40, 48–51; transitorios primero y sexto).</li>
+          <li><a href="https://www.bcn.cl/leychile/Navegar?idNorma=141599&idVersion=2023-05-09" target="_blank" rel="noopener">Ley 19.628 anterior a la reforma — Ley Chile</a> (vigente hasta el 30 de noviembre de 2026; art. 16).</li>
+          <li><a href="https://www.bcn.cl/leychile/Navegar?idNorma=1010668" target="_blank" rel="noopener">Ley 20.416 — Ley Chile</a> (artículo segundo: categorías por ingresos del último año calendario).</li>
+          <li><a href="https://www.diariooficial.interior.gob.cl/publicaciones/2024/12/13/44023/01/2583630.pdf" target="_blank" rel="noopener">Diario Oficial — publicación de la Ley 21.719</a> (13 de diciembre de 2024).</li>
+          <li><a href="https://www.sii.cl/valores_y_fechas/utm/utm2026.htm" target="_blank" rel="noopener">SII — valores UTM 2026</a> (octubre: $72.151).</li>
+        </ul>
+        <p class="disclaimer">La herramienta muestra escenarios y criterios expresos de la ley. No determina responsabilidad ni predice una sanción; la Agencia califica la infracción y fija el monto concreto cuando corresponde.</p>
+      </aside>
+    </div>
+  </main>
+  <footer><a href="index.html#herramientas">← Volver al catálogo</a><span>FOLIOX Studio</span></footer>
+</body>
+</html>

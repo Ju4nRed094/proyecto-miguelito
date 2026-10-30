@@ -3,28 +3,62 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0c1322">
-    <meta name="application-name" content="DOCFAST">
-    <meta name="description" content="DOCFAST: Registro de Tratamiento (RAT).">
+    <meta name="theme-color" content="#090a0d">
+    <meta name="application-name" content="FOLIOX Studio">
+    <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+    <meta name="description" content="FOLIOX Studio: Registro de Tratamiento (RAT).">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="document-tools.css">
+    <script src="rut-input.js" defer></script>
     <script src="document-tools.js" defer></script>
-      <title>Registro de Tratamiento (RAT) — DOCFAST</title>
-  </head>
-  <body class="doc-tool-page" data-tool="rat">
+      <title>Registro de Tratamiento (RAT) — FOLIOX Studio</title>
+    <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+  <body class="doc-tool-page tool-theme-page" data-tool="rat">
     <header class="site-header doc-tool-header">
-      <a class="brand" href="index.html" aria-label="DOCFAST, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/logo-claro.png" alt="DOCFAST"></span></a>
-      <nav class="doc-tool-nav" aria-label="Navegación DOCFAST"><a href="index.html#herramientas">Herramientas</a><a href="politica-privacidad.html">Política de Privacidad</a><a href="diagnostico.html">Diagnóstico</a></nav>
+      <a class="brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+      <button class="tool-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tool-main-nav"><span></span><span></span></button><nav class="doc-tool-nav" id="tool-main-nav" aria-label="Navegación FOLIOX Studio"><a href="index.html#herramientas">Herramientas</a><a href="politica-privacidad.html">Política de Privacidad</a><a href="diagnostico.html">Diagnóstico</a></nav>
     </header>
     <main class="doc-tool-main">
-      <p class="doc-tool-breadcrumb"><a href="index.html">DOCFAST</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span id="tool-breadcrumb-current">Herramienta</span></p>
-      <section class="doc-tool-intro" aria-labelledby="tool-title"><span class="doc-tool-availability">HERRAMIENTA DISPONIBLE</span><h1 id="tool-title">Generador DOCFAST</h1><p id="tool-description">Completa los campos para crear un borrador orientativo.</p></section>
-      <div class="doc-tool-grid">
-        <section class="doc-tool-card" aria-labelledby="tool-form-title"><div class="doc-tool-card-heading"><span class="doc-tool-kicker">INFORMACIÓN NECESARIA</span><h2 id="tool-form-title">Completa los datos</h2><p id="tool-needs"></p></div><form id="doc-tool-form" novalidate><div id="tool-fields" class="doc-tool-fields"></div><p class="doc-tool-error" id="tool-error" role="alert" hidden></p><button class="doc-tool-button" id="tool-submit" type="submit">Generar borrador</button></form></section>
-        <section class="doc-tool-card doc-tool-result" id="tool-result" aria-labelledby="tool-result-title" hidden><div class="doc-tool-card-heading"><span class="doc-tool-kicker">VISTA PREVIA</span><h2 id="tool-result-title">Resultado</h2><p id="result-description"></p></div><div id="tool-preview" class="doc-tool-preview"></div><div id="tool-actions" class="doc-tool-actions"></div><p id="tool-status" class="doc-tool-status" role="status" aria-live="polite" hidden></p></section>
+      <p class="doc-tool-breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span id="tool-breadcrumb-current">Herramienta</span></p>
+      <section class="doc-tool-intro" aria-labelledby="tool-title"><span class="doc-tool-availability">HERRAMIENTA DISPONIBLE</span><h1 id="tool-title">Registro de Actividades de Tratamiento (RAT)</h1><p id="tool-description">Organiza en un registro las actividades que describas. Puedes añadir varias actividades y descargar un borrador HTML o imprimirlo como PDF.</p></section>
+      <div class="rat-workflow" id="rat-workflow">
+        <section class="rat-flow-panel rat-company-panel" id="rat-company-panel" aria-labelledby="rat-company-title">
+          <div class="rat-panel-heading"><span class="doc-tool-kicker">PASO 1 · ORGANIZACIÓN</span><h2 id="rat-company-title">Datos de la empresa responsable</h2><p>Indica quién es responsable de las actividades que registrarás.</p></div>
+          <div class="rat-company-fields">
+            <div class="rat-company-field"><label for="rat-organization">Razón social o nombre de la empresa <span aria-hidden="true">*</span></label><input id="rat-organization" name="ratOrganization" type="text" autocomplete="organization" required aria-describedby="rat-company-hint rat-company-error"><small id="rat-company-hint">Este dato aparecerá en el registro generado.</small><p id="rat-company-error" class="doc-tool-error" role="alert" hidden>Ingresa el nombre de la empresa para habilitar las plantillas.</p></div>
+            <div class="rat-company-field"><label for="rat-rut">RUT <span class="rat-optional-label">Opcional</span></label><input id="rat-rut" data-rut-input name="ratRut" type="text" inputmode="text" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-describedby="rat-rut-hint rat-rut-message"><small id="rat-rut-hint">Se dará formato automáticamente. FOLIOX Studio no verifica el dígito verificador.</small><p id="rat-rut-message" class="rat-rut-message" aria-live="polite" hidden></p></div>
+          </div>
+        </section>
+        <section class="rat-flow-panel" id="rat-template-panel" aria-labelledby="rat-template-title">
+          <div class="rat-panel-heading"><span class="doc-tool-kicker">PASO 2 · PUNTO DE PARTIDA</span><h2 id="rat-template-title">Selecciona una plantilla</h2><p>Las actividades son ejemplos para revisar y completar. Sus campos quedan pendientes hasta que ingreses información.</p></div>
+          <p class="rat-template-disabled-note" id="rat-template-disabled-note">Primero completa el nombre de la empresa para habilitar las plantillas.</p>
+          <div class="rat-template-grid" id="rat-template-grid" aria-label="Plantillas de referencia">
+            <button class="rat-template" type="button" data-template="ecommerce" aria-pressed="false" disabled><span class="rat-template-icon" aria-hidden="true">▣</span><span class="rat-template-copy"><strong>E-commerce</strong><small>5 actividades de referencia</small></span><span class="rat-template-count" aria-hidden="true">5</span></button>
+            <button class="rat-template" type="button" data-template="health" aria-pressed="false" disabled><span class="rat-template-icon" aria-hidden="true">＋</span><span class="rat-template-copy"><strong>Clínica / Salud</strong><small>4 actividades de referencia</small></span><span class="rat-template-count" aria-hidden="true">4</span></button>
+            <button class="rat-template" type="button" data-template="education" aria-pressed="false" disabled><span class="rat-template-icon" aria-hidden="true">▤</span><span class="rat-template-copy"><strong>Colegio / Educación</strong><small>4 actividades de referencia</small></span><span class="rat-template-count" aria-hidden="true">4</span></button>
+            <button class="rat-template" type="button" data-template="restaurant" aria-pressed="false" disabled><span class="rat-template-icon" aria-hidden="true">◇</span><span class="rat-template-copy"><strong>Restaurante</strong><small>3 actividades de referencia</small></span><span class="rat-template-count" aria-hidden="true">3</span></button>
+            <button class="rat-template" type="button" data-template="professional" aria-pressed="false" disabled><span class="rat-template-icon" aria-hidden="true">⌘</span><span class="rat-template-copy"><strong>Servicio profesional</strong><small>4 actividades de referencia</small></span><span class="rat-template-count" aria-hidden="true">4</span></button>
+            <button class="rat-template rat-template-empty" type="button" data-template="empty" aria-pressed="false" disabled><span class="rat-template-icon" aria-hidden="true">＋</span><span class="rat-template-copy"><strong>Empezar desde cero</strong><small>Sin actividades precargadas</small></span><span class="rat-template-count" aria-hidden="true">0</span></button>
+          </div>
+        </section>
+        <section class="rat-flow-panel rat-activities-panel" id="rat-activities-panel" aria-labelledby="rat-activities-title" hidden>
+          <div class="rat-activities-heading"><div><span class="doc-tool-kicker">PASO 3 · ACTIVIDADES</span><h2 id="rat-activities-title" tabindex="-1">Actividades de tratamiento</h2><p id="rat-company-summary"></p></div><div class="rat-heading-actions"><button class="doc-tool-button doc-tool-button-secondary" type="button" id="rat-back-company">← Empresa</button><button class="doc-tool-button doc-tool-button-secondary" type="button" id="rat-change-template">Cambiar plantilla</button></div></div>
+          <button class="doc-tool-button doc-tool-button-secondary rat-add-activity" type="button" id="rat-add-activity">＋ Agregar actividad de tratamiento</button>
+          <p class="rat-template-note" id="rat-template-note"></p>
+          <section class="rat-empty-suggestions" id="rat-empty-suggestions" aria-labelledby="rat-empty-suggestions-title" hidden><h3 id="rat-empty-suggestions-title">Actividades sugeridas</h3><p>Elige una sugerencia para agregarla al registro y revisa sus valores editables.</p><div class="rat-empty-suggestion-list" id="rat-empty-suggestion-list"></div></section>
+          <section class="doc-tool-card rat-editor-card" id="tool-form-panel" aria-labelledby="tool-form-title" hidden><div class="doc-tool-card-heading"><span class="doc-tool-kicker">EDICIÓN DE ACTIVIDAD</span><h2 id="tool-form-title">Editar actividad</h2><p id="tool-needs"></p></div><form id="doc-tool-form" novalidate><div id="tool-fields" class="doc-tool-fields"></div><p class="doc-tool-error" id="tool-error" role="alert" hidden></p><div class="rat-editor-actions"><button class="doc-tool-button" id="tool-submit" type="submit">Guardar cambios</button><button class="doc-tool-button doc-tool-button-secondary rat-cancel-edit" id="rat-cancel-edit" type="button" hidden>Cancelar</button></div></form></section>
+          <div class="rat-activity-list" id="rat-activity-list" aria-live="polite"></div>
+          <div class="rat-empty-state" id="rat-empty-state" hidden><span aria-hidden="true">＋</span><h3>Aún no hay actividades</h3><p>Agrega la primera actividad y completa los datos solicitados para incluirla en el registro.</p></div>
+          <div class="rat-activity-actions"><p class="rat-count" id="rat-activity-count" aria-live="polite"></p><button class="doc-tool-button" type="button" id="rat-view-document" disabled>Ver documento →</button></div>
+        </section>
       </div>
-      <p class="doc-tool-privacy">La información se procesa en este navegador; DOCFAST no la envía ni la guarda en un servidor. Revisa y adapta cualquier borrador antes de usarlo.</p>
+      <div class="doc-tool-grid">
+        <section class="doc-tool-card doc-tool-result" id="tool-result" aria-labelledby="tool-result-title" hidden><div class="doc-tool-card-heading"><span class="doc-tool-kicker">DOCUMENTO</span><h2 id="tool-result-title">Registro de Actividades de Tratamiento</h2><p id="result-description"></p></div><div id="tool-preview" class="doc-tool-preview"></div><div id="tool-actions" class="doc-tool-actions"></div><p id="tool-status" class="doc-tool-status" role="status" aria-live="polite" hidden></p></section>
+      </div>
+      <p class="doc-tool-privacy">La información se procesa en este navegador; FOLIOX Studio no la envía ni la guarda en un servidor. Revisa y adapta cualquier borrador antes de usarlo.</p>
     </main>
-    <footer class="doc-tool-footer"><a href="index.html#herramientas">← Volver al catálogo</a><span>DOCFAST · documentos orientativos</span></footer>
+    <footer class="doc-tool-footer"><a href="index.html#herramientas">← Volver al catálogo</a><span>FOLIOX Studio · documentos orientativos</span></footer>
   </body>
 </html>

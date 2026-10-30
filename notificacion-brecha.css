@@ -1,0 +1,142 @@
+/* Estilos exclusivos de Notificación de Brecha. */
+.notification-page { --dt-bg: #0c1322; --dt-card: #151f31; --dt-line: #303c51; --dt-text: #f4f6fa; --dt-muted: #a8b6ca; overflow-x: clip; background: #0c1322; color: #f4f6fa; }
+.notification-page .notification-header { border-color: #ffffff18; }
+.notification-page .notification-main { width: min(1000px, calc(100% - 48px)); padding-top: 25px; }
+.notification-page .doc-tool-breadcrumb { margin-bottom: 18px; }
+.notification-page .notification-intro { max-width: 900px; margin-bottom: 24px; }
+.notification-page .notification-intro h1 { max-width: 840px; font-size: clamp(27px, 4vw, 38px); letter-spacing: -.035em; }
+.notification-page .notification-intro > p { max-width: 680px; font-size: 14px; line-height: 1.55; }
+.notification-page .notification-skip { position: absolute; z-index: 5; top: 8px; left: 8px; transform: translateY(-160%); padding: 10px 13px; border-radius: 6px; background: #fff; color: #172b45; }
+.notification-page .notification-skip:focus { transform: translateY(0); }
+.notification-page .notification-legal-alert { width: min(100%, 850px); display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 9px; margin: 0 auto 24px; padding: 16px 18px; border: 1px solid #76551f; border-radius: 10px; background: #191e2a; color: #d7deea; }
+.notification-page .notification-alert-icon { color: #ffc15b; font-size: 17px; line-height: 1.4; }
+.notification-page .notification-legal-alert h2 { margin: 0 0 6px; color: #fff; font-size: 14px; }
+.notification-page .notification-legal-alert p { margin: 0 0 7px; color: #aebbd0; font-size: 12px; line-height: 1.6; }
+.notification-page .notification-legal-alert strong { color: #fff; }
+.notification-page .notification-legal-alert a { display: inline-block; color: #f0bd65; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+.notification-page .notification-legal-alert small { display: block; margin-top: 5px; color: #8898ae; font-size: 10px; }
+.notification-page .notification-workspace { width: min(100%, 1000px); min-width: 0; margin-inline: auto; }
+.notification-page .notification-progress { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin: 0 0 11px; padding: 0; list-style: none; }
+.notification-page .notification-progress li { min-width: 0; display: flex; align-items: center; gap: 7px; padding: 8px 10px; border: 1px solid transparent; border-radius: 999px; background: #151f31; color: #91a0b6; font-size: 11px; }
+.notification-page .notification-progress li > span { width: 23px; height: 23px; flex: 0 0 23px; display: grid; place-items: center; border-radius: 50%; background: #202c40; color: #c7d1df; font-size: 10px; font-weight: 750; }
+.notification-page .notification-progress li[aria-current="step"] { border-color: #087e63; background: #102b2c; color: #18c69b; }
+.notification-page .notification-progress li[aria-current="step"] > span, .notification-page .notification-progress li.is-complete > span { background: #08a982; color: #071b1b; }
+.notification-page .notification-progress li.is-complete { color: #b5c2d2; }
+.notification-page .notification-progress-track { height: 3px; overflow: hidden; margin: 0 3px 14px; border-radius: 8px; background: #253247; }
+.notification-page .notification-progress-track span { display: block; width: 25%; height: 100%; border-radius: inherit; background: #08b88b; transition: width .2s ease; }
+.notification-page .notification-card, .notification-page .notification-generated-card { padding: clamp(19px, 3vw, 25px); border-color: #2e3a4f; border-radius: 13px; background: #151f31; color: #f3f6fa; box-shadow: 0 12px 30px #03081224; }
+.notification-page .notification-card .doc-tool-card-heading { margin-bottom: 18px; }
+.notification-page .notification-card .doc-tool-kicker, .notification-page .notification-generated-card .doc-tool-kicker { color: #1bcca1; }
+.notification-page .notification-card .doc-tool-card-heading h2 { margin-top: 6px; color: #f8fafc; font-size: 22px; }
+.notification-page .notification-card .doc-tool-card-heading p { color: #99a9bf; font-size: 12px; }
+.notification-page .notification-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 13px; }
+.notification-page .notification-field { min-width: 0; }
+.notification-page .notification-field-full { grid-column: 1 / -1; }
+.notification-page .notification-field label, .notification-page .notification-choice-fieldset legend { display: block; margin-bottom: 6px; color: #edf2f8; font-size: 12px; font-weight: 700; line-height: 1.45; }
+.notification-page .notification-optional { margin-left: 4px; color: #8c9bb0; font-size: 10px; font-weight: 450; }
+.notification-page .notification-field input, .notification-page .notification-field select, .notification-page .notification-field textarea { display: block; width: 100%; min-height: 40px; padding: 9px 10px; border: 1px solid #354259; border-radius: 7px; outline: 0; background: #192438; color: #f4f6fa; color-scheme: dark; font: inherit; font-size: 12px; }
+.notification-page .notification-field input::placeholder, .notification-page .notification-field textarea::placeholder { color: #8291a7; opacity: 1; }
+.notification-page .notification-field textarea { min-height: 92px; resize: vertical; line-height: 1.55; }
+.notification-page .notification-field input:focus-visible, .notification-page .notification-field select:focus-visible, .notification-page .notification-field textarea:focus-visible, .notification-page .notification-choice input:focus-visible, .notification-page .notification-category-list input:focus-visible, .notification-page .notification-unavailable input:focus-visible, .notification-page .notification-button:focus-visible, .notification-page .notification-text-button:focus-visible { outline: 3px solid #17c89b; outline-offset: 2px; border-color: #17c89b; }
+.notification-page .notification-error { margin: 6px 0 0; color: #ff909a; font-size: 11px; line-height: 1.45; }
+.notification-page .notification-error[hidden], .notification-page [hidden] { display: none !important; }
+.notification-page [aria-invalid="true"] { border-color: #ff6674 !important; }
+.notification-page .notification-choice-fieldset { min-width: 0; margin: 17px 0 0; padding: 0; border: 0; }
+.notification-page .notification-choice-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.notification-page .notification-choice { position: relative; display: inline-flex; align-items: center; min-height: 38px; padding: 0 12px; border: 1px solid #354259; border-radius: 7px; background: #192438; color: #afbdd0; font-size: 11px; cursor: pointer; }
+.notification-page .notification-choice:has(input:checked) { border-color: #09bd91; background: #102c30; color: #eafff9; }
+.notification-page .notification-choice input { width: 15px; height: 15px; margin: 0 7px 0 0; accent-color: #0fc295; }
+.notification-page .notification-inline-note { margin: 13px 0 0; color: #91a1b7; font-size: 11px; line-height: 1.5; }
+.notification-page .notification-category-list { display: grid; gap: 6px; }
+.notification-page .notification-category-list label { min-width: 0; display: flex; align-items: center; gap: 9px; min-height: 36px; padding: 7px 10px; border: 1px solid #354259; border-radius: 7px; background: #192438; color: #e3eaf3; font-size: 11px; line-height: 1.4; cursor: pointer; }
+.notification-page .notification-category-list label:has(input:checked) { border-color: #0ab78c; background: #102b2e; }
+.notification-page .notification-category-list input { width: 15px; height: 15px; flex: 0 0 15px; margin: 0; accent-color: #0fc295; }
+.notification-page .notification-counts { margin-top: 15px; }
+.notification-page .notification-unavailable { display: flex !important; align-items: center; gap: 6px; margin: 7px 0 0 !important; color: #abb9cb !important; font-size: 11px !important; font-weight: 500 !important; cursor: pointer; }
+.notification-page .notification-unavailable input { width: 15px; min-height: 15px; height: 15px; margin: 0; accent-color: #0fc295; }
+.notification-page .notification-field input:disabled { opacity: .55; }
+.notification-page .notification-minors { margin-top: 18px; }
+.notification-page .notification-minors small, .notification-page .notification-hint { display: block; margin-top: 6px; color: #8e9eb4; font-size: 10px; line-height: 1.5; }
+.notification-page .notification-card > .notification-field + .notification-field { margin-top: 15px; }
+.notification-page .notification-legal-note { margin: 17px 0 0; padding: 11px 13px; border-left: 3px solid #bd8c39; border-radius: 0 7px 7px 0; background: #202536; color: #bcc6d4; font-size: 11px; line-height: 1.6; }
+.notification-page .notification-legal-note strong { color: #f0c46f; }
+.notification-page .notification-step-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; }
+.notification-page .notification-button { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; padding: 0 15px; border: 1px solid #08b98a; border-radius: 7px; background: #08b98a; color: #06231e; font-size: 12px; font-weight: 750; cursor: pointer; }
+.notification-page .notification-button:hover:not(:disabled) { border-color: #09d5a0; background: #09d5a0; }
+.notification-page .notification-button:disabled { border-color: #354259; background: #202c40; color: #708098; cursor: not-allowed; }
+.notification-page .notification-button-secondary { border-color: #354259; background: transparent; color: #adbbcf; }
+.notification-page .notification-button-secondary:hover:not(:disabled) { border-color: #71819a; background: #1b2639; color: #fff; }
+.notification-page .notification-step-error { margin: 10px 0 0; color: #ff909a; font-size: 11px; }
+.notification-page .notification-success { margin: 0 0 17px; padding: 24px; border: 1px solid #236152; border-radius: 12px; background: #142b30; text-align: center; }
+.notification-page .notification-success-label { color: #31d1a7; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.notification-page .notification-success h2 { margin: 7px 0; font-size: 24px; }
+.notification-page .notification-success > p { color: #aab8ca; font-size: 12px; }
+.notification-page .notification-success-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; margin-top: 17px; }
+.notification-page .notification-text-button { padding: 8px 10px; border: 0; background: transparent; color: #aebbd0; font: inherit; font-size: 11px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.notification-page .notification-generated-card { margin-top: 16px; }
+.notification-page .notification-document-heading { margin: 0 0 12px; }
+.notification-page .notification-document-heading h2 { margin: 5px 0 0; font-size: 21px; }
+.notification-page .notification-document { box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; padding: clamp(24px, 4vw, 42px); border-radius: 8px; background: #fff; color: #253449; font: 14px/1.62 Georgia, 'Times New Roman', serif; overflow-wrap: anywhere; }
+.notification-page .notification-doc-header { margin-bottom: 18px; padding-bottom: 16px; border-bottom: 2px solid #dce2e9; }
+.notification-page .notification-doc-brand-row { display: flex; align-items: center; gap: 11px; }
+.notification-page .notification-doc-logo { width: 44px; height: 44px; flex: 0 0 44px; object-fit: contain; }
+.notification-page .notification-doc-brand { display: flex; flex-direction: column; gap: 2px; color: #172b45; font: 13px/1.3 Arial, sans-serif; }
+.notification-page .notification-doc-brand strong { color: #a72533; font-size: 13px; letter-spacing: .02em; }
+.notification-page .notification-doc-brand span { color: #617287; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.notification-page .notification-document h1 { max-width: 760px; margin: 17px 0 7px; color: #172b45; font-size: clamp(26px, 3vw, 34px); line-height: 1.14; letter-spacing: -.025em; }
+.notification-page .notification-doc-subtitle { margin: 0 0 15px; color: #53667c; font: 13px/1.5 Arial, sans-serif; }
+.notification-page .notification-doc-meta-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(180px, .8fr); gap: 9px; }
+.notification-page .notification-doc-meta-grid > div { min-width: 0; display: flex; flex-direction: column; gap: 3px; padding: 9px 11px; border-left: 3px solid #a72533; background: #f5f7f9; }
+.notification-page .notification-doc-meta-grid span { color: #64768a; font: 10px/1.3 Arial, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.notification-page .notification-doc-meta-grid strong { color: #243a54; font: 700 13px/1.4 Arial, sans-serif; overflow-wrap: anywhere; }
+.notification-page .notification-document h2 { margin: 21px 0 9px; padding: 0 0 6px; border-bottom: 1px solid #dce2e9; color: #243a54; font-size: 18px; line-height: 1.28; break-after: avoid; }
+.notification-page .notification-document h3 { margin: 12px 0 5px; color: #344b65; font: 700 13px/1.35 Arial, sans-serif; }
+.notification-page .notification-document p, .notification-page .notification-document li, .notification-page .notification-document dd { color: #3e4c5e; }
+.notification-page .notification-document ul { margin: 5px 0 9px; padding-left: 22px; }
+.notification-page .notification-document dl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: 0; }
+.notification-page .notification-document .notification-doc-row { min-width: 0; display: grid; grid-template-columns: minmax(165px, .38fr) minmax(0, 1fr); gap: 0 18px; break-inside: avoid; }
+.notification-page .notification-document dt, .notification-page .notification-document dd { min-width: 0; margin: 0; padding: 8px 0; border-bottom: 1px solid #e7ebef; }
+.notification-page .notification-document dt { color: #52657a; font: 700 12px/1.5 Arial, sans-serif; }
+.notification-page .notification-document dd { white-space: normal; }
+.notification-page .notification-document .notification-doc-note { margin: 0 0 13px; padding: 11px 13px; border-left: 3px solid #a72533; background: #f6f7f9; }
+.notification-page .notification-document .notification-doc-definition { margin: 10px 0 0; padding: 10px 12px; border-left: 2px solid #9baabd; background: #f7f8fa; color: #53667c; font: 12px/1.55 Arial, sans-serif; }
+.notification-page .notification-document .notification-doc-section { margin: 0 0 15px; }
+.notification-page .notification-document a { color: #8f2632; text-decoration: underline; }
+.notification-page .notification-document .notification-doc-footer { margin-top: 22px; padding-top: 10px; border-top: 1px solid #dce2e9; color: #5c6c7d; font-size: 11px; }
+.notification-page .notification-privacy { color: #8f9db1; text-align: center; font-size: 11px; }
+.notification-page .notification-footer { border-color: #283449; color: #8f9db1; }
+.notification-page .notification-footer a { color: #16c69b; }
+@media (max-width: 700px) {
+  .notification-page .notification-main { width: calc(100% - 30px); padding-top: 19px; }
+  .notification-page .notification-intro h1 { font-size: clamp(25px, 7vw, 33px); }
+  .notification-page .notification-legal-alert { padding: 13px; }
+  .notification-page .notification-progress { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .notification-page .notification-progress li { padding: 7px 9px; font-size: 10px; }
+  .notification-page .notification-fields { grid-template-columns: 1fr; }
+  .notification-page .notification-field-full { grid-column: auto; }
+  .notification-page .notification-choice-row { display: grid; grid-template-columns: 1fr; }
+  .notification-page .notification-choice { width: 100%; }
+  .notification-page .notification-generated-card { min-width: 0; padding: 12px; }
+  .notification-page .notification-document { padding: 20px 16px; border-radius: 6px; font-size: 14px; line-height: 1.6; }
+  .notification-page .notification-doc-meta-grid { grid-template-columns: minmax(0, 1fr); }
+  .notification-page .notification-document .notification-doc-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .notification-page .notification-document dl { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .notification-page .notification-document dt { padding-bottom: 0; border: 0; }
+  .notification-page .notification-document dd { padding-top: 2px; }
+  .notification-page .notification-success-actions { display: grid; grid-template-columns: 1fr; }
+  .notification-page .notification-success-actions .notification-button { width: 100%; }
+}
+@media print {
+  @page { size: A4 portrait; margin: 18mm; }
+  body.notification-page { display: block !important; overflow: visible !important; background: #fff !important; color: #222 !important; }
+  .notification-page .notification-header, .notification-page .notification-skip, .notification-page .doc-tool-breadcrumb, .notification-page .notification-intro, .notification-page .notification-legal-alert, .notification-page .notification-progress, .notification-page .notification-progress-track, .notification-page #notification-form, .notification-page #notification-success, .notification-page .notification-privacy, .notification-page .notification-footer { display: none !important; }
+  .notification-page .notification-main, .notification-page .notification-workspace { width: auto !important; margin: 0 !important; padding: 0 !important; }
+  .notification-page .notification-generated-card { display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: #fff !important; box-shadow: none !important; }
+  .notification-page .notification-document-heading { display: none !important; }
+  .notification-page .notification-document { width: 100% !important; max-width: none !important; padding: 0 !important; border: 0 !important; background: #fff !important; color: #222 !important; font-size: 11pt !important; }
+  .notification-page .notification-document section, .notification-page .notification-document h2, .notification-page .notification-document h3 { break-after: avoid; }
+  .notification-page .notification-document dt { break-after: avoid-page; }
+  .notification-page .notification-document dd { break-before: avoid-page; }
+  .notification-page .notification-document li, .notification-page .notification-document p, .notification-page .notification-document dt, .notification-page .notification-document dd { break-inside: avoid; }
+  .notification-page .notification-document a { color: #222 !important; }
+}

@@ -1,0 +1,120 @@
+/* Styles scoped to the ARCOP protocol generator. */
+.arcop-page { --dt-bg: #f4f6f9; --dt-card: #fff; --dt-line: #d8e1eb; --dt-text: #172b45; --dt-muted: #586b80; --dt-red: #a72533; --dt-coral: #9f2633; background: #f4f6f9; color: #172b45; }
+.arcop-page .arcop-header { border-color: #dce3eb; background: #fff; box-shadow: 0 3px 14px #1934520a; }
+.arcop-page .doc-tool-nav { color: #40556d; }
+.arcop-page .doc-tool-nav a:hover, .arcop-page .doc-tool-breadcrumb a:hover { color: #9f2633; }
+.arcop-page .arcop-main { width: min(1040px, calc(100% - 48px)); padding-top: 29px; }
+.arcop-page .doc-tool-breadcrumb { color: #687b8f; }
+.arcop-page .doc-tool-breadcrumb a { color: #9f2633; }
+.arcop-page .doc-tool-intro { max-width: 800px; margin-bottom: 26px; }
+.arcop-page .doc-tool-availability { border-color: #e8c7cb; background: #fff4f5; color: #942330; }
+.arcop-page .doc-tool-intro h1 { color: #172b45; }
+.arcop-page .doc-tool-intro > p { color: #586b80; }
+.arcop-page .arcop-workspace { width: min(100%, 820px); margin-inline: auto; }
+.arcop-page .arcop-progress { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 0 0 12px; padding: 0; list-style: none; }
+.arcop-page .arcop-progress li { min-width: 0; display: flex; align-items: center; gap: 9px; padding: 10px 12px; border: 1px solid #d8e1eb; border-radius: 10px; background: #fff; color: #6a7d90; font-size: 12px; }
+.arcop-page .arcop-progress li > span { width: 29px; height: 29px; flex: 0 0 29px; display: grid; place-items: center; border-radius: 50%; background: #edf1f5; color: #61758b; font-weight: 750; }
+.arcop-page .arcop-progress li[aria-current="step"] { border-color: #d9a3a9; background: #fffafb; color: #84212b; }
+.arcop-page .arcop-progress li[aria-current="step"] > span, .arcop-page .arcop-progress li.is-complete > span { background: #a72533; color: #fff; }
+.arcop-page .arcop-progress li.is-complete { border-color: #ead1d4; color: #40556d; }
+.arcop-page .arcop-progress-track { height: 4px; overflow: hidden; margin: 0 2px 15px; border-radius: 9px; background: #e0e6ed; }
+.arcop-page .arcop-progress-track span { width: 25%; height: 100%; display: block; border-radius: inherit; background: #a72533; transition: width .25s ease; }
+.arcop-page .arcop-card, .arcop-page .arcop-result { padding: clamp(20px, 3vw, 29px); border-color: #d8e1eb; border-radius: 14px; background: #fff; color: #172b45; box-shadow: 0 12px 32px #1934520d; }
+.arcop-page .arcop-card .doc-tool-card-heading { margin-bottom: 20px; }
+.arcop-page .arcop-card .doc-tool-kicker, .arcop-page .arcop-result .doc-tool-kicker { color: #9f2633; }
+.arcop-page .arcop-card .doc-tool-card-heading h2 { color: #20364f; font-size: clamp(22px, 3vw, 27px); }
+.arcop-page .arcop-card .doc-tool-card-heading p { color: #586b80; font-size: 13px; }
+.arcop-page .arcop-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+.arcop-page .arcop-field { min-width: 0; }
+.arcop-page .arcop-field-full { grid-column: 1 / -1; }
+.arcop-page .arcop-field label, .arcop-page .arcop-choice-fieldset legend, .arcop-page .arcop-rights-fieldset legend { display: block; margin-bottom: 7px; color: #2d435d; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.arcop-page .arcop-optional { margin-left: 5px; color: #73869a; font-size: 11px; font-weight: 500; }
+.arcop-page .arcop-field input, .arcop-page .arcop-field textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #c8d3df; border-radius: 8px; outline: 0; background: #fff; color: #172b45; font: inherit; font-size: 14px; }
+.arcop-page .arcop-field textarea { min-height: 95px; resize: vertical; }
+.arcop-page .arcop-field input:focus-visible, .arcop-page .arcop-field textarea:focus-visible, .arcop-page .arcop-choice input:focus-visible, .arcop-page .arcop-right-card input:focus-visible, .arcop-page .arcop-button:focus-visible { outline: 3px solid #ad3340; outline-offset: 2px; border-color: #a72533; }
+.arcop-page .arcop-field small { display: block; margin-top: 6px; color: #687b8f; font-size: 11px; line-height: 1.5; }
+.arcop-page .arcop-error { margin: 7px 0 0; color: #a72533; font-size: 12px; line-height: 1.5; }
+.arcop-page .arcop-error[hidden] { display: none !important; }
+.arcop-page [aria-invalid="true"] { border-color: #a72533 !important; }
+.arcop-page .arcop-privacy-note, .arcop-page .arcop-legal-note { margin: 18px 0 0; padding: 12px 14px; border-left: 3px solid #a72533; border-radius: 0 8px 8px 0; background: #f7f8fa; color: #53677d; font-size: 12px; line-height: 1.65; }
+.arcop-page .arcop-choice-fieldset, .arcop-page .arcop-rights-fieldset { min-width: 0; margin: 0 0 17px; padding: 0; border: 0; }
+.arcop-page .arcop-channel-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.arcop-page .arcop-choice, .arcop-page .arcop-right-card { min-width: 0; display: flex; align-items: flex-start; gap: 10px; padding: 13px; border: 1px solid #d8e1eb; border-radius: 9px; background: #fff; cursor: pointer; transition: border-color .15s ease, background .15s ease, box-shadow .15s ease; }
+.arcop-page .arcop-choice:hover, .arcop-page .arcop-right-card:hover { border-color: #c7838a; background: #fffafb; }
+.arcop-page .arcop-choice:has(input:checked), .arcop-page .arcop-right-card:has(input:checked) { border-color: #ad3340; background: #fff7f8; box-shadow: inset 0 0 0 1px #a7253312; }
+.arcop-page .arcop-choice input, .arcop-page .arcop-right-card input, .arcop-page .arcop-inline-checks input { width: 17px; height: 17px; flex: 0 0 17px; margin: 1px 0 0; accent-color: #a72533; }
+.arcop-page .arcop-choice strong, .arcop-page .arcop-choice small, .arcop-page .arcop-right-card strong, .arcop-page .arcop-right-card small { display: block; }
+.arcop-page .arcop-choice strong, .arcop-page .arcop-right-card strong { color: #263c56; font-size: 13px; line-height: 1.4; }
+.arcop-page .arcop-choice small, .arcop-page .arcop-right-card small { margin-top: 3px; color: #687b8f; font-size: 11px; line-height: 1.5; }
+.arcop-page .arcop-inline-checks { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+.arcop-page .arcop-inline-checks label { display: inline-flex; align-items: center; gap: 8px; color: #344b65; font-size: 13px; cursor: pointer; }
+.arcop-page .arcop-size-options { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; }
+.arcop-page .arcop-size-options-short { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 320px; }
+.arcop-page .arcop-choice.compact { align-items: center; justify-content: center; min-height: 45px; padding: 9px; }
+.arcop-page .arcop-choice.compact span { text-align: center; }
+.arcop-page .arcop-multiple-picker { margin: -1px 0 15px; padding: 14px; border: 1px solid #dfe6ed; border-radius: 9px; background: #f8fafc; }
+.arcop-page .arcop-multiple-picker[hidden], .arcop-page .arcop-channel-fields [hidden] { display: none !important; }
+.arcop-page .arcop-channel-fields { display: grid; gap: 12px; }
+.arcop-page .arcop-channel-fields .arcop-field { padding: 14px; border: 1px solid #e0e6ed; border-radius: 9px; background: #f9fafb; }
+.arcop-page .arcop-rights-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+.arcop-page .arcop-right-card { min-height: 82px; align-items: flex-start; padding: 15px; }
+.arcop-page .arcop-step-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 15px; }
+.arcop-page .arcop-button { display: inline-flex; min-height: 43px; align-items: center; justify-content: center; gap: 9px; padding: 0 17px; border: 1px solid #a72533; border-radius: 8px; background: #a72533; color: #fff; font-size: 13px; font-weight: 700; cursor: pointer; transition: background .16s ease, transform .16s ease, border-color .16s ease; }
+.arcop-page .arcop-button:hover:not(:disabled) { transform: translateY(-1px); border-color: #861d29; background: #861d29; }
+.arcop-page .arcop-button:disabled { border-color: #d8e0e8; background: #e8edf2; color: #8795a5; cursor: not-allowed; }
+.arcop-page .arcop-button-secondary { border-color: #cbd5df; background: #fff; color: #304760; }
+.arcop-page .arcop-button-secondary:hover:not(:disabled) { border-color: #a9b7c5; background: #f2f5f8; color: #20364f; }
+.arcop-page .arcop-step-error { margin: 13px 0 0; color: #a72533; font-size: 12px; }
+.arcop-page .arcop-step-error[hidden] { display: none !important; }
+.arcop-page .arcop-result { margin-top: 20px; }
+.arcop-page .arcop-result-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+.arcop-page .arcop-result-heading h2 { margin: 6px 0; color: #20364f; font-size: clamp(23px, 3vw, 30px); line-height: 1.2; }
+.arcop-page .arcop-result-heading p { margin: 0; color: #687b8f; font-size: 12px; }
+.arcop-page .arcop-result-badge { flex: none; padding: 7px 10px; border: 1px solid #ead1d4; border-radius: 999px; background: #fff6f7; color: #912632; font-size: 11px; font-weight: 700; }
+.arcop-page .arcop-result-warning { margin-bottom: 17px; padding: 12px 14px; border-left: 3px solid #b77b21; border-radius: 0 8px 8px 0; background: #fff9ed; color: #5e4a2c; font-size: 12px; line-height: 1.6; }
+.arcop-page .arcop-document { padding: clamp(20px, 4vw, 36px); border: 1px solid #e1e6ec; border-radius: 7px; background: #fff; color: #263244; font: 14px/1.68 Arial, sans-serif; overflow-wrap: anywhere; }
+.arcop-page .arcop-document:focus-visible { outline: 3px solid #a72533; outline-offset: 3px; }
+.arcop-page .arcop-document .arcop-doc-brand { color: #9b2639; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.arcop-page .arcop-document h1 { margin: 6px 0 4px; color: #172337; font-size: 26px; line-height: 1.2; }
+.arcop-page .arcop-document .arcop-doc-meta { margin: 0 0 19px; color: #687489; font-size: 11px; }
+.arcop-page .arcop-document h2 { margin: 23px 0 8px; padding-bottom: 5px; border-bottom: 1px solid #e4e8ed; color: #243a54; font-size: 18px; line-height: 1.3; }
+.arcop-page .arcop-document h3 { margin: 14px 0 5px; color: #344b65; font-size: 14px; }
+.arcop-page .arcop-document p, .arcop-page .arcop-document li { color: #3e4c5e; }
+.arcop-page .arcop-document ul, .arcop-page .arcop-document ol { padding-left: 22px; }
+.arcop-page .arcop-document .arcop-doc-note { padding: 10px 12px; border-left: 3px solid #9b2639; background: #f7f8fa; color: #4f5f72; font-size: 12px; }
+.arcop-page .arcop-document .arcop-doc-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.arcop-page .arcop-document .arcop-doc-table th, .arcop-page .arcop-document .arcop-doc-table td { padding: 8px; border: 1px solid #d9e0e7; text-align: left; vertical-align: top; }
+.arcop-page .arcop-document .arcop-doc-table th { background: #f1f4f7; }
+.arcop-page .arcop-document .arcop-doc-cover-table { margin: 12px 0 16px; }
+.arcop-page .arcop-document .arcop-doc-cover-table th { width: 24%; }
+.arcop-page .arcop-document a { color: #8f2430; text-decoration: underline; }
+.arcop-page .arcop-result-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 17px; }
+.arcop-page .arcop-result-actions .arcop-button { margin: 0; }
+.arcop-page .arcop-page-note { color: #64778a; }
+.arcop-page .arcop-footer { border-color: #dce3eb; color: #64778a; }
+.arcop-page .arcop-footer a { color: #9f2633; }
+@media (max-width: 700px) {
+  .arcop-page .arcop-main { width: calc(100% - 30px); padding-top: 22px; }
+  .arcop-page .arcop-progress { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .arcop-page .arcop-progress li { padding: 8px; font-size: 11px; }
+  .arcop-page .arcop-progress li > span { width: 26px; height: 26px; flex-basis: 26px; }
+  .arcop-page .arcop-fields, .arcop-page .arcop-channel-options, .arcop-page .arcop-rights-grid { grid-template-columns: 1fr; }
+  .arcop-page .arcop-field-full { grid-column: auto; }
+  .arcop-page .arcop-size-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arcop-page .arcop-result-heading { flex-direction: column; }
+  .arcop-page .arcop-result-actions { display: grid; grid-template-columns: 1fr; }
+  .arcop-page .arcop-result-actions .arcop-button { width: 100%; }
+}
+@media print {
+  @page { size: A4 portrait; margin: 18mm; }
+  body.arcop-page { display: block !important; background: #fff !important; color: #222 !important; }
+  .arcop-page .arcop-header, .arcop-page .doc-tool-breadcrumb, .arcop-page .arcop-intro, .arcop-page .arcop-workspace > .arcop-progress, .arcop-page .arcop-workspace > .arcop-progress-track, .arcop-page #arcop-form, .arcop-page .arcop-result-warning, .arcop-page .arcop-result-actions, .arcop-page .arcop-page-note, .arcop-page .arcop-footer { display: none !important; }
+  .arcop-page .arcop-main { width: auto !important; margin: 0 !important; padding: 0 !important; }
+  .arcop-page .arcop-workspace { width: auto !important; margin: 0 !important; }
+  .arcop-page .arcop-result { display: block !important; margin: 0 !important; padding: 0 !important; border: 0 !important; background: #fff !important; box-shadow: none !important; }
+  .arcop-page .arcop-result-heading { margin-bottom: 15px; }
+  .arcop-page .arcop-document { padding: 0 !important; border: 0 !important; }
+  .arcop-page .arcop-document h2, .arcop-page .arcop-document h3 { break-after: avoid; }
+  .arcop-page .arcop-document li, .arcop-page .arcop-document p, .arcop-page .arcop-document tr { break-inside: avoid; }
+  .arcop-page .arcop-document a { color: #222 !important; }
+}

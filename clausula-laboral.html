@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="application-name" content="FOLIOX Studio">
+  <meta name="description" content="Prepara un borrador configurable de cláusula laboral sobre tratamiento de datos en FOLIOX Studio.">
+  <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+  <title>Generador de Cláusula Laboral de Datos — FOLIOX Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="clausula-laboral.css">
+  <script src="app.js" defer></script>
+  <script src="rut-input.js" defer></script>
+  <script src="clausula-laboral.js" defer></script>
+  <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+<body class="employment-page tool-theme-page">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="site-header employment-header">
+    <a class="brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal"><a href="index.html#inicio">Inicio</a><a href="index.html#herramientas">Herramientas</a><a href="diagnostico.html">Diagnóstico</a><a class="nav-cta" href="#generador">Comenzar <span aria-hidden="true">↓</span></a></nav>
+  </header>
+  <main id="main-content" class="employment-main">
+    <section class="employment-intro" aria-labelledby="page-title">
+      <p class="employment-breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span>Cláusula Laboral</span></p>
+      <span class="employment-availability"><i aria-hidden="true"></i> HERRAMIENTA DISPONIBLE</span>
+      <h1 id="page-title">Generador de <span>Cláusula Laboral de Datos</span></h1>
+      <p>Prepara un borrador configurable con la información que aportes. Revísalo y adáptalo a las circunstancias de la organización antes de utilizarlo.</p>
+    </section>
+    <section class="employment-builder" id="generador" aria-labelledby="builder-title">
+      <div class="employment-builder-head"><div><span class="employment-kicker">GENERADOR FOLIOX STUDIO</span><h2 id="builder-title">Completa cuatro pasos</h2><p>Los campos opcionales se indican expresamente. Las respuestas se procesan en este navegador.</p></div></div>
+      <div class="employment-card" id="wizard-card">
+        <div class="employment-stepper" id="stepper" aria-label="Progreso del generador">
+          <div class="employment-progress-copy"><span id="step-count">Paso 1 de 4</span><strong id="step-name">Partes</strong></div>
+          <div class="employment-progress-track" role="progressbar" aria-label="Progreso del generador" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" id="progress"><span id="progress-fill"></span></div>
+          <ol class="employment-step-labels" aria-label="Pasos del generador"><li aria-current="step"><span>01</span><b>Partes</b></li><li><span>02</span><b>Datos</b></li><li><span>03</span><b>Condiciones</b></li><li><span>04</span><b>Extras</b></li></ol>
+        </div>
+        <div id="step-error" class="employment-error" role="alert" aria-live="polite" hidden></div>
+        <form id="clause-form" novalidate>
+          <section class="employment-step" data-step="0" aria-labelledby="step1-title">
+            <div class="employment-step-heading"><span>PASO 1 · PARTES</span><h3 id="step1-title" tabindex="-1">Datos de las partes</h3><p>Ingresa la organización y, si aplica, el cargo al que se refiere este borrador.</p></div>
+            <div class="employment-grid">
+              <div class="employment-field full"><label for="employer">Nombre de la empresa o empleador <span aria-hidden="true">*</span></label><input id="employer" name="employer" autocomplete="organization" maxlength="160" required aria-describedby="error-employer"><small class="employment-field-error" id="error-employer" hidden>Ingresa el nombre de la empresa o empleador.</small></div>
+              <div class="employment-field"><label for="employer-rut">RUT del empleador <span class="optional">(opcional)</span></label><input id="employer-rut" data-rut-input name="employerRut" maxlength="12" inputmode="text" autocomplete="off" placeholder="12.345.678-5" aria-describedby="error-rut"><small class="employment-field-error" id="error-rut" hidden>Revisa el formato del RUT o déjalo vacío.</small></div>
+              <div class="employment-field"><label for="job-title">Cargo del trabajador <span class="optional">(opcional)</span></label><input id="job-title" name="jobTitle" maxlength="140" aria-describedby="job-help"><small id="job-help">Puedes ajustar este texto si la cláusula se usará para varios cargos.</small></div>
+            </div>
+          </section>
+          <section class="employment-step" data-step="1" aria-labelledby="step2-title" hidden>
+            <div class="employment-step-heading"><span>PASO 2 · DATOS</span><h3 id="step2-title" tabindex="-1">Acceso a datos personales</h3><p>Selecciona el tipo de titulares cuyos datos puede tratar el trabajador en sus funciones.</p></div>
+            <fieldset class="employment-group"><legend>¿A qué datos puede acceder? <span aria-hidden="true">*</span></legend><div class="employment-options">
+              <label class="employment-option"><input type="radio" name="access" value="customers" required><span>Solo clientes o proveedores</span></label>
+              <label class="employment-option"><input type="radio" name="access" value="workers"><span>Solo trabajadores</span></label>
+              <label class="employment-option"><input type="radio" name="access" value="both"><span>Ambos</span></label>
+              <label class="employment-option"><input type="radio" name="access" value="indirect"><span>Acceso indirecto, sin acceso directo a bases de datos</span></label>
+            </div><small class="employment-field-error" id="error-access" hidden>Selecciona una opción para continuar.</small></fieldset>
+            <div class="employment-grid employment-grid-spaced">
+              <div class="employment-field"><label for="data-details">Datos o ejemplos pertinentes <span class="optional">(opcional)</span></label><textarea id="data-details" name="dataDetails" rows="3" maxlength="500" placeholder="Describe solo categorías generales, sin datos reales de personas."></textarea></div>
+              <fieldset class="employment-group"><legend>¿Se tratarán datos sensibles u otras categorías especiales?</legend><div class="employment-options compact"><label class="employment-option"><input type="radio" name="sensitive" value="yes"><span>Sí</span></label><label class="employment-option"><input type="radio" name="sensitive" value="no"><span>No</span></label><label class="employment-option"><input type="radio" name="sensitive" value="unknown" checked><span>Por determinar</span></label></div><small>La selección debe reflejar el proceso real y requiere revisión.</small></fieldset>
+            </div>
+          </section>
+          <section class="employment-step" data-step="2" aria-labelledby="step3-title" hidden>
+            <div class="employment-step-heading"><span>PASO 3 · CONDICIONES</span><h3 id="step3-title" tabindex="-1">Condiciones de trabajo y seguridad</h3><p>Indica los equipos, la modalidad y los controles de acceso que se utilizarán.</p></div>
+            <fieldset class="employment-group"><legend>Equipos y acceso <span aria-hidden="true">*</span></legend><div class="employment-options">
+              <label class="employment-option"><input type="checkbox" name="equipment" value="company"><span>Uso de equipos de la empresa</span></label>
+              <label class="employment-option"><input type="checkbox" name="equipment" value="byod"><span>Uso de equipos personales (BYOD)</span></label>
+              <label class="employment-option"><input type="checkbox" name="vpn" value="yes"><span>Uso de VPN corporativa para acceder a sistemas, cuando corresponda</span></label>
+            </div><small class="employment-field-error" id="error-equipment" hidden>Selecciona al menos un tipo de equipo.</small></fieldset>
+            <fieldset class="employment-group employment-grid-spaced"><legend>Modalidad de trabajo <span aria-hidden="true">*</span></legend><div class="employment-options compact">
+              <label class="employment-option"><input type="radio" name="modality" value="onsite" required><span>Presencial</span></label><label class="employment-option"><input type="radio" name="modality" value="remote"><span>Remoto / teletrabajo</span></label><label class="employment-option"><input type="radio" name="modality" value="hybrid"><span>Híbrido</span></label>
+            </div><small class="employment-field-error" id="error-modality" hidden>Selecciona una modalidad.</small></fieldset>
+            <div class="employment-field employment-conditional" id="remote-details-wrap" hidden><label for="remote-details">Medidas o condiciones específicas para trabajo remoto <span class="optional">(opcional)</span></label><textarea id="remote-details" name="remoteDetails" rows="3" maxlength="500" placeholder="Ej.: resguardo de pantalla, almacenamiento local o conexión segura."></textarea></div>
+          </section>
+          <section class="employment-step" data-step="3" aria-labelledby="step4-title" hidden>
+            <div class="employment-step-heading"><span>PASO 4 · EXTRAS</span><h3 id="step4-title" tabindex="-1">Política interna y opciones</h3><p>Elige qué elementos quieres incorporar al documento; el resumen se actualiza con tus selecciones.</p></div>
+            <fieldset class="employment-group"><legend>¿La organización cuenta con una política interna de datos?</legend><div class="employment-options compact"><label class="employment-option"><input type="radio" name="policy" value="yes"><span>Sí</span></label><label class="employment-option"><input type="radio" name="policy" value="no"><span>No</span></label><label class="employment-option"><input type="radio" name="policy" value="unknown" checked><span>Por determinar</span></label></div></fieldset>
+            <fieldset class="employment-group employment-grid-spaced"><legend>Secciones adicionales</legend><div class="employment-options"><label class="employment-option"><input type="checkbox" name="extras" value="consequences"><span>Incluir un apartado de consecuencias del incumplimiento (requiere revisión y adaptación)</span></label><label class="employment-option"><input type="checkbox" name="extras" value="monitoring"><span>Incluir un apartado sobre monitoreo, control o auditoría</span></label><label class="employment-option"><input type="checkbox" name="extras" value="return"><span>Incluir devolución o eliminación de información y revocación de accesos al término</span></label></div></fieldset>
+            <aside class="employment-summary" aria-labelledby="summary-title"><h4 id="summary-title">Secciones que incluirá el borrador</h4><ul id="summary-list" aria-live="polite"></ul></aside>
+          </section>
+          <div class="employment-form-actions"><button class="employment-button secondary" type="button" id="back" hidden>← Anterior</button><span class="action-spacer"></span><button class="employment-button secondary" type="button" id="next">Siguiente →</button><button class="employment-button primary" type="button" id="generate" hidden>Generar borrador</button></div>
+        </form>
+      </div>
+    </section>
+    <section class="employment-result" id="result-view" aria-labelledby="result-title" hidden>
+      <div class="employment-result-head"><span class="employment-kicker">VISTA PREVIA</span><h2 id="result-title" tabindex="-1">Borrador de cláusula laboral sobre datos personales</h2><p>Revisa el contenido y adapta las partes pendientes antes de utilizarlo. Este documento es un borrador, no asesoría ni garantía de cumplimiento.</p></div>
+      <article class="employment-document" id="document" aria-label="Documento generado"></article>
+      <div class="employment-result-actions no-print"><button class="employment-button secondary" type="button" id="edit">Editar respuestas</button><button class="employment-button primary" type="button" id="print">Imprimir / Guardar como PDF</button><button class="employment-button secondary" type="button" id="new-draft">Generar nueva cláusula</button></div>
+    </section>
+  </main>
+  <footer class="site-footer employment-footer"><p id="footer-copyright">© FOLIOX Studio</p><a href="index.html#herramientas">Volver al catálogo</a></footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a0d">
+    <meta name="application-name" content="FOLIOX Studio">
+    <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+    <meta name="description" content="Prepara una guía editable para organizar la respuesta interna ante incidentes que puedan afectar datos o sistemas.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="document-tools.css">
+    <link rel="stylesheet" href="protocolo-brechas.css">
+    <script src="rut-input.js" defer></script>
+    <script src="protocolo-brechas.js" defer></script>
+    <title>Protocolo de Brechas de Seguridad — FOLIOX Studio</title>
+    <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+  <body class="doc-tool-page breach-page tool-theme-page" data-tool="breach">
+    <header class="site-header doc-tool-header breach-header">
+      <a class="brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+      <button class="tool-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tool-main-nav"><span></span><span></span></button><nav class="doc-tool-nav" id="tool-main-nav" aria-label="Navegación FOLIOX Studio"><a href="index.html#herramientas">Herramientas</a><a href="index.html">Inicio</a></nav>
+    </header>
+    <main class="doc-tool-main breach-main" id="main-content">
+      <p class="doc-tool-breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span aria-current="page">Protocolo de Brechas</span></p>
+      <section class="doc-tool-intro breach-intro" aria-labelledby="breach-title"><span class="doc-tool-availability">HERRAMIENTA DISPONIBLE</span><h1 id="breach-title">Protocolo de Brechas de Seguridad</h1><p>Prepara una guía interna para organizar la respuesta ante un incidente. El documento es un borrador preventivo: no confirma que haya ocurrido una brecha ni envía notificaciones.</p></section>
+      <div class="breach-workspace" id="breach-workspace">
+        <ol class="breach-progress" id="breach-progress" aria-label="Pasos del protocolo">
+          <li aria-current="step"><span>1</span><strong>Organización</strong></li><li><span>2</span><strong>Equipo</strong></li><li><span>3</span><strong>Infraestructura</strong></li><li><span>4</span><strong>Comunicación</strong></li>
+        </ol>
+        <div class="breach-progress-track" id="breach-progress-track" role="progressbar" aria-label="Avance del protocolo" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Paso 1 de 4"><span id="breach-progress-fill"></span></div>
+        <form id="breach-form" novalidate>
+          <section class="doc-tool-card breach-card breach-step" data-step="0" aria-labelledby="breach-step-1-title">
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 1 · ORGANIZACIÓN</span><h2 id="breach-step-1-title" tabindex="-1">Datos de la organización</h2><p>Declara la información básica de la organización a la que corresponde esta guía.</p></div>
+            <div class="breach-fields">
+              <div class="breach-field breach-field-full"><label for="breach-organization">Nombre de la empresa u organización <span aria-hidden="true">*</span></label><input id="breach-organization" name="organization" type="text" autocomplete="organization" required aria-describedby="breach-organization-error"><p class="breach-error" id="breach-organization-error" role="alert" hidden>Ingresa el nombre de la organización.</p></div>
+              <div class="breach-field"><label for="breach-rut">RUT <span class="breach-optional">Opcional</span></label><input id="breach-rut" data-rut-input name="rut" type="text" inputmode="text" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="XX.XXX.XXX-X" aria-describedby="breach-rut-hint breach-rut-error"><small id="breach-rut-hint">Se dará formato automáticamente. No se verifica el dígito verificador.</small><p class="breach-error" id="breach-rut-error" role="alert" hidden>Escribe el RUT con el formato XX.XXX.XXX-X.</p></div>
+              <div class="breach-field"><label for="breach-sector">Sector <span aria-hidden="true">*</span></label><select id="breach-sector" name="sector" required aria-describedby="breach-sector-error"><option value="">Selecciona una opción</option><option>E-commerce</option><option>Servicio profesional</option><option>Salud</option><option>Educación</option><option>Retail</option><option value="Restaurante/Gastronomía">Restaurante / gastronomía</option><option value="Contabilidad/Finanzas">Contabilidad / finanzas</option><option>Inmobiliaria</option><option>Otro</option></select><p class="breach-error" id="breach-sector-error" role="alert" hidden>Selecciona un sector.</p></div>
+              <div class="breach-field breach-field-full" id="breach-sector-other-wrap" hidden><label for="breach-sector-other">Describe el sector <span aria-hidden="true">*</span></label><input id="breach-sector-other" name="sectorOther" type="text" aria-describedby="breach-sector-other-error"><p class="breach-error" id="breach-sector-other-error" role="alert" hidden>Describe el sector.</p></div>
+              <div class="breach-field breach-field-full"><label for="breach-address">Domicilio <span class="breach-optional">Opcional</span></label><input id="breach-address" name="address" type="text" autocomplete="street-address"></div>
+            </div>
+            <p class="breach-note">No se precargan datos de empresas. La información se procesa localmente en este navegador.</p>
+          </section>
+          <section class="doc-tool-card breach-card breach-step" data-step="1" aria-labelledby="breach-step-2-title" hidden>
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 2 · EQUIPO</span><h2 id="breach-step-2-title" tabindex="-1">Equipo de respuesta</h2><p>Identifica a la persona de coordinación principal y agrega miembros que quieras incluir en la guía.</p></div>
+            <h3 class="breach-subheading">Responsable principal</h3>
+            <div class="breach-fields">
+              <div class="breach-field"><label for="breach-lead-name">Nombre <span aria-hidden="true">*</span></label><input id="breach-lead-name" name="leadName" type="text" autocomplete="name" required aria-describedby="breach-lead-name-error"><p class="breach-error" id="breach-lead-name-error" role="alert" hidden>Ingresa el nombre del responsable.</p></div>
+              <div class="breach-field"><label for="breach-lead-role">Cargo <span class="breach-optional">Opcional</span></label><input id="breach-lead-role" name="leadRole" type="text" autocomplete="organization-title"></div>
+              <div class="breach-field breach-field-full"><label for="breach-lead-contact">Contacto urgente <span class="breach-optional">Opcional</span></label><input id="breach-lead-contact" name="leadContact" type="text" autocomplete="off" aria-describedby="breach-lead-contact-hint"><small id="breach-lead-contact-hint">Ingresa un medio interno de contacto que la organización confirme.</small></div>
+            </div>
+            <div class="breach-team-heading"><div><h3 class="breach-subheading">Miembros adicionales</h3><p>Los datos de cada miembro son editables y se incluyen en el protocolo.</p></div><button class="breach-button breach-button-secondary" type="button" id="breach-add-member">Agregar miembro al equipo <span aria-hidden="true">＋</span></button></div>
+            <div class="breach-members" id="breach-members" aria-live="polite"></div>
+          </section>
+          <section class="doc-tool-card breach-card breach-step" data-step="2" aria-labelledby="breach-step-3-title" hidden>
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 3 · INFRAESTRUCTURA</span><h2 id="breach-step-3-title" tabindex="-1">Infraestructura y datos</h2><p>Describe los sistemas y categorías que la organización declara; deja en blanco lo que no sepas.</p></div>
+            <div class="breach-fields">
+              <div class="breach-field breach-field-full"><label for="breach-provider">Proveedor de hosting o nube <span class="breach-optional">Opcional</span></label><input id="breach-provider" name="provider" type="text" autocomplete="off"></div>
+              <fieldset class="breach-choice-fieldset breach-field-full" aria-describedby="breach-infrastructure-error"><legend>Tipo de infraestructura <span aria-hidden="true">*</span></legend><div class="breach-choice-grid"><label class="breach-choice"><input type="radio" name="infrastructure" value="Nube pública"><span>Nube pública</span></label><label class="breach-choice"><input type="radio" name="infrastructure" value="Servidor propio"><span>Servidor propio</span></label><label class="breach-choice"><input type="radio" name="infrastructure" value="Híbrido"><span>Híbrido</span></label><label class="breach-choice"><input type="radio" name="infrastructure" value="Hosting compartido"><span>Hosting compartido</span></label></div><p class="breach-error" id="breach-infrastructure-error" role="alert" hidden>Selecciona un tipo de infraestructura.</p></fieldset>
+              <div class="breach-field"><label for="breach-backup">Frecuencia de copias de seguridad <span aria-hidden="true">*</span></label><select id="breach-backup" name="backup" required aria-describedby="breach-backup-error"><option value="">Selecciona una opción</option><option>Diaria</option><option>Semanal</option><option>Mensual</option><option>Sin backup</option></select><p class="breach-error" id="breach-backup-error" role="alert" hidden>Selecciona una opción.</p></div>
+              <fieldset class="breach-choice-fieldset" aria-describedby="breach-sensitive-error"><legend>¿Se tratan datos sensibles o de especial atención? <span aria-hidden="true">*</span></legend><div class="breach-choice-grid breach-choice-grid-short"><label class="breach-choice"><input type="radio" name="sensitive" value="yes"><span>Sí</span></label><label class="breach-choice"><input type="radio" name="sensitive" value="no"><span>No</span></label></div><p class="breach-error" id="breach-sensitive-error" role="alert" hidden>Selecciona Sí o No.</p></fieldset>
+              <div class="breach-field breach-field-full" id="breach-sensitive-categories-wrap" hidden><label for="breach-sensitive-categories">Categorías declaradas <span aria-hidden="true">*</span></label><textarea id="breach-sensitive-categories" name="sensitiveCategories" rows="3" aria-describedby="breach-sensitive-categories-error"></textarea><small>Describe categorías, sin añadir datos personales concretos.</small><p class="breach-error" id="breach-sensitive-categories-error" role="alert" hidden>Describe las categorías indicadas.</p></div>
+              <div class="breach-field breach-field-full"><label for="breach-record-count">Número estimado de registros <span class="breach-optional">Opcional</span></label><input id="breach-record-count" name="recordCount" type="text" inputmode="numeric" autocomplete="off" aria-describedby="breach-record-count-hint breach-record-count-error"><small id="breach-record-count-hint">Estimación declarada; no es un recuento de personas afectadas por un incidente.</small><p class="breach-error" id="breach-record-count-error" role="alert" hidden>Ingresa una cantidad con dígitos o deja el campo vacío.</p></div>
+            </div>
+          </section>
+          <section class="doc-tool-card breach-card breach-step" data-step="3" aria-labelledby="breach-step-4-title" hidden>
+            <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 4 · COMUNICACIÓN</span><h2 id="breach-step-4-title" tabindex="-1">Comunicación a titulares</h2><p>Declara los canales de contacto y revisa el resumen que formará parte de la guía.</p></div>
+            <fieldset class="breach-choice-fieldset" aria-describedby="breach-channels-error"><legend>Canales de comunicación <span aria-hidden="true">*</span></legend><div class="breach-choice-grid">
+              <label class="breach-choice"><input type="checkbox" name="channels" value="Correo electrónico"><span>Correo electrónico</span></label><label class="breach-choice"><input type="checkbox" name="channels" value="SMS o mensaje"><span>SMS o mensaje</span></label><label class="breach-choice"><input type="checkbox" name="channels" value="Notificación en una aplicación"><span>Notificación en una aplicación</span></label><label class="breach-choice"><input type="checkbox" name="channels" value="Web (complementario)"><span>Web (canal complementario)</span></label>
+            </div><p class="breach-error" id="breach-channels-error" role="alert" hidden>Selecciona al menos un canal principal (correo, SMS o aplicación). La web es complementaria.</p></fieldset>
+            <div class="breach-fields">
+              <div class="breach-field"><label for="breach-contact-email">Correo de contacto para personas afectadas <span aria-hidden="true">*</span></label><input id="breach-contact-email" name="contactEmail" type="email" autocomplete="email" required aria-describedby="breach-contact-email-error"><p class="breach-error" id="breach-contact-email-error" role="alert" hidden>Ingresa un correo de contacto válido.</p></div>
+              <div class="breach-field"><label for="breach-contact-phone">Teléfono de contacto <span class="breach-optional">Opcional</span></label><input id="breach-contact-phone" name="contactPhone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div class="breach-summary-wrap"><label for="breach-summary">Resumen para revisar y editar</label><textarea id="breach-summary" name="editableSummary" rows="9" aria-describedby="breach-summary-hint"></textarea><small id="breach-summary-hint">Puedes personalizar este resumen. El protocolo incluirá el texto que dejes aquí.</small></div>
+            <p class="breach-legal-note"><strong>Plantilla preventiva.</strong> Los canales seleccionados no envían mensajes. Confirma por separado si existe un incidente, qué reglas aplican, a quién corresponde comunicar y en qué momento. Esta herramienta no notifica a titulares ni autoridades.</p>
+          </section>
+          <p class="breach-step-error" id="breach-step-error" role="alert" hidden>Revisa los campos señalados antes de continuar.</p>
+          <div class="breach-step-actions" id="breach-step-actions"><button class="breach-button breach-button-secondary" id="breach-previous" type="button" disabled>Anterior</button><button class="breach-button" id="breach-next" type="button">Siguiente <span aria-hidden="true">→</span></button></div>
+        </form>
+
+        <section class="breach-final-success" id="breach-final-success" aria-labelledby="breach-success-title" hidden>
+          <span class="breach-lock-icon" aria-hidden="true">🔒</span><span class="breach-success-kicker">BORRADOR LISTO</span><h2 id="breach-success-title" tabindex="-1">Protocolo generado</h2><p>El borrador está listo para revisar. Puedes imprimirlo o guardarlo como PDF desde el diálogo de impresión de tu navegador.</p>
+          <div class="breach-success-actions"><button class="breach-button" id="breach-print" type="button">Imprimir / Guardar como PDF</button><button class="breach-button breach-button-secondary" id="breach-new-company" type="button">Nueva empresa</button><button class="breach-text-button" id="breach-edit-answers" type="button">Editar respuestas</button></div>
+        </section>
+        <section class="breach-complementary" id="breach-complementary" aria-labelledby="breach-complementary-title" hidden><h2 id="breach-complementary-title">Complementa tu trabajo</h2><div><a href="protocolo-arcop.html">Protocolo ARCOP <span aria-hidden="true">↗</span></a><a href="registro-tratamiento.html">Registro de Actividades de Tratamiento <span aria-hidden="true">↗</span></a><a href="politica-privacidad.html">Política de Privacidad <span aria-hidden="true">↗</span></a></div></section>
+        <section class="doc-tool-card breach-generated-card" id="breach-generated-card" aria-labelledby="breach-document-heading" hidden><div class="breach-document-heading"><span class="doc-tool-kicker">DOCUMENTO PARA REVISAR</span><h2 id="breach-document-heading">Protocolo preventivo ante incidentes</h2><p id="breach-document-meta"></p></div><article class="breach-document" id="breach-document"></article></section>
+      </div>
+      <p class="doc-tool-privacy breach-privacy-note">La información se procesa en este navegador y no se envía a FOLIOX Studio. Revisa y adapta el documento antes de utilizarlo.</p>
+    </main>
+    <footer class="doc-tool-footer breach-footer"><a href="index.html#herramientas">← Volver al catálogo</a><span>FOLIOX Studio · guía editable</span></footer>
+  </body>
+</html>

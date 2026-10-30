@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090a0d">
+  <meta name="application-name" content="FOLIOX Studio">
+  <meta name="description" content="Prepara un borrador editable para revisar la comunicación de una vulneración de seguridad de datos personales.">
+  <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="document-tools.css">
+  <link rel="stylesheet" href="notificacion-brecha.css">
+  <script src="rut-input.js" defer></script>
+  <script src="notificacion-brecha.js" defer></script>
+  <title>Notificación de Brecha de Datos a la APDP — FOLIOX Studio</title>
+  <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+<body class="doc-tool-page notification-page tool-theme-page" data-tool="notification">
+  <a class="notification-skip" href="#notification-form">Saltar al formulario</a>
+  <header class="site-header doc-tool-header notification-header">
+    <a class="brand" href="index.html" aria-label="FOLIOX Studio, inicio"><span class="brand-logo-frame"><img class="brand-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt=""></span><span class="brand-name">FOLIOX Studio</span></a>
+    <button class="tool-menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="tool-main-nav"><span></span><span></span></button><nav class="doc-tool-nav" id="tool-main-nav" aria-label="Navegación FOLIOX Studio"><a href="index.html#herramientas">Herramientas</a><a href="index.html">Inicio</a></nav>
+  </header>
+  <main class="doc-tool-main notification-main" id="main-content">
+    <p class="doc-tool-breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span aria-current="page">Notificación de Brecha a la APDP</span></p>
+    <section class="doc-tool-intro notification-intro" aria-labelledby="notification-title">
+      <span class="doc-tool-availability">HERRAMIENTA DISPONIBLE</span>
+      <h1 id="notification-title">Notificación de Brecha de Datos a la APDP</h1>
+      <p>Genera un borrador editable de los antecedentes de una vulneración para revisar una eventual comunicación a la Agencia de Protección de Datos Personales. La herramienta no envía notificaciones ni determina por sí sola si existe una obligación.</p>
+    </section>
+
+    <aside class="notification-legal-alert" aria-labelledby="notification-legal-title">
+      <span class="notification-alert-icon" aria-hidden="true">⚠</span>
+      <div><h2 id="notification-legal-title">Sobre el plazo de “72 horas”</h2>
+        <p>La Ley 21.719 no fija un plazo general de 72 horas para reportar vulneraciones. Su artículo 14 sexies establece, cuando se cumplen sus condiciones, comunicar a la Agencia por los medios más expeditos posibles y sin dilaciones indebidas. La ley entra en vigor el <strong>1 de diciembre de 2026</strong>. Esta herramienta no evalúa el régimen aplicable antes de esa fecha ni resuelve si el caso alcanza el umbral legal.</p>
+        <a href="https://www.bcn.cl/leychile/navegar?idNorma=1209272" target="_blank" rel="noopener noreferrer">Consultar Ley 21.719 en Ley Chile (art. 14 sexies y disposiciones transitorias)</a>
+        <small>Referencia revisada el 27 de octubre de 2026.</small>
+      </div>
+    </aside>
+
+    <div class="notification-workspace" id="notification-workspace">
+      <ol class="notification-progress" id="notification-progress" aria-label="Pasos de la notificación">
+        <li aria-current="step"><span>1</span><strong>Responsable</strong></li><li><span>2</span><strong>Vulneración</strong></li><li><span>3</span><strong>Datos</strong></li><li><span>4</span><strong>Medidas</strong></li>
+      </ol>
+      <div class="notification-progress-track" role="progressbar" aria-label="Avance de la notificación" aria-valuemin="0" aria-valuemax="4" aria-valuenow="1" aria-valuetext="Paso 1 de 4"><span id="notification-progress-fill"></span></div>
+
+      <form id="notification-form" novalidate>
+        <section class="doc-tool-card notification-card notification-step" data-step="0" aria-labelledby="notification-step-1-title">
+          <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 1 · RESPONSABLE</span><h2 id="notification-step-1-title" tabindex="-1">Identificación del responsable</h2><p>Datos del responsable que comunica la vulneración a la Agencia.</p></div>
+          <div class="notification-fields">
+            <div class="notification-field notification-field-full"><label for="notification-company">Razón social <span aria-hidden="true">*</span></label><input id="notification-company" name="company" type="text" autocomplete="organization" required aria-describedby="notification-company-error"><p class="notification-error" id="notification-company-error" role="alert" hidden>Completa la razón social para continuar.</p></div>
+            <div class="notification-field notification-field-full"><label for="notification-rut">RUT <span class="notification-optional">Opcional</span></label><input id="notification-rut" data-rut-input name="rut" type="text" maxlength="12" autocomplete="off" placeholder="12.345.678-9" aria-describedby="notification-rut-error"><p class="notification-error" id="notification-rut-error" role="alert" hidden>Escribe el RUT completo con el formato XX.XXX.XXX-X o deja el campo vacío.</p></div>
+            <div class="notification-field notification-field-full"><label for="notification-address">Domicilio <span class="notification-optional">Opcional</span></label><input id="notification-address" name="address" type="text" autocomplete="street-address" placeholder="Calle, número, comuna"></div>
+            <div class="notification-field notification-field-full"><label for="notification-sector">Sector / industria <span class="notification-optional">Opcional</span></label><input id="notification-sector" name="sector" type="text" autocomplete="off" placeholder="Ej.: comercio, salud, tecnología"></div>
+            <div class="notification-field"><label for="notification-representative">Nombre del DPO o representante <span class="notification-optional">Opcional</span></label><input id="notification-representative" name="representative" type="text" autocomplete="name"></div>
+            <div class="notification-field"><label for="notification-role">Cargo <span class="notification-optional">Opcional</span></label><input id="notification-role" name="role" type="text" autocomplete="organization-title" placeholder="DPO / Representante legal"></div>
+            <div class="notification-field"><label for="notification-email">Email <span class="notification-optional">Opcional</span></label><input id="notification-email" name="email" type="email" autocomplete="email" aria-describedby="notification-email-error"><p class="notification-error" id="notification-email-error" role="alert" hidden>Revisa el formato del email.</p></div>
+            <div class="notification-field"><label for="notification-phone">Teléfono <span class="notification-optional">Opcional</span></label><input id="notification-phone" name="phone" type="tel" autocomplete="tel" placeholder="+56 9 ..."></div>
+          </div>
+        </section>
+
+        <section class="doc-tool-card notification-card notification-step" data-step="1" aria-labelledby="notification-step-2-title" hidden>
+          <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 2 · VULNERACIÓN</span><h2 id="notification-step-2-title" tabindex="-1">Datos de la vulneración</h2><p>Caracterización del incidente según los antecedentes disponibles.</p></div>
+          <div class="notification-fields">
+            <div class="notification-field"><label for="notification-detected">Fecha y hora de detección <span aria-hidden="true">*</span></label><input id="notification-detected" name="detected" type="datetime-local" required aria-describedby="notification-detected-error"><p class="notification-error" id="notification-detected-error" role="alert" hidden>Indica cuándo se detectó el incidente.</p></div>
+            <div class="notification-field"><label for="notification-occurred">Fecha y hora estimada de ocurrencia <span class="notification-optional">Opcional</span></label><input id="notification-occurred" name="occurred" type="datetime-local"></div>
+            <fieldset class="notification-choice-fieldset notification-field-full"><legend>Estado actual</legend><div class="notification-choice-row">
+              <label class="notification-choice"><input type="radio" name="status" value="Vulneración contenida"><span>Vulneración contenida</span></label>
+              <label class="notification-choice"><input type="radio" name="status" value="Vulneración activa, en proceso de contención"><span>Vulneración activa, en proceso de contención</span></label>
+              <label class="notification-choice"><input type="radio" name="status" value="Estado actual desconocido"><span>Estado actual desconocido</span></label>
+            </div></fieldset>
+            <div class="notification-field notification-field-full"><label for="notification-cause">Causa probable</label><select id="notification-cause" name="cause"><option value="">Selecciona si se conoce</option><option value="access">Acceso no autorizado</option><option value="loss">Pérdida o destrucción</option><option value="disclosure">Divulgación o comunicación</option><option value="alteration">Alteración</option><option value="other">Otro</option><option value="unknown">No se sabe</option></select></div>
+          </div>
+          <p class="notification-inline-note">La causa y el estado son antecedentes declarados; no determinan por sí solos una infracción legal.</p>
+        </section>
+
+        <section class="doc-tool-card notification-card notification-step" data-step="2" aria-labelledby="notification-step-3-title" hidden>
+          <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 3 · DATOS</span><h2 id="notification-step-3-title" tabindex="-1">Datos comprometidos</h2><p>Categorías y volumen según lo que se conoce.</p></div>
+          <fieldset class="notification-choice-fieldset"><legend>Categorías de datos comprometidos</legend><div class="notification-category-list">
+            <label><input type="checkbox" name="categories" value="Datos de identificación (RUT, nombre, dirección)"><span>Datos de identificación (RUT, nombre, dirección)</span></label>
+            <label><input type="checkbox" name="categories" value="Datos de contacto (email, teléfono)"><span>Datos de contacto (email, teléfono)</span></label>
+            <label><input type="checkbox" name="categories" value="Datos económicos, financieros, bancarios o comerciales"><span>Datos económicos, financieros, bancarios o comerciales</span></label>
+            <label><input type="checkbox" name="categories" value="Datos sensibles: salud"><span>Datos sensibles: salud</span></label>
+            <label><input type="checkbox" name="categories" value="Datos sensibles: biométricos"><span>Datos sensibles: biométricos</span></label>
+            <label><input type="checkbox" name="categories" value="Datos sensibles: orientación sexual, creencias, origen"><span>Datos sensibles: orientación sexual, creencias, origen</span></label>
+            <label><input type="checkbox" name="categories" value="Datos relativos a niños, niñas o adolescentes"><span>Datos relativos a niños, niñas o adolescentes</span></label>
+            <label><input type="checkbox" name="categories" value="Credenciales de acceso (contraseñas, tokens, claves API)"><span>Credenciales de acceso (contraseñas, tokens, claves API)</span></label>
+          </div></fieldset>
+          <div class="notification-fields notification-counts">
+            <div class="notification-field"><label for="notification-people">Titulares afectados (estimación)</label><input id="notification-people" name="people" type="number" min="0" step="1" inputmode="numeric" aria-describedby="notification-people-error"><label class="notification-unavailable"><input id="notification-people-unavailable" type="checkbox" name="peopleUnavailable"><span>No disponible</span></label><p class="notification-error" id="notification-people-error" role="alert" hidden>Ingresa un número entero igual o mayor que cero, o marca “No disponible”.</p></div>
+            <div class="notification-field"><label for="notification-records">Registros comprometidos (estimación)</label><input id="notification-records" name="records" type="number" min="0" step="1" inputmode="numeric" aria-describedby="notification-records-error"><label class="notification-unavailable"><input id="notification-records-unavailable" type="checkbox" name="recordsUnavailable"><span>No disponible</span></label><p class="notification-error" id="notification-records-error" role="alert" hidden>Ingresa un número entero igual o mayor que cero, o marca “No disponible”.</p></div>
+          </div>
+          <fieldset class="notification-choice-fieldset notification-minors"><legend>¿Incluye datos de niños o niñas menores de 14 años?</legend><div class="notification-choice-row notification-choice-row-short"><label class="notification-choice"><input type="radio" name="under14" value="Sí"><span>Sí</span></label><label class="notification-choice"><input type="radio" name="under14" value="No"><span>No</span></label></div><small>La ley contempla una comunicación a las personas afectadas en ciertos supuestos; esta respuesta no determina por sí sola que corresponda.</small></fieldset>
+        </section>
+
+        <section class="doc-tool-card notification-card notification-step" data-step="3" aria-labelledby="notification-step-4-title" hidden>
+          <div class="doc-tool-card-heading"><span class="doc-tool-kicker">PASO 4 · MEDIDAS</span><h2 id="notification-step-4-title" tabindex="-1">Consecuencias y medidas</h2><p>Información que la ley contempla para registrar y evaluar el incidente.</p></div>
+          <div class="notification-field notification-field-full"><label for="notification-consequences">Posibles consecuencias para los titulares</label><textarea id="notification-consequences" name="consequences" rows="4" maxlength="3000" placeholder="Describe consecuencias conocidas o posibles y lo que todavía está en evaluación."></textarea><small class="notification-hint">No incluyas conclusiones que no puedas respaldar.</small></div>
+          <div class="notification-field notification-field-full"><label for="notification-measures">Medidas técnicas y organizativas ya adoptadas</label><textarea id="notification-measures" name="measures" rows="4" maxlength="3000" placeholder="Indica medidas confirmadas para contener, resolver o mitigar el incidente."></textarea></div>
+          <div class="notification-field notification-field-full"><label for="notification-planned">Medidas adicionales planificadas</label><textarea id="notification-planned" name="planned" rows="4" maxlength="3000" placeholder="Describe medidas previstas, responsables o asuntos pendientes."></textarea></div>
+          <fieldset class="notification-choice-fieldset"><legend>¿Se notificará a las personas afectadas?</legend><div class="notification-choice-row">
+            <label class="notification-choice"><input type="radio" name="notifyPeople" value="Sí"><span>Sí</span></label><label class="notification-choice"><input type="radio" name="notifyPeople" value="Parcialmente"><span>Parcialmente</span></label><label class="notification-choice"><input type="radio" name="notifyPeople" value="No"><span>No</span></label>
+          </div></fieldset>
+          <div class="notification-field notification-field-full"><label for="notification-timing">Plazo estimado para notificar a titulares <span class="notification-optional">Opcional</span></label><input id="notification-timing" name="timing" type="text" placeholder="Ej.: después de validar los antecedentes"><small class="notification-hint">Es una estimación declarada, no un plazo legal.</small></div>
+          <p class="notification-legal-note"><strong>Revisión necesaria.</strong> El artículo 14 sexies contempla el reporte a la Agencia si la vulneración genera un riesgo razonable para los derechos y libertades. También prevé comunicación a las personas afectadas en los supuestos que indica. Este borrador no confirma que esas condiciones se cumplan ni se transmite a la Agencia o a titulares.</p>
+        </section>
+        <p class="notification-step-error" id="notification-step-error" role="alert" hidden>Revisa los campos señalados antes de continuar.</p>
+        <div class="notification-step-actions" id="notification-step-actions"><button class="notification-button notification-button-secondary" id="notification-previous" type="button" disabled>← Anterior</button><button class="notification-button" id="notification-next" type="button">Siguiente →</button></div>
+      </form>
+
+      <section class="notification-success" id="notification-success" aria-labelledby="notification-success-title" hidden><span class="notification-success-label">BORRADOR LISTO PARA REVISAR</span><h2 id="notification-success-title" tabindex="-1">Notificación preparada</h2><p>Revisa cuidadosamente la información antes de decidir si corresponde utilizarla. No se envió ningún mensaje.</p><div class="notification-success-actions"><button class="notification-button" id="notification-print" type="button">Imprimir / Guardar como PDF</button><button class="notification-button notification-button-secondary" id="notification-new" type="button">Nueva notificación</button><button class="notification-text-button" id="notification-edit" type="button">Editar respuestas</button></div></section>
+      <section class="doc-tool-card notification-generated-card" id="notification-generated-card" aria-labelledby="notification-document-heading" hidden><div class="notification-document-heading"><span class="doc-tool-kicker">VISTA PREVIA</span><h2 id="notification-document-heading">Documento generado</h2></div><article class="notification-document" id="notification-document"></article></section>
+    </div>
+    <p class="doc-tool-privacy notification-privacy">Los datos se procesan en este navegador y no se envían a FOLIOX Studio. Este resultado es un borrador, no una notificación presentada.</p>
+  </main>
+  <footer class="doc-tool-footer notification-footer"><a href="index.html#herramientas">← Volver al catálogo</a><span>FOLIOX Studio · borrador editable</span></footer>
+</body>
+</html>

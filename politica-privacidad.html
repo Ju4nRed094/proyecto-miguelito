@@ -3,18 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0c1322">
-    <meta name="description" content="Prepara un borrador de Política de Privacidad en DOCFAST, directamente en tu navegador.">
-    <meta name="application-name" content="DOCFAST">
-    <title>Política de Privacidad — DOCFAST</title>
+    <meta name="theme-color" content="#090a0d">
+    <meta name="description" content="Prepara un borrador de Política de Privacidad en FOLIOX Studio, directamente en tu navegador.">
+    <meta name="application-name" content="FOLIOX Studio">
+    <link rel="icon" type="image/png" href="img/Logotipo moderno FOLIOX Studio.png">
+    <title>Política de Privacidad — FOLIOX Studio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="politica-privacidad.css">
+    <script src="rut-input.js" defer></script>
     <script src="politica-privacidad.js" defer></script>
-  </head>
-  <body class="policy-page">
+    <link rel="stylesheet" href="tool-theme.css">
+  <script src="tool-nav.js" defer></script>
+</head>
+  <body class="policy-page tool-theme-page">
     <header class="site-header">
       <div class="brand policy-header-brand">
-        <span class="policy-header-logo-frame"><img class="policy-header-logo" src="img/logo-claro.png" alt="DOCFAST" draggable="false" decoding="async"></span>
+        <span class="policy-header-logo-frame"><img class="policy-header-logo" src="img/Logotipo moderno FOLIOX Studio.png" alt="" draggable="false" decoding="async"></span><span class="brand-name">FOLIOX Studio</span>
       </div>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
@@ -27,7 +31,7 @@
 
     <main class="policy-main">
       <section class="policy-intro" aria-labelledby="page-title">
-        <p class="policy-breadcrumb"><a href="index.html">DOCFAST</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span>Política de Privacidad</span></p>
+        <p class="policy-breadcrumb"><a href="index.html">FOLIOX Studio</a><span aria-hidden="true">/</span><a href="index.html#herramientas">Herramientas</a><span aria-hidden="true">/</span><span>Política de Privacidad</span></p>
         <span class="policy-availability"><i aria-hidden="true"></i> HERRAMIENTA DISPONIBLE</span>
         <h1 id="page-title">Prepara tu <span>Política de Privacidad</span></h1>
         <p>Completa cuatro pasos para crear un borrador con la información que proporciones. Todo se procesa en tu navegador y puedes revisar cada sección antes de compartirlo.</p>
@@ -36,7 +40,7 @@
 
       <section class="policy-builder" id="generador" aria-labelledby="builder-title">
         <div class="policy-builder-head">
-          <div><span class="section-kicker">GENERADOR DOCFAST</span><h2 id="builder-title">Tu información, paso a paso.</h2><p>Los campos obligatorios se indican con <span aria-hidden="true">*</span>. Usa ejemplos solo como guía, no agregues datos personales de terceros.</p></div>
+          <div><span class="section-kicker">GENERADOR FOLIOX Studio</span><h2 id="builder-title">Tu información, paso a paso.</h2><p>Los campos obligatorios se indican con <span aria-hidden="true">*</span>. Usa ejemplos solo como guía, no agregues datos personales de terceros.</p></div>
         </div>
         <div class="policy-card">
           <div class="policy-stepper">
@@ -55,7 +59,7 @@
               <div class="policy-step-heading"><span class="step-eyebrow">PASO 1 · IDENTIFICACIÓN</span><h3 id="step-business-title" tabindex="-1">Tu negocio</h3><p>Completa la identidad y el canal que recibiría solicitudes de datos.</p></div>
               <div class="policy-form-grid">
                 <div class="policy-field full"><label for="business-name">Razón social o nombre del negocio <span aria-hidden="true">*</span></label><input id="business-name" name="businessName" autocomplete="organization" maxlength="160" required placeholder="Ej.: Comercio Ejemplo SpA" aria-describedby="error-business-name"><small class="field-error" id="error-business-name" hidden>Ingresa la razón social o el nombre del negocio.</small></div>
-                <div class="policy-field"><label for="business-rut">RUT de la empresa <span class="field-optional">(opcional)</span></label><input id="business-rut" name="businessRut" autocomplete="off" inputmode="text" maxlength="12" placeholder="Ej.: 12.345.678-5" aria-describedby="error-business-rut"><small class="field-warning" id="error-business-rut" role="status" aria-live="polite" hidden>Escribe el RUT con el formato XX.XXX.XXX-X.</small></div>
+                <div class="policy-field"><label for="business-rut">RUT de la empresa <span class="field-optional">(opcional)</span></label><input id="business-rut" data-rut-input name="businessRut" autocomplete="off" inputmode="text" maxlength="12" placeholder="Ej.: 12.345.678-5" aria-describedby="error-business-rut"><small class="field-warning" id="error-business-rut" role="status" aria-live="polite" hidden>Escribe el RUT con el formato XX.XXX.XXX-X.</small></div>
                 <div class="policy-field"><label for="business-address">Dirección <span class="field-optional">(opcional)</span></label><input id="business-address" name="businessAddress" autocomplete="street-address" maxlength="200" placeholder="Calle, número, comuna, ciudad"></div>
                 <div class="policy-field"><label for="contact-email">Email para solicitudes de datos <span aria-hidden="true">*</span></label><input id="contact-email" name="contactEmail" type="email" autocomplete="email" maxlength="160" required placeholder="privacidad@ejemplo.cl" aria-describedby="error-contact-email"><small class="field-error" id="error-contact-email" hidden>Ingresa un email válido para recibir solicitudes.</small></div>
                 <div class="policy-field"><label for="business-website">Sitio web <span class="field-optional">(opcional)</span></label><input id="business-website" name="businessWebsite" type="url" autocomplete="url" maxlength="240" placeholder="https://www.ejemplo.cl" aria-describedby="website-help error-business-website"><small class="field-hint" id="website-help">No escribiremos una URL inferida del diagnóstico. Ingresa la dirección exacta si deseas incluirla.</small><small class="field-error" id="error-business-website" hidden>Ingresa una dirección web válida (por ejemplo, https://ejemplo.cl).</small></div>
@@ -156,7 +160,7 @@
             <div class="preview-screen-heading"><span class="step-eyebrow">VISTA PREVIA · BORRADOR ORIENTATIVO</span><h3 id="preview-screen-title" tabindex="-1">Revisa tu Política de Privacidad</h3><p id="pending-summary"></p></div>
             <div class="policy-document-wrap"><article class="policy-document" id="policy-document" aria-label="Borrador de Política de Privacidad"></article></div>
             <section class="policy-recommendations" aria-labelledby="policy-recommendations-title">
-              <div class="policy-recommendations-heading"><div><span class="step-eyebrow">MÁS HERRAMIENTAS DOCFAST</span><h4 id="policy-recommendations-title">También puedes revisar estas herramientas</h4><p>Prepara registros y materiales orientativos con la información que ingreses.</p></div></div>
+              <div class="policy-recommendations-heading"><div><span class="step-eyebrow">MÁS HERRAMIENTAS FOLIOX Studio</span><h4 id="policy-recommendations-title">También puedes revisar estas herramientas</h4><p>Prepara registros y materiales orientativos con la información que ingreses.</p></div></div>
               <div class="policy-recommendation-grid">
                 <a class="policy-recommendation" href="registro-tratamiento.html" aria-label="Abrir generador de Registro de Tratamiento">
                   <span class="recommendation-icon" aria-hidden="true">📊</span><h5>Registro de Tratamiento (RAT)</h5><span class="recommendation-status">Disponible · Crear registro</span><span class="recommendation-arrow" aria-hidden="true">↗</span>
@@ -188,11 +192,41 @@
         <div><span class="section-kicker">ANTES DE PUBLICAR</span><h2 id="legal-note-title">Revisa la vigencia normativa.</h2><p>Ley Chile registra la entrada en vigencia de las modificaciones de la Ley 21.719 para el 1 de diciembre de 2026. La norma y obligaciones aplicables dependen de la fecha de publicación y de las actualizaciones posteriores. Este generador no selecciona bases de licitud ni determina obligaciones para tu caso: las secciones sin información quedan marcadas como pendientes. Comprueba los textos oficiales vigentes antes de publicar.</p><a href="https://www.bcn.cl/leychile/navegar?i=141599" target="_blank" rel="noopener noreferrer">Ley 19.628 (Ley Chile) ↗</a><a href="https://www.bcn.cl/leychile/Navegar/imprimir?idNorma=1209272" target="_blank" rel="noopener noreferrer">Ley 21.719 y vigencia diferida (Ley Chile) ↗</a></div>
       </section>
 
-      <section class="policy-footer-note"><p>DOCFAST procesa esta información en tu navegador. No la envía ni la guarda en un servidor. El borrador no es asesoría legal, certificación ni garantía de cumplimiento; revísalo y adáptalo antes de publicarlo.</p></section>
+      <section class="policy-footer-note"><p>FOLIOX Studio procesa esta información en tu navegador. No la envía ni la guarda en un servidor. El borrador no es asesoría legal, certificación ni garantía de cumplimiento; revísalo y adáptalo antes de publicarlo.</p></section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-bottom"><span id="footer-copyright">© 2026 DOCFAST</span><span>Borradores revisables, paso a paso.</span><a href="index.html#herramientas">Volver a herramientas ↑</a></div>
+    <footer class="site-footer policy-site-footer">
+      <div class="policy-footer-inner">
+        <div class="policy-footer-main">
+          <div class="policy-footer-about">
+            <a class="policy-footer-brand" href="index.html" aria-label="FOLIOX Studio, inicio">
+              <img src="img/Logotipo moderno FOLIOX Studio.png" alt="" width="44" height="44">
+              <span>FOLIOX Studio</span>
+            </a>
+            <p>Herramientas para organizar información y preparar documentos.</p>
+          </div>
+          <nav class="policy-footer-links" aria-label="Herramientas de FOLIOX Studio">
+            <strong>Herramientas</strong>
+            <div class="policy-footer-link-grid">
+              <a href="diagnostico.html">Diagnóstico de Cumplimiento</a>
+              <a href="politica-privacidad.html">Política de Privacidad</a>
+              <a href="registro-tratamiento.html">Registro de Tratamiento</a>
+              <a href="formulario-consentimiento.html">Formulario de Consentimiento</a>
+              <a href="banner-cookies.html">Banner de Cookies</a>
+              <a href="protocolo-arcop.html">Protocolo ARCOP</a>
+              <a href="protocolo-brechas.html">Protocolo de Brechas</a>
+              <a href="clausula-laboral.html">Cláusula Laboral</a>
+              <a href="calculadora-multas.html">Calculadora de Multas</a>
+              <a href="notificacion-brecha.html">Notificación de Brecha</a>
+            </div>
+          </nav>
+        </div>
+        <div class="policy-footer-bottom">
+          <span id="footer-copyright">© 2026 FOLIOX Studio</span>
+          <span>Revisa los documentos antes de utilizarlos.</span>
+          <a href="index.html#herramientas">Volver a herramientas ↑</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

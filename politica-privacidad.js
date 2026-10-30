@@ -81,9 +81,10 @@ function mark(control, errorId) {
   target?.setAttribute('aria-invalid', 'true');
   if (error) error.hidden = false;
 }
+
 function rutValidation(raw) {
   if (raw === '') return { valid: true, reason: 'empty' };
-  return /^\d{2}\.\d{3}\.\d{3}-[0-9Kk]$/.test(raw)
+  return window.FolioxRut.isComplete(raw)
     ? { valid: true, reason: '' }
     : { valid: false, reason: 'format' };
 }
@@ -103,7 +104,7 @@ function updateRutNotice() {
     notice.hidden = true;
     return result;
   }
-  notice.textContent = 'El formato no coincide con XX.XXX.XXX-X. Puedes continuar y revisar el dato antes de compartir el borrador.';
+  notice.textContent = 'Completa el RUT con el formato XX.XXX.XXX-X o déjalo vacío.';
   notice.hidden = false;
   return result;
 }
@@ -111,6 +112,7 @@ function updateRutNotice() {
 function bindRutValidation() {
   const input = field('businessRut');
   input.addEventListener('blur', updateRutNotice);
+  input.addEventListener('input', updateRutNotice);
 }
 
 function validateStep() {
@@ -123,7 +125,11 @@ function validateStep() {
     if (!value('contactEmail') || !field('contactEmail').validity.valid) { mark(field('contactEmail'), 'error-contact-email'); valid = false; }
     if (!value('businessType')) { mark(field('businessType'), 'error-business-type'); valid = false; }
     if (value('businessType') === 'Otro' && !value('businessTypeOther')) { mark(field('businessTypeOther'), 'error-business-type-other'); valid = false; }
-    updateRutNotice();
+    const rutResult = updateRutNotice();
+    if (value('businessRut') && !rutResult.valid) {
+      field('businessRut').setAttribute('aria-invalid', 'true');
+      valid = false;
+    }
     if (value('businessWebsite') && !field('businessWebsite').validity.valid) { mark(field('businessWebsite'), 'error-business-website'); valid = false; }
   } else if (activeStep === 1) {
     const categories = selected('dataCategories'), subjects = selected('dataSubjects');
@@ -181,8 +187,8 @@ function generatePolicy() {
   documentNode.replaceChildren();
   const header = document.createElement('header'); header.className = 'policy-document-header';
   const brand = document.createElement('div'); brand.className = 'policy-document-brand';
-  const logo = document.createElement('img'); logo.id = 'policy-document-logo'; logo.className = 'policy-document-logo'; logo.src = 'img/logo.png'; logo.alt = 'DOCFAST'; logo.draggable = false; logo.decoding = 'async';
-  logo.addEventListener('error', () => announce('No se pudo cargar img/logo.png. Revisa que el archivo exista junto a la página y vuelve a generar la vista previa.'));
+  const logo = document.createElement('img'); logo.id = 'policy-document-logo'; logo.className = 'policy-document-logo'; logo.src = 'img/Logotipo moderno FOLIOX Studio.png'; logo.alt = 'FOLIOX Studio'; logo.draggable = false; logo.decoding = 'async';
+  logo.addEventListener('error', () => announce('No se pudo cargar img/Logotipo moderno FOLIOX Studio.png. Revisa que el archivo exista junto a la página y vuelve a generar la vista previa.'));
   brand.append(logo);
   const title = document.createElement('h1'); title.textContent = 'Política de Privacidad';
   const date = paragraph('Borrador preparado el ' + localDate()); date.className = 'document-generated-date';
@@ -272,7 +278,7 @@ function generatePolicy() {
   if (value('businessWebsite')) contact.push('Sitio web: ' + value('businessWebsite'));
   section('11. Contacto', list(contact));
   const footer = document.createElement('footer'); footer.className = 'policy-document-footer';
-  footer.textContent = 'Borrador generado localmente por DOCFAST. Revisa y completa la información antes de publicar.'; documentNode.append(footer);
+  footer.textContent = 'Borrador generado localmente por FOLIOX Studio. Revisa y completa la información antes de publicar.'; documentNode.append(footer);
 
   const count = documentNode.querySelectorAll('.policy-pending').length;
   document.querySelector('#pending-summary').textContent = count
@@ -352,8 +358,8 @@ function copyPolicy() {
   navigator.clipboard.writeText(text).then(() => announce('Texto copiado al portapapeles.')).catch(() => copyTextFallback(text));
 }
 async function logoDataUri() {
-  const response = await fetch(new URL('img/logo.png', document.baseURI));
-  if (!response.ok) throw new Error('No se pudo leer el logo de DOCFAST.');
+  const response = await fetch(new URL('img/Logotipo moderno FOLIOX Studio.png', document.baseURI));
+  if (!response.ok) throw new Error('No se pudo leer el logo de FOLIOX Studio.');
   const bytes = new Uint8Array(await response.arrayBuffer());
   let binary = '';
   for (let offset = 0; offset < bytes.length; offset += 8192) binary += String.fromCharCode(...bytes.subarray(offset, offset + 8192));
@@ -365,14 +371,14 @@ async function downloadHtml() {
   catch { announce('No se pudo incorporar el logo al HTML. Abre el sitio mediante un servidor local y vuelve a intentarlo.'); return; }
   const exportedDocument = documentNode.cloneNode(true);
   exportedDocument.querySelector('.policy-document-logo').src = logo;
-  const styles = 'body{font:14px/1.6 Arial,Helvetica,sans-serif;color:#263244;max-width:780px;margin:40px auto;padding:0 24px}.policy-document-brand{display:flex;justify-content:flex-start;width:100%;margin:0 0 24px}.policy-document-logo{display:block;width:160px;height:54px;margin:0;object-fit:contain;object-position:left center;user-select:none;-webkit-user-drag:none;pointer-events:none}.document-generated-date{color:#687489;font-size:.85rem}.draft-callout{padding:12px;background:#f6f2f3;border-left:3px solid #b83248}.policy-section{margin-top:22px;break-inside:avoid}.policy-section h2{font-size:1.1rem;border-bottom:1px solid #e5e8ed;padding-bottom:6px}.policy-pending{color:#7d3e49;font-style:italic}footer{margin-top:28px;padding-top:10px;border-top:1px solid #ddd;color:#687489;font-size:.8rem}';
+  const styles = 'body{font:14px/1.6 Arial,Helvetica,sans-serif;color:#263244;max-width:780px;margin:40px auto;padding:0 24px}.policy-document-brand{display:flex;justify-content:flex-start;width:100%;margin:0 0 24px}.policy-document-logo{display:block;width:240px;height:100px;margin:0;object-fit:contain;object-position:left center;user-select:none;-webkit-user-drag:none;pointer-events:none}.document-generated-date{color:#687489;font-size:.85rem}.draft-callout{padding:12px;background:#f6f2f3;border-left:3px solid #b83248}.policy-section{margin-top:22px;break-inside:avoid}.policy-section h2{font-size:1.1rem;border-bottom:1px solid #e5e8ed;padding-bottom:6px}.policy-pending{color:#7d3e49;font-style:italic}footer{margin-top:28px;padding-top:10px;border-top:1px solid #ddd;color:#687489;font-size:.8rem}';
   const source = '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Política de Privacidad</title><style>' + styles + '</style></head><body>' + exportedDocument.innerHTML + '</body></html>';
   const url = URL.createObjectURL(new Blob([source], { type: 'text/html;charset=utf-8' }));
   const link = document.createElement('a');
-  const slug = (value('businessName') || 'docfast').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-  link.href = url; link.download = 'politica-privacidad-' + (slug || 'docfast') + '.html';
+  const slug = (value('businessName') || 'foliox-studio').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+  link.href = url; link.download = 'politica-privacidad-' + (slug || 'foliox-studio') + '.html';
   document.body.append(link); link.click(); link.remove(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-  announce('Se descargó el archivo HTML de la vista previa con el logo DOCFAST incorporado.');
+  announce('Se descargó el archivo HTML de la vista previa con el logo FOLIOX Studio incorporado.');
 }
 
 document.querySelector('.menu-toggle').addEventListener('click', (event) => {
@@ -425,7 +431,7 @@ document.querySelector('#download-policy-html-button').addEventListener('click',
 document.querySelector('#print-policy-button').addEventListener('click', async () => {
   const logo = document.querySelector('#policy-document-logo');
   try { if (logo && !logo.complete) await new Promise((resolve) => { logo.addEventListener('load', resolve, { once: true }); logo.addEventListener('error', resolve, { once: true }); }); await logo?.decode?.(); } catch { /* Continue if image decoding is unavailable. */ }
-  if (!logo?.naturalWidth) { announce('No se imprimió porque el logo DOCFAST no está cargado. Revisa la ruta img/logo.png.'); return; }
+  if (!logo?.naturalWidth) { announce('No se imprimió porque el logo FOLIOX Studio no está cargado. Revisa la ruta img/Logotipo moderno FOLIOX Studio.png.'); return; }
   document.body.classList.add('printing-policy');
   window.print();
 });

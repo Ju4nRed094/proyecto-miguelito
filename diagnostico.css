@@ -1,4 +1,4 @@
-/* DOCFAST diagnosis page; shared site components come from styles.css. */
+/* FOLIOX Studio diagnosis page; shared site components come from styles.css. */
 :root { --diag-surface: #151f31; --diag-card: #18253a; --diag-line: #36445b; --diag-text: #f0f3f8; --diag-muted: #aeb9ca; --diag-red: #ed4053; --diag-coral: #ff8990; }
 html { scroll-padding-top: 90px; }
 .diagnostic-page { background: radial-gradient(ellipse at 10% 0%, #17243a 0, transparent 34%), #0c1322; color: var(--diag-text); }
@@ -253,3 +253,242 @@ html { scroll-padding-top: 90px; }
   body.printing-document #generated-document .generated-document-section { margin-top: 14pt; break-inside: avoid-page; }
   body.printing-document #generated-document .document-meta { margin: 13pt 0 16pt; }
 }
+
+/* FOLIOX Studio light theme for the diagnostic flow and its live results. */
+:root { color-scheme: light; --diag-surface: #f4f6f9; --diag-card: #fff; --diag-line: #d7e0e9; --diag-text: #172b45; --diag-muted: #596b80; --diag-red: #cf2635; --diag-coral: #a51f2b; }
+.diagnostic-page { color: #172b45; background: #f5f7fa; }
+.diagnostic-page .site-header { border-bottom-color: #dce3eb; background: #fff; box-shadow: 0 2px 10px #1b35500c; }
+.diagnostic-page .brand { color: #172b45; }.diagnostic-page .main-nav { color: #40556d; }
+.diagnostic-page .main-nav a[aria-current="page"] { color: #a51f2b; }
+.diagnostic-page .main-nav .nav-cta { border-color: #cf2635; background: #cf2635; color: #fff; }.diagnostic-page .main-nav .nav-cta:hover { background: #b91f2c; }
+.diagnostic-page .menu-toggle { border-color: #cbd5e0; background: #fff; }.diagnostic-page .menu-toggle span { background: #263b55; }
+.breadcrumb { color: #65768a; }.breadcrumb a { color: #a51f2b; }.breadcrumb a:hover { color: #7f1621; }
+.diagnostic-page .availability { border-color: #ecc8cc; background: #fff2f3; color: #9f2732; }.diagnostic-page .availability-dot { background: #cf2635; box-shadow: 0 0 0 3px #cf26351a; }
+.diagnostic-hero h1 { color: #172b45; }.diagnostic-hero h1 span { color: #c92332; }
+.diagnostic-lede, .hero-facts, .hero-note { color: #596b80; }.hero-facts strong { color: #203650; }
+.diagnostic-page .primary-link { background: #cf2635; color: #fff; }.diagnostic-page .primary-link:hover { background: #b91f2c; }
+.hero-summary { border-color: #d7e0e9; background: linear-gradient(145deg, #fff, #f1f5f9 80%); box-shadow: 0 18px 42px #1b355012; }
+.summary-orbit { border-color: #cf26351a; box-shadow: 0 0 0 35px #cf263508, 0 0 0 70px #cf263505; }
+.summary-icon { border-color: #ecc8cc; background: #fff0f1; color: #b91f2c; }.summary-kicker, .section-kicker { color: #a51f2b; }
+.hero-summary h2 { color: #1d334d; }.hero-summary > p:not(.summary-kicker) { color: #596b80; }.summary-bottom { border-top-color: #dce3eb; color: #52667d; }
+.questionnaire-section { border-color: #e0e6ed; background: #f1f4f8; }
+.questionnaire-heading h2, .info-intro h2, .related-heading h2, .faq-heading h2 { color: #172b45; }
+.questionnaire-heading p, .info-intro > p, .related-heading p, .faq-heading > p { color: #586a7f; }
+.privacy-chip { border-color: #d5e0d8; background: #f2f8f4; color: #365b43; }.privacy-chip span { color: #36734b; }
+.questionnaire-card, .document-builder { border-color: #d5dee8; background: #fff; box-shadow: 0 12px 32px #1b35500d; }
+.step-count { color: #263b55; }.step-topic, .step-eyebrow { color: #a51f2b; }
+.diagnostic-page .progress-track { background: #e1e7ee; }.diagnostic-page .progress-fill { background: #cf2635; }
+.step-labels li { border-bottom-color: #d9e1e9; color: #68798c; }.step-labels li > span { border-color: #cbd5e0; color: #596c81; }
+.step-labels li[aria-current="step"] { border-bottom-color: #cf2635; color: #203650; }
+.step-labels li[aria-current="step"] > span, .step-labels li.is-complete > span { border-color: #d88c93; background: #fff0f1; color: #a51f2b; }
+.form-step-heading h3, .results-header h3 { color: #203650; }.form-step-heading p, .results-header p { color: #596b80; }
+.question-group legend { color: #263d57; }.legend-hint, .question-hint { color: #64768b; }
+.choice-card { border-color: #d5dee8; background: #fff; }.choice-card:hover { border-color: #c4cfdc; background: #f8fafc; }
+.choice-mark { border-color: #8c9aac; background: #fff; }.choice-card input:checked + .choice-mark { border-color: #cf2635; background: #cf2635; box-shadow: 0 0 0 3px #cf26351a; }
+.choice-card:has(input:checked) { border-color: #d88990; background: #fff5f5; box-shadow: inset 0 0 0 1px #cf263510; }
+.choice-copy strong { color: #263b55; }.choice-copy small { color: #617389; }
+.question-group[aria-invalid="true"] legend, .question-error { color: #a51f2b; }
+.questionnaire-error, .document-form-error { border-color: #e5bfc3; background: #fff2f3; color: #83202a; }
+.form-actions { border-top-color: #e1e6ed; }.secondary-button, .reset-button { border-color: #cbd5e0; background: #f5f7fa; color: #263b55; }
+.secondary-button:hover:not(:disabled), .reset-button:hover { border-color: #b9c6d3; background: #eaf0f6; }.local-data-note { color: #5f7186; }.local-data-note span { color: #34724b; }
+.results-header h3 { color: #203650; }.result-level { border-color: #e8c4c8; background: #fff2f3; color: #a51f2b; }
+.result-level.level-progress, .result-level.level-pending { border-color: #eadbb9; background: #fff9ea; color: #765214; }.result-level.level-advanced { border-color: #c7ddce; background: #f0f8f2; color: #316241; }
+.score-layout, .result-list-block, .action-plan { border-color: #d7e0e9; background: #fff; }
+.score-ring { background: conic-gradient(#cf2635 var(--score-angle), #e3e8ee var(--score-angle)); }.score-ring[data-level="progress"] { background: conic-gradient(#c58b24 var(--score-angle), #e3e8ee var(--score-angle)); }.score-ring[data-level="advanced"] { background: conic-gradient(#43875b var(--score-angle), #e3e8ee var(--score-angle)); }
+.score-ring::before { background: #fff; }.score-ring strong { color: #203650; }.score-ring span { color: #617389; }
+.score-copy h4, .result-list-block h4, .action-plan h4 { color: #203650; }.score-copy > p { color: #586b80; }.score-copy .score-method { border-top-color: #e0e6ed; color: #62748a; }
+.attention-list, .action-plan ol { color: #465b73; }.attention-list li, .action-plan li { border-top-color: #e0e6ed; }.attention-list strong, .action-plan strong { color: #263b55; }
+.attention-status { color: #a51f2b; }.empty-result, .action-plan p, .action-plan .general-action { color: #596c81; }
+.result-separators { border-color: #d6dfe8; background: #f7f9fb; }
+.results-next-step { border-color: #e5c9cc; background: linear-gradient(120deg, #fff5f5, #f7f8fa 72%, #fff7f7); }
+.results-next-step h4 { color: #203650; }.results-next-step p { color: #596b80; }
+.live-diagnostic, .live-diagnostic.is-complete { border-color: #d7e0e9; background: #fff; box-shadow: 0 12px 30px #1b355010; }
+.live-panel-inner > .section-kicker { color: #a51f2b; }.live-panel-inner h3, .live-panel-inner h4 { color: #203650; }
+.live-intro, .live-completion, .live-dimension p { color: #5d7085; }.live-score-line strong { color: #203650; }.live-score-line span { color: #65778c; }
+.live-level { color: #805a18; }.live-level.is-complete { color: #316241; }.live-meter { background: #e2e8ee; }.live-meter > span { background: #cf2635; }
+.live-dimension { border-color: #d8e0e9; background: #f7f9fb; }.live-dimension:hover { border-color: #c0ccd8; background: #eef3f8; }
+.live-dimension-top { color: #263b55; }.live-dimension-top span { color: #a51f2b; }.live-pending { color: #52667d; }.live-pending strong { color: #354b64; }
+.live-complete-note { border-color: #c9dccf; background: #f1f8f3; color: #365b43; }
+.document-builder h3, .document-preview-heading { color: #203650; }.document-builder > p { color: #596b80; }.document-builder label { color: #263b55; }
+.document-builder select, .document-builder input { border-color: #c8d2de; background: #fff; color: #172b45; color-scheme: light; }
+.document-builder small, .document-print-note { color: #5f7186; }.document-builder select:focus-visible, .document-builder input:focus-visible { outline-color: #a51f2b; border-color: #a51f2b; }
+.diagnostic-page .faq-section { border-color: #e0e6ed; background: #f1f4f8; }.diagnostic-page .faq-heading h2 { color: #172b45; }
+.diagnostic-page .faq-heading > p, .diagnostic-page .faq-list details p { color: #586a7f; }.diagnostic-page .faq-list details, .diagnostic-page .faq-list details:first-child { border-color: #d8e0e9; }
+.diagnostic-page .faq-list summary { color: #263b55; }.related-section { background: #fff; }.diagnostic-footer { background: #edf1f5; border-top-color: #d8e0e9; }
+.diagnostic-page .tile-action { color: #a51f2b; }.diagnostic-page .tool-tile-active { border-color: #d5dee8; box-shadow: 0 8px 22px #1b355010; }.diagnostic-page .tool-tile-active:hover { border-color: #bdcbd9; }
+.diagnostic-page .site-header { height: auto; min-height: 112px; }
+.document-brandline { align-items: center; }.document-brand { display: block; }
+.document-brand-logo { display: block; width: 240px; max-width: 100%; height: 100px; object-fit: contain; object-position: left center; }
+.diagnostic-page button:focus-visible, .diagnostic-page a:focus-visible, .diagnostic-page summary:focus-visible { outline-color: #a51f2b; }
+@media (max-width: 620px) { .document-brandline { align-items: flex-start; }.document-brand-logo { width: 200px; height: 82px; }.live-panel-summary { border-bottom-color: #e0e6ed; background: #f5f7fa; color: #354b65; } }
+.information-section { background: #fff; }.info-card { border-color: #d7e0e9; background: #f7f9fb; }
+.info-icon { border-color: #ecc8cc; background: #fff0f1; color: #a51f2b; }.info-card h3 { color: #203650; }.info-card p, .info-card li { color: #586b80; }
+.legal-reference { border-color: #d7e0e9; background: #f7f9fb; }.legal-icon { border-color: #cbd5e0; color: #a51f2b; }.legal-reference h3 { color: #203650; }.legal-reference p { color: #586b80; }.legal-reference a, .text-link { color: #a51f2b; }
+.related-card { border-color: #d6dfe8; background: #fff; }.related-card:hover { border-color: #c3cfdb; box-shadow: 0 12px 26px #1b355012; }
+.related-status, .related-tool-status { border-color: #d4dde7; background: #f7f9fb; color: #596c81; }.related-card h3 { color: #203650; }.related-card p, .related-tools-note { color: #596c81; }
+.results-ready .step-eyebrow { color: #316241; }.ready-check { border-color: #c4dccb; background: #eff8f1; color: #316241; }
+.result-meter { background: #e1e7ee; }.result-meter span { background: #cf2635; }
+.context-summary { border-color: #d7e0e9; background: #f7f9fb; color: #4d6178 !important; }
+.result-section-heading h4 { color: #203650; }.result-section-heading > span { color: #63758a; }
+.dimension-row { border-color: #d7e0e9; background: #fff; }.dimension-row h5 { color: #263b55; }.dimension-points { color: #a51f2b; }.dimension-meter { background: #e2e8ee; }.dimension-meter > span { background: #cf2635; }
+.action-section { border-top-color: #e0e6ed; }.action-item { border-color: #d7e0e9; background: #fff; }.action-priority { border-color: #e6c5c9; background: #fff2f3; color: #a51f2b; }
+.action-content h5 { color: #263b55; }.action-content p { color: #596b80; }.action-section .empty-result { border-color: #cbded0; background: #f1f8f3; color: #365b43; }
+.result-disclaimer { color: #5c6e82; }.diagnostic-footer .footer-bottom a { color: #a51f2b; }.diagnostic-footer .footer-column span { color: #53657a; }
+.consistency-confirm { border-color: #e2c3c6; background: #fff5f5; }.consistency-confirm legend { color: #8f2530; }
+.results-actions .reset-button { border-color: #e1c7ca; background: #fff5f5; color: #9f2632; }
+
+/* Final results layout and contrast, scoped to the diagnosis results view. */
+.diagnostic-page .questionnaire-wrap:has(#results-panel:not([hidden])) {
+  width: min(1200px, calc(100% - 48px));
+}
+.diagnostic-page .questionnaire-wrap:has(#results-panel:not([hidden])) .questionnaire-layout {
+  grid-template-columns: minmax(0, 1.55fr) minmax(350px, .9fr);
+  align-items: start;
+  gap: 22px;
+}
+.diagnostic-page #results-panel .results-next-step {
+  border-color: #782a38;
+  background: linear-gradient(135deg, #1b1519, #17171d 70%);
+  color: #f4f4f6;
+  box-shadow: inset 3px 0 0 #d8203a;
+}
+.diagnostic-page #results-panel .results-next-step .step-eyebrow { color: #ff7888; }
+.diagnostic-page #results-panel .results-next-step h4 { color: #fff; }
+.diagnostic-page #results-panel .results-next-step p { color: #c2c3ca; font-size: 12px; line-height: 1.65; }
+.diagnostic-page #results-panel .results-next-step .primary-link { border-color: #d8203a; background: #d8203a; color: #fff; }
+.diagnostic-page #results-panel .results-next-step .primary-link:hover { border-color: #f0344e; background: #f0344e; color: #fff; }
+.diagnostic-page #results-panel .score-ring strong,
+.diagnostic-page #results-panel .dimension-points,
+.diagnostic-page #results-panel .action-priority { color: #ff7888; }
+.diagnostic-page #results-panel #score-explanation,
+.diagnostic-page #results-panel .score-method,
+.diagnostic-page #results-panel .context-summary,
+.diagnostic-page #results-panel .result-section-heading > span,
+.diagnostic-page #results-panel .related-tools-note,
+.diagnostic-page #results-panel .result-disclaimer { color: #bfc0c7; font-size: 11px; line-height: 1.65; }
+.diagnostic-page #results-panel .dimension-row h5 { color: #f0f0f3; font-size: 12px; }
+.diagnostic-page #results-panel .dimension-points { font-size: 11px; }
+.diagnostic-page #results-panel .action-content h5 { color: #f4f4f6; font-size: 13px; line-height: 1.4; }
+.diagnostic-page #results-panel .action-content p { color: #c0c1c8; font-size: 12px; line-height: 1.6; }
+.diagnostic-page #results-panel .action-priority { border-color: #71303a; background: #30171d; font-size: 10px; }
+.diagnostic-page #results-panel .action-list[hidden] { display: none !important; }
+.diagnostic-page #results-panel .action-section .empty-result {
+  border-color: #41424a;
+  background: #191a20;
+  color: #d4d5da;
+  font-size: 12px;
+}
+.diagnostic-page #results-panel .results-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 10px;
+}
+.diagnostic-page #results-panel .results-actions > button {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+}
+.diagnostic-page #results-panel .results-actions #generate-document-button { border-color: #d8203a; background: #d8203a; color: #fff; }
+.diagnostic-page #results-panel .results-actions #generate-document-button:hover { border-color: #f0344e; background: #f0344e; }
+.diagnostic-page #results-panel .results-actions #review-button,
+.diagnostic-page #results-panel .results-actions #reset-button { border-color: #44454d; background: #1b1c22; color: #e5e5e9; }
+.diagnostic-page #results-panel .results-actions #review-button:hover,
+.diagnostic-page #results-panel .results-actions #reset-button:hover { border-color: #777880; background: #25262d; color: #fff; }
+.diagnostic-page #results-panel .results-actions :focus-visible,
+.diagnostic-page #results-panel .results-next-step a:focus-visible { outline: 3px solid #ff7888; outline-offset: 3px; }
+@media (max-width: 980px) {
+  .diagnostic-page .questionnaire-wrap:has(#results-panel:not([hidden])) .questionnaire-layout { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 620px) {
+  .diagnostic-page .questionnaire-wrap:has(#results-panel:not([hidden])) { width: calc(100% - 28px); }
+  .diagnostic-page #results-panel .results-actions { grid-template-columns: minmax(0, 1fr); }
+  .diagnostic-page #results-panel .results-actions > button { min-height: 44px; }
+  .diagnostic-page #results-panel .results-next-step { padding: 18px; }
+}
+
+/* Red figures are limited to the live "Tu diagnóstico" card. */
+.diagnostic-page .live-diagnostic .live-score-line strong,
+.diagnostic-page .live-diagnostic .live-dimension-top > span,
+.diagnostic-page .live-diagnostic:focus-within .live-score-line strong,
+.diagnostic-page .live-diagnostic:focus-within .live-dimension-top > span { color: #ff7888; }
+
+/* Review confirmation, inline score figures, and all diagnostic progress fills. */
+.diagnostic-page .questionnaire-card .consistency-confirm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin: 18px 0 25px;
+  padding: 18px;
+  border: 1px solid #3d3e46;
+  border-radius: 11px;
+  background: #17181d;
+  color: #ededf0;
+}
+.diagnostic-page .questionnaire-card .consistency-confirm[hidden] { display: none !important; }
+.diagnostic-page .questionnaire-card .consistency-confirm legend {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #f4f4f6;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.diagnostic-page .questionnaire-card .consistency-confirm > .question-hint {
+  margin: 0;
+  color: #bfc0c7;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.diagnostic-page .questionnaire-card .consistency-confirm > .choice-card {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 13px 14px;
+  border-color: #45464e;
+  border-radius: 9px;
+  background: #1c1d23;
+  color: #f0f0f3;
+}
+.diagnostic-page .questionnaire-card .consistency-confirm > .choice-card:hover { border-color: #a23a49; background: #24191d; }
+.diagnostic-page .questionnaire-card .consistency-confirm > .choice-card .choice-copy { min-width: 0; }
+.diagnostic-page .questionnaire-card .consistency-confirm > .choice-card .choice-copy strong { color: #f0f0f3; font-size: 12px; line-height: 1.5; }
+.diagnostic-page .questionnaire-card .consistency-confirm > .choice-card:focus-within { outline: 3px solid #ff7888; outline-offset: 3px; }
+.diagnostic-page .questionnaire-card .consistency-confirm > .question-error { margin: 0; color: #ff9aa7; }
+.diagnostic-page .inline-score { color: #ff7888; white-space: nowrap; }
+.diagnostic-page .progress-track { background: #303138; }
+.diagnostic-page .progress-track > .progress-fill,
+.diagnostic-page .result-meter > span,
+.diagnostic-page .dimension-meter > span,
+.diagnostic-page .live-meter > span { background: #d8203a; }
+.diagnostic-page #score-ring,
+.diagnostic-page #score-ring[data-level="start"],
+.diagnostic-page #score-ring[data-level="progress"],
+.diagnostic-page #score-ring[data-level="advanced"] {
+  background: conic-gradient(#d8203a var(--score-angle), #303138 var(--score-angle));
+}
+.diagnostic-page #score-ring::before { background: #17181d; }
+.diagnostic-page .live-diagnostic.is-complete .live-meter > span { background: #d8203a; }
+@media (max-width: 620px) {
+  .diagnostic-page .questionnaire-card .consistency-confirm { gap: 11px; margin-block: 15px 22px; padding: 14px; }
+  .diagnostic-page .questionnaire-card .consistency-confirm legend { font-size: 12px; }
+  .diagnostic-page .questionnaire-card .consistency-confirm > .choice-card { min-height: 58px; padding: 12px; }
+}
+
+/* Keep the live panel's completion message readable in the dark diagnosis theme. */
+.diagnostic-page .live-diagnostic .live-complete-note {
+  border-color: #476b53;
+  background: #17241c;
+  color: #d4e6d9;
+}
+.diagnostic-page .live-diagnostic .live-complete-note[hidden] { display: none !important; }

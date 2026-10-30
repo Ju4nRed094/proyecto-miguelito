@@ -5,7 +5,13 @@ document.querySelectorAll('.brand-name, .preview-name').forEach((element) => {
 });
 document.querySelector('.brand[aria-label]').setAttribute('aria-label', `${siteName}, inicio`);
 document.querySelector('#footer-copyright').textContent = `© ${new Date().getFullYear()} ${siteName}`;
-document.title = `${siteName} — documento rápido`;
+if (document.body.classList.contains('home-page')) {
+  document.title = `${siteName} — herramientas para privacidad y documentos`;
+} else if (document.body.classList.contains('employment-page')) {
+  document.title = `Generador de Cláusula Laboral de Datos — ${siteName}`;
+} else {
+  document.title = `${siteName} — documento rápido`;
+}
 
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('#main-nav');
